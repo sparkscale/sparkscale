@@ -17,16 +17,16 @@ const MobileMenu: React.FC = () => {
 
   return (
     <>
-      {/* Hamburger Button */}
+      {/* Hamburger Button - IMMER sichtbar */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden p-2 text-gray-600 hover:text-black z-50 relative"
+        className="md:hidden p-3 text-white bg-black rounded-lg hover:bg-gray-800 z-50 relative shadow-lg"
         aria-label="Menu"
       >
         <div className="w-6 h-6 flex flex-col justify-center items-center">
-          <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-1'}`} />
-          <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isOpen ? 'opacity-0' : 'opacity-100'}`} />
-          <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-1'}`} />
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-1'}`} />
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${isOpen ? 'opacity-0' : 'opacity-100'}`} />
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-1'}`} />
         </div>
       </button>
 
@@ -49,7 +49,7 @@ const MobileMenu: React.FC = () => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'tween', duration: 0.3 }}
-              className="fixed top-0 right-0 h-full w-80 bg-white shadow-xl z-50 md:hidden"
+              className="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 md:hidden border-l-2 border-gray-100"
             >
               <div className="flex flex-col h-full pt-20 px-6">
                 {menuItems.map((item, index) => (

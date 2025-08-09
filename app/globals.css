@@ -22,12 +22,12 @@ nav {
 
 @media (min-width: 768px) {
   nav {
-    min-height: 80px !important;
-    max-height: 80px !important;
+    min-height: 120px !important; /* Größer für großes Logo */
+    max-height: 120px !important;
   }
   
   :root {
-    --logo-height: 8rem; /* Desktop: 128px */
+    --logo-height: 8rem !important; /* Desktop: 128px - !important für Override */
   }
 }
 
@@ -42,10 +42,10 @@ nav .container {
 
 @media (min-width: 768px) {
   nav .container {
-    min-height: 80px !important;
-    max-height: 80px !important;
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
+    min-height: 120px !important; /* Größer für großes Logo */
+    max-height: 120px !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
   }
 }
 
