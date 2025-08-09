@@ -3,9 +3,9 @@
 import React from 'react';
 import MobileMenu from './MobileMenu';
 
-const GlobalHeader: React.FC = () => {
+const Navigation: React.FC = () => {
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-40">
+    <nav className="relative z-50 bg-white">
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -17,6 +17,9 @@ const GlobalHeader: React.FC = () => {
             />
           </div>
           
+          {/* Mobile Menu */}
+          <MobileMenu />
+          
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8 text-sm">
             <a href="/leistungen" className="text-gray-600 hover:text-black transition-colors">Leistungen</a>
@@ -25,7 +28,7 @@ const GlobalHeader: React.FC = () => {
             <a href="/blog" className="text-gray-600 hover:text-black transition-colors">Blog</a>
             <a href="/kontakt" className="text-gray-600 hover:text-black transition-colors">Kontakt</a>
           </div>
-
+          
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <a 
@@ -35,13 +38,10 @@ const GlobalHeader: React.FC = () => {
               Kostenlose Analyse
             </a>
           </div>
-          
-          {/* Mobile Menu */}
-          <MobileMenu />
         </div>
       </div>
     </nav>
   );
 };
 
-export default GlobalHeader;
+export default Navigation;

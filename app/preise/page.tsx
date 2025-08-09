@@ -5,7 +5,6 @@ import Magnet from '@/components/Magnet';
 import ElegantShapes from '@/components/ElegantShapes';
 import CustomCursor from '@/components/CustomCursor';
 import ROICalculator from '@/components/ROICalculator';
-import MobileMenu from '@/components/MobileMenu';
 import ShinyText from '@/components/ShinyText';
 
 export default function PreisePage() {
@@ -33,10 +32,6 @@ export default function PreisePage() {
               <a href="/blog" className="text-gray-600 hover:text-black transition-colors">Blog</a>
               <a href="/kontakt" className="text-gray-600 hover:text-black transition-colors">Kontakt</a>
             </div>
-            
-            {/* Mobile Menu */}
-            <MobileMenu />
-            
             <div className="hidden md:block">
               <Magnet padding={20} disabled={false} magnetStrength={4} innerClassName="hover:text-white">
                 <a href="/kontakt" className="bg-black text-[#a29a88] px-6 py-2 text-sm font-semibold rounded-full hover:bg-gray-800 hover:text-white transition-all duration-300 shadow-md group" style={{display: 'inline-block'}}>

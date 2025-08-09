@@ -14,38 +14,38 @@
   transform: var(--logo-transform, none) !important;
 }
 
-/* Header responsive - Mobile kleiner */
+/* Header responsive - Logo unabhängig */
 nav {
-  min-height: 60px !important;
-  max-height: 60px !important;
+  min-height: auto !important;
+  max-height: none !important;
+  padding: 1rem 0 !important;
 }
 
 @media (min-width: 768px) {
   nav {
-    min-height: 120px !important; /* Größer für großes Logo */
-    max-height: 120px !important;
+    min-height: auto !important;
+    max-height: none !important;
+    padding: 1.5rem 0 !important;
   }
   
   :root {
-    --logo-height: 8rem !important; /* Desktop: 128px - !important für Override */
+    --logo-height: 8rem; /* Desktop: 128px - frei skalierbar */
   }
 }
 
 nav .container {
-  min-height: 60px !important;
-  max-height: 60px !important;
+  min-height: auto !important;
+  max-height: none !important;
   display: flex !important;
   align-items: center !important;
-  padding-top: 0.75rem !important;
-  padding-bottom: 0.75rem !important;
+  padding: 0 !important;
 }
 
 @media (min-width: 768px) {
   nav .container {
-    min-height: 120px !important; /* Größer für großes Logo */
-    max-height: 120px !important;
-    padding-top: 1.5rem !important;
-    padding-bottom: 1.5rem !important;
+    min-height: auto !important;
+    max-height: none !important;
+    padding: 0 !important;
   }
 }
 
