@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useContactFormAnalytics } from '@/hooks/useAnalytics';
-import { useContactFormAnalytics as useHubSpotContactAnalytics } from '@/hooks/useHubSpotAnalytics';
+import { useVercelAnalytics } from '@/hooks/useVercelAnalytics';
 // import { createCustomer } from '@/services/customerService'; // Moved to API route
 import SuccessModal from './SuccessModal';
 
@@ -37,19 +37,19 @@ const MultiStepContactForm: React.FC<MultiStepContactFormProps> = ({ onSubmit })
 
   // Analytics hooks
   const { trackFormStep } = useContactFormAnalytics();
-  const hubspotAnalytics = useHubSpotContactAnalytics();
+  const vercelAnalytics = useVercelAnalytics();
 
   // Track form start
   useEffect(() => {
     trackFormStep(1, formData);
-    hubspotAnalytics.trackFormStart();
+    vercelAnalytics.trackFormStart();
   }, []);
 
   // Track step changes
   useEffect(() => {
     if (currentStep > 1) {
       trackFormStep(currentStep, formData);
-      hubspotAnalytics.trackFormStep(currentStep, getStepName(currentStep));
+      vercelAnalytics.trackFormStep(currentStep, getStepName(currentStep));
     }
   }, [currentStep]); // Removed formData and trackFormStep from dependencies
 
@@ -130,18 +130,31 @@ const MultiStepContactForm: React.FC<MultiStepContactFormProps> = ({ onSubmit })
       const payload = { ...formData, leadScore };
 
       // API call to server
-              const response = await fetch('/api/create-customer', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        });
+      console.log('🚀 FRONTEND: Starting API call to /api/create-customer');
+      console.log('📋 FRONTEND: Payload:', JSON.stringify(payload, null, 2));
+      console.log('🌐 FRONTEND: Current URL:', window.location.href);
+      
+      const response = await fetch('/api/create-customer', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      
+      console.log('📡 FRONTEND: Response received');
+      console.log('📊 FRONTEND: Response status:', response.status);
+      console.log('📊 FRONTEND: Response ok:', response.ok);
         
         if (!response.ok) {
+          console.log('❌ FRONTEND: Response not OK');
           const errorData = await response.json().catch(() => ({}));
+          console.log('❌ FRONTEND: Error data:', errorData);
           throw new Error(errorData.details || errorData.error || `HTTP ${response.status}`);
         }
+        
+        console.log('✅ FRONTEND: Parsing response JSON...');
         const result = await response.json();
-      console.log('Customer created with ID:', result.id);
+        console.log('✅ FRONTEND: Response parsed successfully');
+        console.log('Customer created with ID:', result.id);
 
       if (onSubmit) {
         onSubmit({ ...formData, leadScore });
@@ -151,16 +164,24 @@ const MultiStepContactForm: React.FC<MultiStepContactFormProps> = ({ onSubmit })
       setHasSubmitted(true);
       setShowSuccessModal(true);
       
-      // HubSpot Analytics tracking
-      hubspotAnalytics.trackFormSubmission(formData, leadScore);
-          } catch (err) {
-        console.error('Error creating customer:', err);
-        console.error('Error details:', {
-          message: err instanceof Error ? err.message : 'Unknown error',
-          stack: err instanceof Error ? err.stack : 'No stack trace'
-        });
-        alert(`Fehler beim Senden: ${err instanceof Error ? err.message : 'Unbekannter Fehler'}`);
-      } finally {
+      // Vercel Analytics tracking
+      vercelAnalytics.trackFormSubmission(formData, leadScore);
+      vercelAnalytics.trackFormSuccess(result.id, leadScore);
+              } catch (err) {
+      console.error('❌ FRONTEND: Error creating customer:', err);
+      console.error('❌ FRONTEND: Error details:', {
+        message: err instanceof Error ? err.message : 'Unknown error',
+        stack: err instanceof Error ? err.stack : 'No stack trace',
+        name: err instanceof Error ? err.name : 'Unknown',
+      });
+      
+      // Check if it's a network error
+      if (err instanceof TypeError && err.message.includes('fetch')) {
+        console.error('🌐 FRONTEND: This looks like a network/CORS error');
+      }
+      
+      alert(`Fehler beim Senden: ${err instanceof Error ? err.message : 'Unbekannter Fehler'}`);
+    } finally {
       setIsSubmitting(false);
     }
   };
