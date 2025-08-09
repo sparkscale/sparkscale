@@ -30,10 +30,20 @@ export async function POST(request: NextRequest) {
       console.log('✅ createCustomer succeeded with ID:', id);
       
       // Send email notification directly in API route
+      console.log('📧 API Route: About to send email notification...');
+      console.log('📧 API Route: RESEND_API_KEY exists:', !!process.env.RESEND_API_KEY);
+      console.log('📧 API Route: NOTIFICATION_EMAIL:', process.env.NOTIFICATION_EMAIL);
+      
       try {
-        console.log('📧 API Route: Sending email notification...');
+        console.log('📧 API Route: Importing Resend...');
         const { Resend } = await import('resend');
-        const resend = new Resend(process.env.RESEND_API_KEY || 're_WZn4gLoN_EQC3RtcH4CuLZs3MbejuBShk');
+        console.log('📧 API Route: Resend imported successfully');
+        
+        const apiKey = process.env.RESEND_API_KEY || 're_WZn4gLoN_EQC3RtcH4CuLZs3MbejuBShk';
+        console.log('📧 API Route: Using API key:', apiKey.substring(0, 10) + '...');
+        
+        const resend = new Resend(apiKey);
+        console.log('📧 API Route: Resend instance created');
         
         const emailHtml = `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -53,12 +63,16 @@ export async function POST(request: NextRequest) {
           </div>
         `;
         
+        console.log('📧 API Route: About to send email...');
         const emailResult = await resend.emails.send({
           from: 'Spark&Scale Website <noreply@sparkandscale.site>',
           to: [process.env.NOTIFICATION_EMAIL || 'spark.scale01@gmail.com'],
           subject: `🚀 Neue Anfrage (Score: ${payload.leadScore}) - ${payload.name}`,
           html: emailHtml,
         });
+        
+        console.log('📧 API Route: Email send completed');
+        console.log('📧 API Route: Email result:', emailResult);
         
         if (emailResult.error) {
           console.error('❌ API Route: Email failed:', emailResult.error);
