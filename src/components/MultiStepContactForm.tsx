@@ -122,14 +122,17 @@ const MultiStepContactForm: React.FC<MultiStepContactFormProps> = ({ onSubmit })
       const payload = { ...formData, leadScore } as any;
 
       // API call to server
-      const response = await fetch('/api/create-customer', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-      
-      if (!response.ok) throw new Error('Network error');
-      const result = await response.json();
+              const response = await fetch('/api/create-customer', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        
+        if (!response.ok) {
+          const errorData = await response.json().catch(() => ({}));
+          throw new Error(errorData.details || errorData.error || `HTTP ${response.status}`);
+        }
+        const result = await response.json();
       console.log('Customer created with ID:', result.id);
 
       if (onSubmit) {
