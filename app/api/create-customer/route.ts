@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
       
       console.log('📧 API Route: About to send email...');
       const emailResult = await resend.emails.send({
-        from: 'Spark&Scale Website <noreply@sparkandscale.site>',
+        from: 'Spark&Scale Website <onboarding@resend.dev>',  // Resend Standard Domain
         to: [emailTo],
         subject: `🚀 Neue Anfrage (Score: ${payload.leadScore}) - ${payload.name}`,
         html: emailHtml,
