@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useContactFormAnalytics } from '@/hooks/useAnalytics';
+import { useHubSpotAnalytics as useHubSpotContactAnalytics } from '@/hooks/useHubSpotAnalytics';
 // import { createCustomer } from '@/services/customerService'; // Moved to API route
 import SuccessModal from './SuccessModal';
 
@@ -36,19 +37,27 @@ const MultiStepContactForm: React.FC<MultiStepContactFormProps> = ({ onSubmit })
 
   // Analytics hooks
   const { trackFormStep, trackFormAbandonment } = useContactFormAnalytics();
+  const hubspotAnalytics = useHubSpotContactAnalytics();
   const [startTime] = useState(Date.now());
 
   // Track form start
   useEffect(() => {
     trackFormStep(1, formData);
+    hubspotAnalytics.trackFormStart();
   }, []);
 
   // Track step changes
   useEffect(() => {
     if (currentStep > 1) {
       trackFormStep(currentStep, formData);
+      hubspotAnalytics.trackFormStep(currentStep, getStepName(currentStep));
     }
-  }, [currentStep, formData, trackFormStep]);
+  }, [currentStep]); // Removed formData and trackFormStep from dependencies
+
+  const getStepName = (step: number) => {
+    const stepNames = ['', 'project_type', 'budget_timeline', 'contact_info', 'message'];
+    return stepNames[step] || 'unknown';
+  };
 
   const projektOptionen = [
     { id: 'website', label: 'Neue Website', score: 20 },
@@ -142,6 +151,9 @@ const MultiStepContactForm: React.FC<MultiStepContactFormProps> = ({ onSubmit })
       // Success state
       setHasSubmitted(true);
       setShowSuccessModal(true);
+      
+      // HubSpot Analytics tracking
+      hubspotAnalytics.trackFormSubmission(formData, leadScore);
           } catch (err) {
         console.error('Error creating customer:', err);
         console.error('Error details:', {
