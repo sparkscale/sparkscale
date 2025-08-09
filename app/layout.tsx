@@ -78,6 +78,18 @@ export default function RootLayout({
           `}
         </Script>
       ) : null}
+
+      {/* HubSpot Tracking Code */}
+      <Script id="hubspot-tracking" strategy="afterInteractive">
+        {`
+          (function(h,u,b,s,p,o,t){
+            h.hsq=h.hsq||[];
+            s=u.createElement("script");s.async=true;
+            s.src="//js.hs-scripts.com/146697731.js";
+            u.getElementsByTagName("head")[0].appendChild(s);
+          })(window,document);
+        `}
+      </Script>
       </head>
       <body
         className={`${montserrat.variable} ${geistMono.variable} antialiased`}
