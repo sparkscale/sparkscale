@@ -63,10 +63,10 @@ export default function PortfolioPage() {
       </section>
 
       {/* Case Study Categories */}
-      <section className="py-20 px-8 bg-white">
+      <section className="py-12 md:py-20 px-4 md:px-8 bg-white">
         <div className="container mx-auto max-w-6xl">
           <ScrollAnimation animation="staggerUp" delay={0.3} stagger={0.15} triggerStart="top 95%">
-            <div className="grid lg:grid-cols-2 gap-16 mb-20">
+            <div className="grid lg:grid-cols-2 gap-8 md:gap-16 mb-12 md:mb-20">
               
               {/* Lokale Dienstleister */}
               <div>
@@ -78,13 +78,13 @@ export default function PortfolioPage() {
                     </svg>
                     Lokale Dienstleister
                   </div>
-                  <h2 className="text-3xl font-bold text-black mb-4">Regional verwurzelt</h2>
-                  <p className="text-gray-600 text-lg">Lokale Marktführerschaft durch strategisches SEO und gezielte Optimierung</p>
+                  <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">Regional verwurzelt</h2>
+                  <p className="text-gray-600 text-base md:text-lg">Lokale Marktführerschaft durch strategisches SEO und gezielte Optimierung</p>
                 </div>
 
                 <div className="space-y-8">
                   {/* Anwaltskanzlei Case */}
-                  <div className="bg-gray-50 p-8 rounded-xl hover:bg-gray-100 transition-colors duration-300 cursor-pointer group border border-gray-100 hover:border-gray-300">
+                  <div className="bg-gray-50 p-4 md:p-8 rounded-xl hover:bg-gray-100 transition-colors duration-300 cursor-pointer group border border-gray-100 hover:border-gray-300">
                     <div className="flex items-start justify-between mb-6">
                       <div className="flex items-center gap-4">
                         <div className="w-16 h-16 bg-black rounded-lg flex items-center justify-center">
@@ -113,7 +113,7 @@ export default function PortfolioPage() {
 
                     <div className="mb-6">
                       <h4 className="font-semibold text-black mb-3">Unsere Lösung:</h4>
-                      <div className="grid md:grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="flex items-start gap-2">
                           <svg className="w-4 h-4 text-black mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -143,7 +143,7 @@ export default function PortfolioPage() {
 
                     <div className="bg-white p-4 rounded-lg border border-gray-100">
                       <div className="text-sm text-gray-500 mb-2">Ergebnis nach 4 Monaten:</div>
-                      <div className="grid grid-cols-3 gap-4 text-center">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
                         <div>
                           <div className="text-lg font-bold text-black">Top 3</div>
                           <div className="text-xs text-gray-500">Rankings</div>
@@ -161,7 +161,7 @@ export default function PortfolioPage() {
                   </div>
 
                   {/* Zahnarztpraxis Case */}
-                  <div className="bg-gray-50 p-8 rounded-xl hover:bg-gray-100 transition-colors duration-300 cursor-pointer group border border-gray-100 hover:border-gray-300">
+                  <div className="bg-gray-50 p-4 md:p-8 rounded-xl hover:bg-gray-100 transition-colors duration-300 cursor-pointer group border border-gray-100 hover:border-gray-300">
                     <div className="flex items-start justify-between mb-6">
                       <div className="flex items-center gap-4">
                         <div className="w-16 h-16 bg-black rounded-lg flex items-center justify-center">
@@ -190,7 +190,7 @@ export default function PortfolioPage() {
 
                     <div className="mb-6">
                       <h4 className="font-semibold text-black mb-3">Unsere Lösung:</h4>
-                      <div className="grid md:grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="flex items-start gap-2">
                           <svg className="w-4 h-4 text-black mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -220,7 +220,7 @@ export default function PortfolioPage() {
 
                     <div className="bg-white p-4 rounded-lg border border-gray-100">
                       <div className="text-sm text-gray-500 mb-2">Ergebnis nach 5 Monaten:</div>
-                      <div className="grid grid-cols-3 gap-4 text-center">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
                         <div>
                           <div className="text-lg font-bold text-black">Platz 2</div>
                           <div className="text-xs text-gray-500">Hauptkeyword</div>
@@ -248,13 +248,13 @@ export default function PortfolioPage() {
                     </svg>
                     Skalierung & E-Commerce
                   </div>
-                  <h2 className="text-3xl font-bold text-black mb-4">Wachstum beschleunigen</h2>
-                  <p className="text-gray-600 text-lg">Performance und Conversion-Optimierung für skalierende Unternehmen</p>
+                  <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">Wachstum beschleunigen</h2>
+                  <p className="text-gray-600 text-base md:text-lg">Performance und Conversion-Optimierung für skalierende Unternehmen</p>
                 </div>
 
                 <div className="space-y-8">
                   {/* B2B SaaS Case */}
-                  <div className="bg-gray-50 p-8 rounded-xl hover:bg-gray-100 transition-colors duration-300 cursor-pointer group border border-gray-100 hover:border-gray-300">
+                  <div className="bg-gray-50 p-4 md:p-8 rounded-xl hover:bg-gray-100 transition-colors duration-300 cursor-pointer group border border-gray-100 hover:border-gray-300">
                     <div className="flex items-start justify-between mb-6">
                       <div className="flex items-center gap-4">
                         <div className="w-16 h-16 bg-black rounded-lg flex items-center justify-center">
@@ -283,7 +283,7 @@ export default function PortfolioPage() {
 
                     <div className="mb-6">
                       <h4 className="font-semibold text-black mb-3">Unsere Lösung:</h4>
-                      <div className="grid md:grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="flex items-start gap-2">
                           <svg className="w-4 h-4 text-black mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -313,7 +313,7 @@ export default function PortfolioPage() {
 
                     <div className="bg-white p-4 rounded-lg border border-gray-100">
                       <div className="text-sm text-gray-500 mb-2">Ergebnis nach 6 Monaten:</div>
-                      <div className="grid grid-cols-3 gap-4 text-center">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
                         <div>
                           <div className="text-lg font-bold text-black">20.000</div>
                           <div className="text-xs text-gray-500">Besucher/Monat</div>
@@ -331,7 +331,7 @@ export default function PortfolioPage() {
                   </div>
 
                   {/* E-Commerce Case */}
-                  <div className="bg-gray-50 p-8 rounded-xl hover:bg-gray-100 transition-colors duration-300 cursor-pointer group border border-gray-100 hover:border-gray-300">
+                  <div className="bg-gray-50 p-4 md:p-8 rounded-xl hover:bg-gray-100 transition-colors duration-300 cursor-pointer group border border-gray-100 hover:border-gray-300">
                     <div className="flex items-start justify-between mb-6">
                       <div className="flex items-center gap-4">
                         <div className="w-16 h-16 bg-black rounded-lg flex items-center justify-center">
@@ -360,7 +360,7 @@ export default function PortfolioPage() {
 
                     <div className="mb-6">
                       <h4 className="font-semibold text-black mb-3">Unsere Lösung:</h4>
-                      <div className="grid md:grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="flex items-start gap-2">
                           <svg className="w-4 h-4 text-black mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -390,7 +390,7 @@ export default function PortfolioPage() {
 
                     <div className="bg-white p-4 rounded-lg border border-gray-100">
                       <div className="text-sm text-gray-500 mb-2">Ergebnis nach 4 Monaten:</div>
-                      <div className="grid grid-cols-3 gap-4 text-center">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
                         <div>
                           <div className="text-lg font-bold text-black">2.1%</div>
                           <div className="text-xs text-gray-500">Conversion Rate</div>

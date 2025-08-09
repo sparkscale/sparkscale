@@ -20,15 +20,25 @@ export default function Home() {
       <CustomCursor />
       {/* Navigation - Phase 4.3 */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
-        <div className="container mx-auto px-8 py-4">
+        <div className="container mx-auto px-4 md:px-8 py-3 md:py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
-                          <img 
-              src="/S&S (1)-Photoroom.png" 
-              alt="Spark&Scale Logo" 
-              className="logo-global"
-            />
+              <img 
+                src="/S&S (1)-Photoroom.png" 
+                alt="Spark&Scale Logo" 
+                className="h-8 md:h-12 w-auto"
+              />
             </div>
+            
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
+              <button className="text-gray-600 hover:text-black p-2">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+            
             <div className="hidden md:flex space-x-8 text-sm">
               <a href="/leistungen" className="text-gray-600 hover:text-black transition-colors">Leistungen</a>
               <a href="/portfolio" className="text-gray-600 hover:text-black transition-colors">Portfolio</a>
@@ -36,7 +46,7 @@ export default function Home() {
               <a href="/blog" className="text-gray-600 hover:text-black transition-colors">Blog</a>
               <a href="/kontakt" className="text-gray-600 hover:text-black transition-colors">Kontakt</a>
             </div>
-            {/* Sticky CTA Button */}
+            {/* Desktop CTA Button */}
             <div className="hidden md:block">
               <Magnet padding={20} disabled={false} magnetStrength={4} innerClassName="hover:text-white">
                 <a href="/kontakt" className="bg-black text-[#a29a88] px-6 py-2 text-sm font-semibold rounded-full hover:bg-gray-800 hover:text-white transition-all duration-300 shadow-md group" style={{display: 'inline-block'}}>
@@ -82,7 +92,7 @@ export default function Home() {
       </div>
 
       {/* Hero Section */}
-      <section className="min-h-screen px-8 bg-black relative overflow-hidden flex items-center">
+      <section className="min-h-screen px-4 md:px-8 bg-black relative overflow-hidden flex items-center">
         {/* 3D Beams Background */}
         <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex: 0 }}>
           <Beams
@@ -97,7 +107,7 @@ export default function Home() {
           />
         </div>
         
-        <div className="container mx-auto max-w-6xl relative z-10 px-4 pt-16 md:pt-20">
+        <div className="container mx-auto max-w-6xl relative z-10 px-4 pt-24 md:pt-20">
           <div className="mb-8 md:mb-12 text-center">
             <ScrollAnimation animation="slideUp" delay={0.2}>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white text-center">
