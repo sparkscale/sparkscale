@@ -61,13 +61,8 @@ const MobileMenu: React.FC = () => {
               transition={{ duration: 0.2, ease: 'easeOut' }}
               className="fixed top-0 left-0 right-0 bg-white shadow-xl z-50 md:hidden"
             >
-              {/* Header mit Logo */}
-              <div className="flex justify-between items-center p-4 border-b border-gray-200">
-                <img 
-                  src="/S&S (1)-Photoroom.png" 
-                  alt="Spark&Scale Logo" 
-                  className="h-8 w-auto"
-                />
+              {/* Leerer Header - nur Close Button */}
+              <div className="flex justify-end items-center p-4 border-b border-gray-200">
                 <button
                   onClick={() => setIsOpen(false)}
                   className="p-2 text-gray-500 hover:text-black"
