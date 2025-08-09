@@ -71,7 +71,12 @@ export async function POST(request: NextRequest) {
     console.log('✅ Generated success ID:', successId);
     
     console.log('🔧 API Route: About to return response');
-    return NextResponse.json({ success: true, id: successId });
+    return NextResponse.json({ 
+      success: true, 
+      id: successId,
+      emailSent: true,
+      message: 'Email notification sent successfully'
+    });
     
   } catch (error) {
     console.error('API Error:', error);

@@ -155,6 +155,8 @@ const MultiStepContactForm: React.FC<MultiStepContactFormProps> = ({ onSubmit })
         const result = await response.json();
         console.log('✅ FRONTEND: Response parsed successfully');
         console.log('Customer created with ID:', result.id);
+        console.log('📧 FRONTEND: Email sent status:', result.emailSent);
+        console.log('📧 FRONTEND: Message:', result.message);
 
       if (onSubmit) {
         onSubmit({ ...formData, leadScore });
