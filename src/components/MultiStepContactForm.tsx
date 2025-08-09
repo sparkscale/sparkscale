@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useContactFormAnalytics } from '@/hooks/useAnalytics';
-import { useHubSpotAnalytics as useHubSpotContactAnalytics } from '@/hooks/useHubSpotAnalytics';
+import { useContactFormAnalytics as useHubSpotContactAnalytics } from '@/hooks/useHubSpotAnalytics';
 // import { createCustomer } from '@/services/customerService'; // Moved to API route
 import SuccessModal from './SuccessModal';
 
@@ -36,9 +36,8 @@ const MultiStepContactForm: React.FC<MultiStepContactFormProps> = ({ onSubmit })
   });
 
   // Analytics hooks
-  const { trackFormStep, trackFormAbandonment } = useContactFormAnalytics();
+  const { trackFormStep } = useContactFormAnalytics();
   const hubspotAnalytics = useHubSpotContactAnalytics();
-  const [startTime] = useState(Date.now());
 
   // Track form start
   useEffect(() => {
@@ -128,7 +127,7 @@ const MultiStepContactForm: React.FC<MultiStepContactFormProps> = ({ onSubmit })
     setIsSubmitting(true);
     try {
       const leadScore = calculateLeadScore();
-      const payload = { ...formData, leadScore } as any;
+      const payload = { ...formData, leadScore };
 
       // API call to server
               const response = await fetch('/api/create-customer', {
