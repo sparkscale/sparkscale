@@ -4,6 +4,7 @@ import ScrollAnimation from '@/components/ScrollAnimation';
 import Magnet from '@/components/Magnet';
 import ElegantShapes from '@/components/ElegantShapes';
 import CustomCursor from '@/components/CustomCursor';
+import MobileMenu from '@/components/MobileMenu';
 import ROICalculator from '@/components/ROICalculator';
 import ShinyText from '@/components/ShinyText';
 
@@ -41,6 +42,9 @@ export default function PreisePage() {
                 </a>
               </Magnet>
             </div>
+            
+            {/* Mobile Menu */}
+            <MobileMenu />
           </div>
         </div>
       </nav>

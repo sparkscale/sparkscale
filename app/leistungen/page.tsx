@@ -4,6 +4,7 @@ import ScrollAnimation from '@/components/ScrollAnimation';
 import Magnet from '@/components/Magnet';
 import ElegantShapes from '@/components/ElegantShapes';
 import CustomCursor from '@/components/CustomCursor';
+import MobileMenu from '@/components/MobileMenu';
 
 export default function LeistungenPage() {
   return (
@@ -39,6 +40,9 @@ export default function LeistungenPage() {
                 </a>
               </Magnet>
             </div>
+            
+            {/* Mobile Menu */}
+            <MobileMenu />
           </div>
         </div>
       </nav>

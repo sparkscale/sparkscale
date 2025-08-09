@@ -142,10 +142,14 @@ const MultiStepContactForm: React.FC<MultiStepContactFormProps> = ({ onSubmit })
       // Success state
       setHasSubmitted(true);
       setShowSuccessModal(true);
-    } catch (err) {
-      console.error('Error creating customer:', err);
-      alert('Fehler beim Senden. Bitte versuchen Sie es erneut.');
-    } finally {
+          } catch (err) {
+        console.error('Error creating customer:', err);
+        console.error('Error details:', {
+          message: err instanceof Error ? err.message : 'Unknown error',
+          stack: err instanceof Error ? err.stack : 'No stack trace'
+        });
+        alert(`Fehler beim Senden: ${err instanceof Error ? err.message : 'Unbekannter Fehler'}`);
+      } finally {
       setIsSubmitting(false);
     }
   };

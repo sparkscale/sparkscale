@@ -5,6 +5,7 @@ import MobilePortfolio from '@/components/MobilePortfolio';
 import Magnet from '@/components/Magnet';
 import ElegantShapes from '@/components/ElegantShapes';
 import CustomCursor from '@/components/CustomCursor';
+import MobileMenu from '@/components/MobileMenu';
 
 export default function PortfolioPage() {
   return (
@@ -40,6 +41,9 @@ export default function PortfolioPage() {
                 </a>
               </Magnet>
             </div>
+            
+            {/* Mobile Menu */}
+            <MobileMenu />
           </div>
         </div>
       </nav>

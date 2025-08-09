@@ -5,6 +5,7 @@ import Magnet from '@/components/Magnet';
 import ElegantShapes from '@/components/ElegantShapes';
 import CustomCursor from '@/components/CustomCursor';
 import MultiStepContactForm from '@/components/MultiStepContactForm';
+import MobileMenu from '@/components/MobileMenu';
 
 export default function KontaktPage() {
   const handleFormSubmit = (data: any) => {
@@ -47,6 +48,9 @@ export default function KontaktPage() {
                 </a>
               </Magnet>
             </div>
+            
+            {/* Mobile Menu */}
+            <MobileMenu />
           </div>
         </div>
       </nav>

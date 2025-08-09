@@ -7,12 +7,12 @@ const MobileMenu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { href: '/', label: 'Home', icon: '🏠' },
-    { href: '/leistungen', label: 'Leistungen', icon: '⚡' },
-    { href: '/portfolio', label: 'Portfolio', icon: '🎯' },
-    { href: '/preise', label: 'Preise', icon: '💰' },
-    { href: '/blog', label: 'Blog', icon: '📝' },
-    { href: '/kontakt', label: 'Kontakt', icon: '📞' },
+    { href: '/', label: 'Home' },
+    { href: '/leistungen', label: 'Leistungen' },
+    { href: '/portfolio', label: 'Portfolio' },
+    { href: '/preise', label: 'Preise' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/kontakt', label: 'Kontakt' },
   ];
 
   return (
@@ -58,12 +58,16 @@ const MobileMenu: React.FC = () => {
               initial={{ y: '-100%' }}
               animate={{ y: 0 }}
               exit={{ y: '-100%' }}
-              transition={{ type: 'tween', duration: 0.3 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
               className="fixed top-0 left-0 right-0 bg-white shadow-xl z-50 md:hidden"
             >
-              {/* Simple Header */}
+              {/* Header mit Logo */}
               <div className="flex justify-between items-center p-4 border-b border-gray-200">
-                <span className="text-xl font-bold text-black">Menü</span>
+                <img 
+                  src="/S&S (1)-Photoroom.png" 
+                  alt="Spark&Scale Logo" 
+                  className="h-8 w-auto"
+                />
                 <button
                   onClick={() => setIsOpen(false)}
                   className="p-2 text-gray-500 hover:text-black"
@@ -81,29 +85,22 @@ const MobileMenu: React.FC = () => {
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.05 }}
-                    className="flex items-center gap-3 px-6 py-4 text-lg font-medium text-gray-800 hover:bg-gray-50 hover:text-black transition-colors border-b border-gray-100 last:border-b-0"
+                    className="block px-6 py-4 text-lg font-medium text-gray-800 hover:bg-gray-50 hover:text-black transition-colors border-b border-gray-100 last:border-b-0"
                   >
-                    <span className="text-xl">{item.icon}</span>
-                    <span>{item.label}</span>
+                    {item.label}
                   </motion.a>
                 ))}
               </div>
                 
               {/* Simple CTA */}
               <div className="p-4 border-t border-gray-200">
-                <motion.a
+                <a
                   href="/kontakt"
                   onClick={() => setIsOpen(false)}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.4 }}
                   className="block w-full bg-black text-white text-center py-3 px-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
                 >
                   Kostenlose Analyse
-                </motion.a>
+                </a>
               </div>
             </motion.div>
           </>
