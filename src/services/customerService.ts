@@ -18,12 +18,31 @@ export async function createCustomer(payload: CustomerPayload) {
   console.log('✅ Customer service: Processing payload');
   console.log('📋 Payload data:', JSON.stringify(payload, null, 2));
   
-  // Skip Firebase/HubSpot for now - just generate success ID
+  // Generate success ID
   const successId = `success_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
   console.log('✅ Customer service: Generated success ID:', successId);
   
-  // Simulate processing time
-  await new Promise(resolve => setTimeout(resolve, 1000));
+  // Send email notification
+  try {
+    console.log('📧 Customer service: Sending email notification...');
+    const emailResponse = await fetch('/api/send-notification', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        ...payload,
+        customerId: successId,
+      }),
+    });
+    
+    if (emailResponse.ok) {
+      console.log('✅ Customer service: Email notification sent');
+    } else {
+      console.error('❌ Customer service: Email notification failed');
+    }
+  } catch (emailError) {
+    console.error('❌ Customer service: Email error:', emailError);
+    // Continue without email - don't fail the whole process
+  }
   
   console.log('✅ Customer service: Processing complete');
   return successId;
