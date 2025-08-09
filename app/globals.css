@@ -1,15 +1,84 @@
 @import "tailwindcss";
 
+/* Global Logo Styles - synchron auf allen Seiten */
+.logo-global {
+  height: var(--logo-height) !important;
+  width: auto !important;
+  max-height: none !important;
+  max-width: none !important;
+  position: relative !important;
+  z-index: 100 !important;
+  /* Logo-Position - HIER KANNST DU DIE POSITION ÄNDERN */
+  top: var(--logo-top, 0px) !important;
+  left: var(--logo-left, 0px) !important;
+  transform: var(--logo-transform, none) !important;
+}
+
+/* Header bleibt immer gleich groß - Logo vergrößert Header nicht */
+nav {
+  min-height: 80px !important;
+  max-height: 80px !important;
+}
+
+nav .container {
+  min-height: 80px !important;
+  max-height: 80px !important;
+  display: flex !important;
+  align-items: center !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+nav .flex.justify-between {
+  min-height: auto !important;
+  max-height: auto !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  overflow: visible !important;
+}
+
+nav .flex.items-center {
+  display: flex !important;
+  align-items: center !important;
+  height: auto !important;
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
+  --surface: #f9fafb; /* gray-50 */
+  --surface-dark: #111827; /* gray-900 */
+  --accent: #374151; /* gray-700 für Akzente */
+  --accent-light: #6b7280; /* gray-500 */
+  --logo-height: 15rem; /* LOGO-GRÖSSE FÜR ALLE SEITEN */
+  --logo-top: 0px; /* Logo vertikal verschieben (+ nach unten, - nach oben) */
+  --logo-left: 0px; /* Logo horizontal verschieben (+ nach rechts, - nach links) */
+  --logo-transform: none; /* Erweiterte Transformationen */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-montserrat);
   --font-mono: var(--font-geist-mono);
+  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +91,198 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
+  overflow-x: hidden;
 }
+
+/* Minimalistisches Black & White Design */
+a, .link {
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+a:hover, .link:hover {
+  color: var(--foreground);
+  text-decoration: underline;
+}
+
+.section {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.section-light {
+  background: var(--surface);
+  color: var(--foreground);
+}
+
+.section-dark {
+  background: var(--surface-dark);
+  color: var(--background);
+}
+
+/* Minimalistic Buttons */
+.btn-primary {
+  background: var(--foreground);
+  color: var(--background);
+  border: 2px solid var(--foreground);
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.btn-secondary {
+  background: var(--background);
+  color: var(--foreground);
+  border: 2px solid var(--foreground);
+  transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+/* Clean Inputs */
+input, textarea, select {
+  background: var(--background);
+  color: var(--foreground);
+  border: 1px solid var(--accent-light);
+  transition: border-color 0.2s ease;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--foreground);
+  outline: none;
+  box-shadow: 0 0 0 1px var(--foreground);
+}
+
+/* Passe ggf. weitere Utility-Styles für Lesbarkeit an */
+
+/* Hide default cursor only on desktop */
+@media (min-width: 768px) {
+  body {
+    cursor: none;
+  }
+  
+  .custom-cursor {
+    display: block;
+  }
+  
+  /* Hide cursor on all interactive elements */
+  a, button, [role="button"], input, textarea, select, .cursor-hover-target {
+    cursor: none !important;
+  }
+}
+
+/* Hide custom cursor on mobile */
+@media (max-width: 767px) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #374151;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.1s ease, height 0.1s ease, background-color 0.1s ease, border-color 0.1s ease;
+  will-change: transform;
+}
+
+.custom-cursor.cursor-hover {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(55, 65, 81, 0.1);
+  border-width: 1px;
+}
+
+.custom-cursor.cursor-cta {
+  width: 50px;
+  height: 50px;
+  border-width: 2px;
+}
+
+.custom-cursor.cursor-cta::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background-color: #374151;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.custom-cursor.cursor-light {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.custom-cursor.cursor-light.cursor-hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #ffffff;
+  transform: scale(1.3);
+}
+
+.custom-cursor.cursor-light.cursor-cta::after {
+  background-color: #ffffff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(229, 231, 235, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6b7280, #374151);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #9ca3af, #6b7280);
+  box-shadow: 0 0 10px rgba(107, 114, 128, 0.3);
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #6b7280 rgba(229, 231, 235, 0.3);
+}
+
+/* 3D Hero Text Effekt */
+.hero-3d-text {
+  background: linear-gradient(to bottom, #6B7280 0%, #000000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 
+    1px 1px 2px rgba(107, 114, 128, 0.8),
+    2px 2px 4px rgba(107, 114, 128, 0.6),
+    3px 3px 6px rgba(107, 114, 128, 0.4),
+    4px 4px 8px rgba(107, 114, 128, 0.3),
+    5px 5px 10px rgba(107, 114, 128, 0.2);
+  transform: perspective(500px) rotateX(10deg);
+  transform-style: preserve-3d;
+}
+
+
