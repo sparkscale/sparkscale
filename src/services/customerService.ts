@@ -25,7 +25,8 @@ export async function createCustomer(payload: CustomerPayload) {
   // Send email notification
   try {
     console.log('📧 Customer service: Sending email notification...');
-    const emailResponse = await fetch('/api/send-notification', {
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://sparkandscale.site';
+    const emailResponse = await fetch(`${baseUrl}/api/send-notification`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

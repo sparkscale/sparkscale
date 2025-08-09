@@ -28,6 +28,7 @@ export async function POST(request: NextRequest) {
       ]);
       
       console.log('✅ createCustomer succeeded with ID:', id);
+      console.log('🔧 API Route: About to return response');
       
       return NextResponse.json({ success: true, id });
     } catch (serviceError) {
