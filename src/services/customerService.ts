@@ -1,7 +1,4 @@
-import { db } from "@/lib/firebase";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { hubspot } from '@/lib/hubspot';
-
+// Simplified - No Firebase, No HubSpot, Just Email
 export interface CustomerPayload {
   projektArt: string[];
   budget: string;
@@ -12,19 +9,4 @@ export interface CustomerPayload {
   unternehmen?: string;
   nachricht?: string;
   leadScore: number;
-}
-
-export async function createCustomer(payload: CustomerPayload) {
-  console.log('✅ Customer service: Processing payload');
-  console.log('📋 Payload data:', JSON.stringify(payload, null, 2));
-  
-  // Generate success ID
-  const successId = `success_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-  console.log('✅ Customer service: Generated success ID:', successId);
-  
-  // Email notification is now handled in API route
-  console.log('📧 Customer service: Email will be sent by API route');
-  
-  console.log('✅ Customer service: Processing complete');
-  return successId;
 }

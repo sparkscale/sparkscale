@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createCustomer } from '@/services/customerService';
 
 console.log('🔧 API Route module loaded');
 
@@ -22,8 +21,10 @@ export async function POST(request: NextRequest) {
       const { Resend } = await import('resend');
       console.log('📧 API Route: Resend imported successfully');
       
-      const apiKey = process.env.RESEND_API_KEY || 're_WZn4gLoN_EQC3RtcH4CuLZs3MbejuBShk';
-      console.log('📧 API Route: Using API key:', apiKey.substring(0, 10) + '...');
+      // Hardcoded for testing - Environment Variables haben Probleme
+      const apiKey = 're_WZn4gLoN_EQC3RtcH4CuLZs3MbejuBShk';
+      const emailTo = 'spark.scale01@gmail.com';
+      console.log('📧 API Route: Using hardcoded API key for testing');
       
       const resend = new Resend(apiKey);
       console.log('📧 API Route: Resend instance created');
@@ -48,7 +49,7 @@ export async function POST(request: NextRequest) {
       console.log('📧 API Route: About to send email...');
       const emailResult = await resend.emails.send({
         from: 'Spark&Scale Website <noreply@sparkandscale.site>',
-        to: [process.env.NOTIFICATION_EMAIL || 'spark.scale01@gmail.com'],
+        to: [emailTo],
         subject: `🚀 Neue Anfrage (Score: ${payload.leadScore}) - ${payload.name}`,
         html: emailHtml,
       });
@@ -65,43 +66,12 @@ export async function POST(request: NextRequest) {
       console.error('❌ API Route: Email error:', emailError);
     }
 
-    // Now try to create customer
-    try {
-      console.log('🔄 Calling createCustomer function...');
-      console.log('📋 Payload for createCustomer:', JSON.stringify(payload, null, 2));
-      
-      const id = await Promise.race([
-        createCustomer(payload as any),
-        new Promise((_, reject) => 
-          setTimeout(() => {
-            console.log('⏰ TIMEOUT: createCustomer took longer than 10s');
-            reject(new Error('Service timeout after 10s'));
-          }, 10000)
-        )
-      ]);
-      
-      console.log('✅ createCustomer succeeded with ID:', id);
-      
-      console.log('🔧 API Route: About to return response');
-      return NextResponse.json({ success: true, id });
-    } catch (serviceError) {
-      console.error('❌ SERVICE ERROR:', serviceError);
-      console.error('📊 Error details:', {
-        message: serviceError?.message,
-        name: serviceError?.name,
-        stack: serviceError?.stack,
-      });
-      
-      // Fallback: At least return success for form submission
-      const fallbackId = `fallback_${Date.now()}`;
-      console.log('🔄 Using fallback ID:', fallbackId);
-      
-      return NextResponse.json({ 
-        success: true, 
-        id: fallbackId,
-        warning: 'Data saved locally, external services may have failed'
-      });
-    }
+    // Generate simple success ID
+    const successId = `email_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    console.log('✅ Generated success ID:', successId);
+    
+    console.log('🔧 API Route: About to return response');
+    return NextResponse.json({ success: true, id: successId });
     
   } catch (error) {
     console.error('API Error:', error);
