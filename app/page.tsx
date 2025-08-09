@@ -28,10 +28,6 @@ export default function Home() {
                 src="/S&S (1)-Photoroom.png" 
                 alt="Spark&Scale Logo" 
                 className="logo-global"
-                style={{
-                  height: '6rem',
-                  width: 'auto'
-                }}
               />
             </div>
             
