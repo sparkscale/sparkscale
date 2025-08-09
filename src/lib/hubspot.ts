@@ -43,27 +43,40 @@ class HubSpotAPI {
       lifecyclestage: this.getLifecycleStage(leadScore),
     };
 
-    const response = await fetch(`${this.baseUrl}/crm/v3/objects/contacts`, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${this.apiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ properties }),
-    });
-
-    if (!response.ok) {
-      throw new Error(`HubSpot API error: ${response.statusText}`);
-    }
-
-    const contact = await response.json();
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 8000); // 8s timeout
     
-    // Create deal if high-value lead
-    if (leadScore >= 70) {
-      await this.createDeal(contact.id, data);
-    }
+    try {
+      const response = await fetch(`${this.baseUrl}/crm/v3/objects/contacts`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${this.apiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ properties }),
+        signal: controller.signal,
+      });
+      clearTimeout(timeoutId);
 
-    return contact;
+      if (!response.ok) {
+        throw new Error(`HubSpot API error: ${response.statusText}`);
+      }
+
+      const contact = await response.json();
+      
+      // Create deal if high-value lead
+      if (leadScore >= 70) {
+        await this.createDeal(contact.id, data);
+      }
+
+      return contact;
+    } catch (error) {
+      clearTimeout(timeoutId);
+      if (error.name === 'AbortError') {
+        throw new Error('HubSpot API timeout after 8s');
+      }
+      throw error;
+    }
   }
 
   async createDeal(contactId: string, data: HubSpotContact) {

@@ -6,14 +6,16 @@ export async function POST(request: NextRequest) {
     const payload = await request.json();
     console.log('Received payload:', payload);
     
-    // Try to create customer with longer timeout
+    // Try to create customer with shorter timeout
     try {
+      console.log('Starting createCustomer with payload:', JSON.stringify(payload, null, 2));
       const id = await Promise.race([
         createCustomer(payload as any),
         new Promise((_, reject) => 
-          setTimeout(() => reject(new Error('Service timeout after 30s')), 30000)
+          setTimeout(() => reject(new Error('Service timeout after 10s')), 10000)
         )
       ]);
+      console.log('createCustomer succeeded with ID:', id);
       
       return NextResponse.json({ success: true, id });
     } catch (serviceError) {
