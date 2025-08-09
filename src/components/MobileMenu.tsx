@@ -53,76 +53,57 @@ const MobileMenu: React.FC = () => {
               className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden"
             />
             
-            {/* Menu Panel - Vollbild mit modernem Design */}
+            {/* Menu Panel - Cleaner & Übersichtlicher */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ type: 'spring', duration: 0.4, bounce: 0.1 }}
-              className="fixed inset-4 bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl z-50 md:hidden border border-gray-200"
+              initial={{ y: '-100%' }}
+              animate={{ y: 0 }}
+              exit={{ y: '-100%' }}
+              transition={{ type: 'tween', duration: 0.3 }}
+              className="fixed top-0 left-0 right-0 bg-white shadow-xl z-50 md:hidden"
             >
-              {/* Header mit Close Button */}
-              <div className="flex justify-between items-center p-6 border-b border-gray-100">
-                <div className="flex items-center gap-3">
-                  <img 
-                    src="/S&S (1)-Photoroom.png" 
-                    alt="Logo" 
-                    className="h-8 w-auto"
-                  />
-                  <span className="font-bold text-lg">Spark&Scale</span>
-                </div>
+              {/* Simple Header */}
+              <div className="flex justify-between items-center p-4 border-b border-gray-200">
+                <span className="text-xl font-bold text-black">Menü</span>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                  className="p-2 text-gray-500 hover:text-black"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
               </div>
 
-              {/* Menu Items mit Icons */}
-              <div className="flex flex-col p-6 space-y-2">
+              {/* Clean Menu Items */}
+              <div className="py-2">
                 {menuItems.map((item, index) => (
                   <motion.a
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 + 0.1 }}
-                    className="flex items-center gap-4 p-4 rounded-2xl hover:bg-gray-50 transition-all duration-200 group"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                    className="flex items-center gap-3 px-6 py-4 text-lg font-medium text-gray-800 hover:bg-gray-50 hover:text-black transition-colors border-b border-gray-100 last:border-b-0"
                   >
-                    <div className="w-10 h-10 rounded-full bg-gray-100 group-hover:bg-[#a29a88] group-hover:text-white flex items-center justify-center transition-all duration-200">
-                      <span className="text-lg">{item.icon}</span>
-                    </div>
-                    <span className="text-lg font-medium text-gray-800 group-hover:text-black">
-                      {item.label}
-                    </span>
+                    <span className="text-xl">{item.icon}</span>
+                    <span>{item.label}</span>
                   </motion.a>
                 ))}
               </div>
                 
-              {/* CTA Button - Verbessert */}
-              <div className="p-6 pt-0">
+              {/* Simple CTA */}
+              <div className="p-4 border-t border-gray-200">
                 <motion.a
                   href="/kontakt"
                   onClick={() => setIsOpen(false)}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8 }}
-                  className="block w-full bg-gradient-to-r from-black to-gray-800 text-white text-center py-4 px-6 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02]"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                  className="block w-full bg-black text-white text-center py-3 px-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
                 >
-                  🚀 Kostenlose Website-Analyse
+                  Kostenlose Analyse
                 </motion.a>
-              </div>
-
-              {/* Footer Info */}
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="text-center text-sm text-gray-500 bg-gray-50 rounded-xl p-3">
-                  <div className="font-medium text-gray-700">Bereit für mehr Erfolg?</div>
-                  <div>Seite 1 in 6 Monaten garantiert</div>
-                </div>
               </div>
             </motion.div>
           </>
