@@ -5,7 +5,6 @@ import MobilePortfolio from '@/components/MobilePortfolio';
 import Magnet from '@/components/Magnet';
 import ElegantShapes from '@/components/ElegantShapes';
 import CustomCursor from '@/components/CustomCursor';
-import Navigation from '@/components/Navigation';
 
 export default function PortfolioPage() {
   return (

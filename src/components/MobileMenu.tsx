@@ -17,7 +17,7 @@ const MobileMenu: React.FC = () => {
 
   return (
     <>
-      {/* Hamburger Button - immer sichtbar */}
+      {/* Hamburger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="md:hidden p-2 text-gray-600 hover:text-black z-50 relative"
@@ -25,7 +25,7 @@ const MobileMenu: React.FC = () => {
       >
         <div className="w-6 h-6 flex flex-col justify-center items-center">
           <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-1'}`} />
-          <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isOpen ? 'rotate-45' : 'opacity-100'}`} />
+          <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isOpen ? 'opacity-0' : 'opacity-100'}`} />
           <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-1'}`} />
         </div>
       </button>
@@ -49,7 +49,7 @@ const MobileMenu: React.FC = () => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'tween', duration: 0.3 }}
-              className="fixed top-0 right-0 h-full w-80 bg-[#a29a88] shadow-xl z-50 md:hidden"
+              className="fixed top-0 right-0 h-full w-80 bg-white shadow-xl z-50 md:hidden"
             >
               <div className="flex flex-col h-full pt-20 px-6">
                 {menuItems.map((item, index) => (
@@ -60,7 +60,7 @@ const MobileMenu: React.FC = () => {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="py-4 text-lg font-medium text-white hover:text-gray-200 border-b border-white/20 last:border-b-0 transition-colors"
+                    className="py-4 text-lg font-medium text-gray-800 hover:text-black border-b border-gray-100 last:border-b-0 transition-colors"
                   >
                     {item.label}
                   </motion.a>
@@ -76,7 +76,7 @@ const MobileMenu: React.FC = () => {
                   <a
                     href="/kontakt"
                     onClick={() => setIsOpen(false)}
-                    className="block w-full bg-white text-black text-center py-3 px-6 rounded-full font-semibold hover:bg-gray-100 transition-colors"
+                    className="block w-full bg-black text-white text-center py-3 px-6 rounded-full font-semibold hover:bg-gray-800 transition-colors"
                   >
                     Kostenlose Analyse
                   </a>

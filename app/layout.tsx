@@ -4,7 +4,6 @@ import "./globals.css";
 import Script from "next/script";
 import CookieBanner from "@/components/CookieBanner";
 import WebVitalsReporter from "@/components/WebVitalsReporter";
-import Navigation from "@/components/Navigation";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -95,7 +94,6 @@ export default function RootLayout({
           </noscript>
         ) : null}
         
-        <Navigation />
         {children}
         <CookieBanner />
         <WebVitalsReporter />
