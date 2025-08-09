@@ -33,25 +33,8 @@ export async function createCustomer(payload: CustomerPayload) {
     docId = `local_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
   }
 
-  // Try HubSpot sync (optional)
-  try {
-    console.log('Attempting HubSpot sync...');
-    const [firstname, ...lastnameParts] = payload.name.split(' ');
-    await hubspot.createContact({
-      email: payload.email,
-      firstname: firstname || '',
-      lastname: lastnameParts.join(' ') || '',
-      phone: payload.phone,
-      company: payload.unternehmen,
-      project_type: payload.projektArt.join(', '),
-      budget_range: payload.budget,
-      timeline: payload.timeline,
-    });
-    console.log('HubSpot sync successful');
-  } catch (error) {
-    console.error('HubSpot sync failed:', error);
-    // Continue without HubSpot
-  }
+  // Skip HubSpot sync temporarily to test Firebase
+  console.log('Skipping HubSpot sync for testing...');
 
   return docId;
 }
