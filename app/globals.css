@@ -2,7 +2,7 @@
 
 /* Global Logo Styles - synchron auf allen Seiten */
 .logo-global {
-  height: var(--logo-height) !important;
+  height: 8rem !important; /* Mobile: 96px */
   width: auto !important;
   max-height: none !important;
   max-width: none !important;
@@ -12,6 +12,13 @@
   top: var(--logo-top, 0px) !important;
   left: var(--logo-left, 0px) !important;
   transform: var(--logo-transform, none) !important;
+}
+
+/* Desktop Logo - größer */
+@media (min-width: 768px) {
+  .logo-global {
+    height: 10rem !important; /* Desktop: 192px */
+  }
 }
 
 /* Header responsive - Mobile kleiner */
@@ -27,7 +34,7 @@ nav {
   }
   
   :root {
-    --logo-height: 18rem; /* Desktop: 128px */
+    --logo-height: 180rem; /* Desktop: 128px */
   }
 }
 
