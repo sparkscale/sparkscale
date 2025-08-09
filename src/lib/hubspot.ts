@@ -20,7 +20,7 @@ interface HubSpotDeal {
 
 class HubSpotAPI {
   private apiKey: string;
-  private baseUrl = 'https://api.hubapi.com';
+  private baseUrl = 'https://api.hubapi.eu';
 
   constructor() {
     this.apiKey = process.env.HUBSPOT_API_KEY || '';

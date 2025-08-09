@@ -164,13 +164,13 @@ class UptimeMonitor {
 
 // Initialize monitoring for production
 export const uptimeMonitor = new UptimeMonitor({
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://sparkscale.vercel.app',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://sparkandscale.site',
   interval: 5, // 5 minutes
   timeout: 30, // 30 seconds
   expectedStatus: 200,
 });
 
-// Auto-start in production
+// Auto-start in browser (production only)
 if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production') {
-  uptimeMonitor.start();
+  setTimeout(() => uptimeMonitor.start(), 5000); // 5s delay for stability
 }

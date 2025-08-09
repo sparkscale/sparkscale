@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useContactFormAnalytics } from '@/hooks/useAnalytics';
-import { createCustomer } from '@/services/customerService';
+// import { createCustomer } from '@/services/customerService'; // Moved to API route
 import SuccessModal from './SuccessModal';
 
 interface FormData {
@@ -121,9 +121,16 @@ const MultiStepContactForm: React.FC<MultiStepContactFormProps> = ({ onSubmit })
       const leadScore = calculateLeadScore();
       const payload = { ...formData, leadScore } as any;
 
-      // Firestore write
-      const id = await createCustomer(payload);
-      console.log('Customer created with ID:', id);
+      // API call to server
+      const response = await fetch('/api/create-customer', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      
+      if (!response.ok) throw new Error('Network error');
+      const result = await response.json();
+      console.log('Customer created with ID:', result.id);
 
       if (onSubmit) {
         onSubmit({ ...formData, leadScore });
