@@ -5,6 +5,7 @@ import Script from "next/script";
 import CookieBanner from "@/components/CookieBanner";
 import WebVitalsReporter from "@/components/WebVitalsReporter";
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -111,6 +112,7 @@ export default function RootLayout({
         <CookieBanner />
         <WebVitalsReporter />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
