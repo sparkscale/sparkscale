@@ -27,7 +27,7 @@ nav {
   }
   
   :root {
-    --logo-height: 4rem; /* Desktop: 64px */
+    --logo-height: 8rem; /* Desktop: 128px */
   }
 }
 
@@ -72,7 +72,7 @@ nav .flex.items-center {
   --surface-dark: #111827; /* gray-900 */
   --accent: #374151; /* gray-700 für Akzente */
   --accent-light: #6b7280; /* gray-500 */
-  --logo-height: 3rem; /* Mobile: 48px */
+  --logo-height: 6rem; /* Mobile: 96px */
   --logo-top: 0px; /* Logo vertikal verschieben (+ nach unten, - nach oben) */
   --logo-left: 0px; /* Logo horizontal verschieben (+ nach rechts, - nach links) */
   --logo-transform: none; /* Erweiterte Transformationen */
