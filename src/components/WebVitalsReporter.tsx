@@ -19,13 +19,18 @@ export default function WebVitalsReporter() {
   useEffect(() => {
     let isMounted = true;
     // Dynamically import to avoid SSR issues
-    import("web-vitals").then(({ onCLS, onFID, onLCP, onFCP, onTTFB }) => {
+    import("web-vitals").then((webVitals) => {
       if (!isMounted) return;
-      onCLS(report);
-      onFID(report);
-      onLCP(report);
-      onFCP(report);
-      onTTFB(report);
+      
+      // Use available metrics (onFID was replaced by onINP in newer versions)
+      if (webVitals.onCLS) webVitals.onCLS(report);
+      if (webVitals.onFID) webVitals.onFID(report); // Legacy support
+      if (webVitals.onINP) webVitals.onINP(report); // New metric
+      if (webVitals.onLCP) webVitals.onLCP(report);
+      if (webVitals.onFCP) webVitals.onFCP(report);
+      if (webVitals.onTTFB) webVitals.onTTFB(report);
+    }).catch((error) => {
+      console.warn('Web Vitals could not be loaded:', error);
     });
     return () => {
       isMounted = false;
