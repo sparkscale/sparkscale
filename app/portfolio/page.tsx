@@ -1,6 +1,7 @@
 "use client";
 
 import ScrollAnimation from '@/components/ScrollAnimation';
+import MobilePortfolio from '@/components/MobilePortfolio';
 import Magnet from '@/components/Magnet';
 import ElegantShapes from '@/components/ElegantShapes';
 import CustomCursor from '@/components/CustomCursor';
@@ -62,8 +63,11 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Case Study Categories */}
-      <section className="py-12 md:py-20 px-4 md:px-8 bg-white">
+      {/* Mobile Portfolio */}
+      <MobilePortfolio />
+
+      {/* Case Study Categories - Desktop Only */}
+      <section className="py-12 md:py-20 px-4 md:px-8 bg-white hidden md:block">
         <div className="container mx-auto max-w-6xl">
           <ScrollAnimation animation="staggerUp" delay={0.3} stagger={0.15} triggerStart="top 95%">
             <div className="grid lg:grid-cols-2 gap-8 md:gap-16 mb-12 md:mb-20">
