@@ -21,6 +21,7 @@ interface PerformanceMetrics {
 const PerformanceMonitor: React.FC = () => {
   const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [uptime, setUptime] = useState({ '24h': 0, '7d': 0, '30d': 0, avgResponse: 0 });
 
   useEffect(() => {
     // Initialize Web Vitals measurement
@@ -78,6 +79,16 @@ const PerformanceMonitor: React.FC = () => {
       });
     }).catch(() => {
       // Fallback for when web-vitals is not available
+      // Load uptime data
+      import('@/lib/uptime').then(({ uptimeMonitor }) => {
+        setUptime({
+          '24h': uptimeMonitor.getUptime('24h'),
+          '7d': uptimeMonitor.getUptime('7d'), 
+          '30d': uptimeMonitor.getUptime('30d'),
+          avgResponse: uptimeMonitor.getAverageResponseTime('24h'),
+        });
+      });
+
       setIsLoading(false);
     });
   }, []);
