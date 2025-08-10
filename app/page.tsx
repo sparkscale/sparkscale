@@ -110,7 +110,7 @@ export default function Home() {
             </div>
             {/* Desktop CTA Button */}
             <div className="hidden md:block">
-              <ConditionalConditionalMagnet
+              <ConditionalMagnet
                 padding={20}
                 disabled={false}
                 magnetStrength={4}
@@ -125,7 +125,7 @@ export default function Home() {
                     Kostenlose Analyse
                   </span>
                 </a>
-              </ConditionalConditionalMagnet>
+              </ConditionalMagnet>
             </div>
           </div>
         </div>
@@ -267,22 +267,22 @@ export default function Home() {
             triggerStart="top 98%"
           >
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-16 md:gap-24 lg:gap-36 justify-center items-center">
-              <ConditionalConditionalMagnet padding={40} disabled={false} magnetStrength={8}>
+              <ConditionalMagnet padding={40} disabled={false} magnetStrength={8}>
                 <a
                   href="/kontakt"
                   className="bg-transparent border-2 border-black text-black px-8 sm:px-10 py-3 sm:py-4 text-sm font-medium hover:bg-black hover:text-white transition-all duration-300 rounded-full inline-block"
                 >
                   Website kostenlos analysieren
                 </a>
-              </ConditionalConditionalMagnet>
-              <ConditionalConditionalMagnet padding={40} disabled={false} magnetStrength={8}>
+              </ConditionalMagnet>
+              <ConditionalMagnet padding={40} disabled={false} magnetStrength={8}>
                 <a
                   href="/portfolio"
                   className="bg-transparent border-2 border-black text-black px-8 sm:px-10 py-3 sm:py-4 text-sm font-medium hover:bg-black hover:text-white transition-all duration-300 rounded-full inline-block"
                 >
                   Erfolgsgeschichten ansehen
                 </a>
-              </ConditionalConditionalMagnet>
+              </ConditionalMagnet>
             </div>
           </ScrollAnimation>
         </div>
