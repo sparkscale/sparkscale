@@ -2,7 +2,7 @@
 
 import ScrollAnimation from '@/components/ScrollAnimation';
 import CustomCursor from '@/components/CustomCursor';
-import Magnet from '@/components/Magnet';
+import ConditionalConditionalMagnet from '@/components/ConditionalConditionalMagnet';
 import ElegantShapes from '@/components/ElegantShapes';
 import Footer from '@/components/Footer';
 
@@ -100,13 +100,13 @@ export default function BlogPage() {
               <a href="/kontakt" className="text-gray-600 hover:text-black transition-colors">Kontakt</a>
             </div>
             <div className="hidden md:block">
-              <Magnet padding={20} disabled={false} magnetStrength={4} innerClassName="hover:text-white">
+              <ConditionalMagnet padding={20} disabled={false} magnetStrength={4} innerClassName="hover:text-white">
                 <a href="/kontakt" className="bg-black text-[#a29a88] px-6 py-2 text-sm font-semibold rounded-full hover:bg-gray-800 hover:text-white transition-all duration-300 shadow-md group" style={{display: 'inline-block'}}>
                   <span className="text-[#a29a88] group-hover:text-white transition-colors duration-300">
                     Kostenlose Analyse
                   </span>
                 </a>
-              </Magnet>
+              </ConditionalMagnet>
             </div>
           </div>
         </div>
@@ -215,14 +215,14 @@ export default function BlogPage() {
                       {post.excerpt}
                     </p>
                     
-                    <Magnet>
+                    <ConditionalMagnet>
                       <a href={`/blog/${post.id}`} className="inline-flex items-center gap-2 text-[#a29a88] font-semibold hover:gap-3 transition-all duration-300">
                         Artikel lesen
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                       </a>
-                    </Magnet>
+                    </ConditionalMagnet>
                   </div>
                 </article>
               ))}
@@ -273,14 +273,14 @@ export default function BlogPage() {
                       {post.excerpt}
                     </p>
                     
-                    <Magnet>
+                    <ConditionalMagnet>
                       <a href={`/blog/${post.id}`} className="inline-flex items-center gap-2 text-[#a29a88] font-medium text-sm hover:gap-3 transition-all duration-300">
                         Weiterlesen
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                       </a>
-                    </Magnet>
+                    </ConditionalMagnet>
                   </div>
                 </article>
               ))}
@@ -308,11 +308,11 @@ export default function BlogPage() {
                 placeholder="Ihre E-Mail-Adresse"
                 className="flex-1 px-6 py-3 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#a29a88]"
               />
-              <Magnet>
+              <ConditionalMagnet>
                 <button className="bg-[#a29a88] text-white px-8 py-3 rounded-full font-semibold hover:brightness-110 transition-all duration-300">
                   Anmelden
                 </button>
-              </Magnet>
+              </ConditionalMagnet>
             </div>
             
             <p className="text-sm text-gray-400">

@@ -1,7 +1,7 @@
 'use client';
 
 import SplitText from '@/components/animations/SplitText';
-import Magnet from '@/components/Magnet';
+import ConditionalMagnet from '@/components/ConditionalMagnet';
 import ScrollVelocity from '@/components/ScrollVelocity';
 import RotatingText from '@/components/RotatingText';
 
@@ -13,43 +13,6 @@ import ScrollAnimation from '@/components/ScrollAnimation';
 import CountUp from '@/components/CountUp';
 import DynamicCTA from '@/components/DynamicCTA';
 import MobileMenu from '@/components/MobileMenu';
-import { useEffect, useState } from 'react';
-
-// Conditional Magnet wrapper - only active on desktop
-function ConditionalMagnet({ children, padding = 20, disabled = false, magnetStrength = 4, innerClassName = '' }: {
-  children: React.ReactNode;
-  padding?: number;
-  disabled?: boolean;
-  magnetStrength?: number;
-  innerClassName?: string;
-}) {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  if (isMobile) {
-    return <>{children}</>;
-  }
-
-  return (
-    <Magnet
-      padding={padding}
-      disabled={disabled}
-      magnetStrength={magnetStrength}
-      innerClassName={innerClassName}
-    >
-      {children}
-    </Magnet>
-  );
-}
 
 export default function Home() {
   return (

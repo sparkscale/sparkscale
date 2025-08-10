@@ -2,7 +2,7 @@
 
 import ScrollAnimation from '@/components/ScrollAnimation';
 import CustomCursor from '@/components/CustomCursor';
-import Magnet from '@/components/Magnet';
+import ConditionalConditionalMagnet from '@/components/ConditionalConditionalMagnet';
 
 export default function ImpressumPage() {
   return (
@@ -31,13 +31,13 @@ export default function ImpressumPage() {
               <a href="/kontakt" className="text-gray-600 hover:text-black transition-colors">Kontakt</a>
             </div>
             <div className="hidden md:block">
-              <Magnet padding={20} disabled={false} magnetStrength={4} innerClassName="hover:text-white">
+              <ConditionalMagnet padding={20} disabled={false} magnetStrength={4} innerClassName="hover:text-white">
                 <a href="/kontakt" className="bg-black text-[#a29a88] px-6 py-2 text-sm font-semibold rounded-full hover:bg-gray-800 hover:text-white transition-all duration-300 shadow-md group" style={{display: 'inline-block'}}>
                   <span className="text-[#a29a88] group-hover:text-white transition-colors duration-300">
                     Kostenlose Analyse
                   </span>
                 </a>
-              </Magnet>
+              </ConditionalMagnet>
             </div>
           </div>
         </div>
