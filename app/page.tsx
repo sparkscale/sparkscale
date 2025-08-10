@@ -15,8 +15,8 @@ import DynamicCTA from '@/components/DynamicCTA';
 import MobileMenu from '@/components/MobileMenu';
 import { useEffect, useState } from 'react';
 
-// Conditional ConditionalMagnet wrapper - only active on desktop
-function ConditionalConditionalMagnet({ children, padding = 20, disabled = false, magnetStrength = 4, innerClassName = '' }: {
+// Conditional Magnet wrapper - only active on desktop
+function ConditionalMagnet({ children, padding = 20, disabled = false, magnetStrength = 4, innerClassName = '' }: {
   children: React.ReactNode;
   padding?: number;
   disabled?: boolean;
@@ -40,14 +40,14 @@ function ConditionalConditionalMagnet({ children, padding = 20, disabled = false
   }
 
   return (
-    <ConditionalMagnet
+    <Magnet
       padding={padding}
       disabled={disabled}
       magnetStrength={magnetStrength}
       innerClassName={innerClassName}
     >
       {children}
-    </ConditionalMagnet>
+    </Magnet>
   );
 }
 
