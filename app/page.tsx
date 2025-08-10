@@ -38,13 +38,14 @@ export default function Home() {
               <a href="/leistungen" className="text-gray-600 hover:text-black transition-colors">Leistungen</a>
               <a href="/portfolio" className="text-gray-600 hover:text-black transition-colors">Portfolio</a>
               <a href="/preise" className="text-gray-600 hover:text-black transition-colors">Preise</a>
+              <a href="/roi-rechner" className="text-gray-600 hover:text-black transition-colors">ROI-Rechner</a>
               <a href="/blog" className="text-gray-600 hover:text-black transition-colors">Blog</a>
               <a href="/kontakt" className="text-gray-600 hover:text-black transition-colors">Kontakt</a>
             </div>
             {/* Desktop CTA Button */}
             <div className="hidden md:block">
               <Magnet padding={20} disabled={false} magnetStrength={4} innerClassName="hover:text-white">
-                <a href="/kontakt" className="bg-black text-[#a29a88] px-6 py-2 text-sm font-semibold rounded-full hover:bg-gray-800 hover:text-white transition-all duration-300 shadow-md group" style={{display: 'inline-block'}}>
+                <a href="/kontakt" className="bg-gradient-to-r from-gray-900 to-black text-[#a29a88] px-6 py-2 text-sm font-semibold rounded-full hover:from-gray-800 hover:to-gray-900 hover:text-white transition-all duration-300 shadow-md group" style={{display: 'inline-block'}}>
                   <span className="text-[#a29a88] group-hover:text-white transition-colors duration-300">
                     Kostenlose Analyse
                   </span>
@@ -87,29 +88,31 @@ export default function Home() {
       </div>
 
       {/* Hero Section */}
-      <section className="min-h-screen px-4 md:px-8 bg-black relative overflow-hidden flex items-center">
-        {/* 3D Beams Background */}
-        <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex: 0 }}>
-          <Beams
-            beamWidth={2}
-            beamHeight={15}
-            beamNumber={12}
-            lightColor="#ffffff"
-            speed={2}
-            noiseIntensity={1.75}
-            scale={0.2}
-            rotation={0}
-          />
-        </div>
+      <section className="min-h-screen px-4 md:px-8 bg-white relative overflow-hidden flex items-center">
+        {/* Logo Background */}
+        <div
+style={{
+  position: 'absolute',
+  inset: 0,
+  zIndex: 0,
+  backgroundPosition: '40px -260px',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: '100% auto',
+  backgroundImage: 'url("/Spark&Scale (1).png")',
+  opacity: 0.23,
+  filter: 'blur(0.5px)',
+  pointerEvents: 'none'
+}}
+        />
         
         <div className="container mx-auto max-w-6xl relative z-10 px-4 pt-24 md:pt-20">
           <div className="mb-8 md:mb-12 text-center">
             <ScrollAnimation animation="slideUp" delay={0.2}>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white text-center">
-                <div className="mb-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-gray-300">Mehr</div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900 text-center">
+                <div className="mb-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-gray-800">Mehr</div>
                 <RotatingText
                   texts={['Sichtbarkeit', 'Leads', 'Erfolg', 'Wachstum', 'Performance']}
-                  mainClassName="flex justify-center w-full text-white font-bold"
+                   mainClassName="flex justify-center w-full text-gray-900 font-bold"
                   staggerFrom="last"
                   initial={{ y: "100%", opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -122,7 +125,7 @@ export default function Home() {
               </h1>
             </ScrollAnimation>
             <ScrollAnimation animation="fadeIn" delay={0.6}>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">
                 <strong>SEO & Performance Spezialisten</strong> für zukunftsfähige Websites. 
                 90% unserer Kunden ranken auf Seite 1 - Performance-Garantie oder Geld zurück.
               </p>
@@ -133,38 +136,34 @@ export default function Home() {
           <ScrollAnimation animation="staggerUp" delay={0.6} stagger={0.2} triggerStart="top 95%">
             <div className="flex flex-wrap justify-center gap-8 mb-8 md:mb-12">
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-white">+3.800</div>
-                <div className="text-sm text-gray-400">Core Web Vital Fixes</div>
+                <div className="text-2xl md:text-3xl font-bold text-gray-900">+3.800</div>
+                <div className="text-sm text-gray-700">Core Web Vital Fixes</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-white">4.9/5</div>
-                <div className="text-sm text-gray-400">Kundenbewertung</div>
+                <div className="text-2xl md:text-3xl font-bold text-gray-900">4.9/5</div>
+                <div className="text-sm text-gray-700">Kundenbewertung</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-white">90%</div>
-                <div className="text-sm text-gray-400">Seite 1 in 6 Monaten</div>
+                <div className="text-2xl md:text-3xl font-bold text-gray-900">90%</div>
+                <div className="text-sm text-gray-700">Seite 1 in 6 Monaten</div>
               </div>
             </div>
           </ScrollAnimation>
 
           <ScrollAnimation animation="slideUp" delay={0.4} triggerStart="top 98%">
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-16 md:gap-24 lg:gap-36 justify-center items-center">
-              <Magnet padding={40} disabled={false} magnetStrength={8} innerClassName="hover:text-black">
+              <Magnet padding={40} disabled={false} magnetStrength={8}>
                 <a 
                   href="/kontakt"
-                  className="bg-white text-black px-8 sm:px-10 py-3 sm:py-4 text-sm font-medium hover:bg-gray-200 hover:text-black transition-all duration-300 rounded-full inline-block group"
-                  style={{display: 'inline-block'}}
+                  className="bg-transparent border-2 border-black text-black px-8 sm:px-10 py-3 sm:py-4 text-sm font-medium hover:bg-black hover:text-white transition-all duration-300 rounded-full inline-block"
                 >
-                  <span className="text-black group-hover:text-black transition-colors duration-300">
-                    Website kostenlos analysieren
-                  </span>
+                  Website kostenlos analysieren
                 </a>
               </Magnet>
               <Magnet padding={40} disabled={false} magnetStrength={8}>
                 <a 
                   href="/portfolio"
-                  className="bg-white text-black px-8 sm:px-10 py-3 sm:py-4 text-sm font-medium hover:bg-gray-200 transition-all duration-300 rounded-full inline-block"
-                  style={{color: 'black !important'}}
+                  className="bg-transparent border-2 border-black text-black px-8 sm:px-10 py-3 sm:py-4 text-sm font-medium hover:bg-black hover:text-white transition-all duration-300 rounded-full inline-block"
                 >
                   Erfolgsgeschichten ansehen
                 </a>
@@ -177,7 +176,7 @@ export default function Home() {
 
 
       {/* 3 Hauptbenefits - Conversion Focus mit schwarzem Hintergrund */}
-      <section className="py-16 md:py-24 px-8 bg-black">
+      <section className="py-16 md:py-24 px-8 bg-gradient-to-b from-gray-800 to-gray-900">
         <div className="container mx-auto max-w-6xl">
           <ScrollAnimation animation="slideUp" delay={0.2}>
             <div className="text-center mb-12">
@@ -192,7 +191,7 @@ export default function Home() {
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               {/* Benefit 1 */}
               <div className="text-center">
-                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
                   <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -206,7 +205,7 @@ export default function Home() {
 
               {/* Benefit 2 */}
               <div className="text-center">
-                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
                   <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
@@ -220,7 +219,7 @@ export default function Home() {
 
               {/* Benefit 3 */}
               <div className="text-center">
-                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
                   <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -276,7 +275,7 @@ export default function Home() {
               <Magnet padding={40} disabled={false} magnetStrength={8} innerClassName="hover:text-white">
                 <a 
                   href="/kontakt"
-                  className="bg-black text-[#a29a88] px-10 py-4 text-lg font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 inline-block group"
+                  className="bg-gradient-to-r from-gray-900 to-black text-[#a29a88] px-10 py-4 text-lg font-semibold hover:from-gray-800 hover:to-gray-900 hover:text-white transition-all duration-300 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 inline-block group"
                   style={{display: 'inline-block'}}
                 >
                   <span className="text-[#a29a88] group-hover:text-white transition-colors duration-300">
@@ -287,7 +286,7 @@ export default function Home() {
               <Magnet padding={40} disabled={false} magnetStrength={8}>
                 <a 
                   href="/preise"
-                  className="border-2 border-black text-black px-10 py-4 text-lg font-semibold hover:bg-black hover:text-white transition-all duration-300 rounded-full inline-block"
+                  className="border-2 border-[#a29a88] text-[#a29a88] px-10 py-4 text-lg font-semibold hover:bg-[#a29a88] hover:text-black transition-all duration-300 rounded-full inline-block"
                 >
                   Pakete & Preise ansehen
                 </a>
@@ -366,12 +365,12 @@ export default function Home() {
 
 
       {/* Erfolg in Zahlen - Kompakt */}
-      <section className="py-16 md:py-20 px-8 bg-gray-100">
+      <section className="py-16 md:py-20 px-8 bg-gradient-to-br from-black via-gray-800 to-gray-900">
         <div className="container mx-auto max-w-4xl">
           <ScrollAnimation animation="slideUp" delay={0.2}>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-light mb-4 text-black">Erfolg in Zahlen</h2>
-              <p className="text-lg text-gray-500">Unsere Resultate sprechen für sich</p>
+              <h2 className="text-3xl md:text-4xl font-light mb-4 text-white">Erfolg in Zahlen</h2>
+              <p className="text-lg text-gray-300">Unsere Resultate sprechen für sich</p>
             </div>
           </ScrollAnimation>
 
@@ -386,10 +385,10 @@ export default function Home() {
                     direction="up"
                     duration={2.5}
                     delay={0.5}
-                    className="text-black"
+                    className="text-[#a29a88]"
                   />
                 </div>
-                <p className="text-gray-600 text-sm font-medium">SEO-Optimierungen erfolgreich</p>
+                <p className="text-gray-300 text-sm font-medium">SEO-Optimierungen erfolgreich</p>
               </div>
 
               <div className="text-center">
@@ -400,10 +399,10 @@ export default function Home() {
                     direction="up"
                     duration={2}
                     delay={0.7}
-                    className="text-black"
+                    className="text-[#a29a88]"
                   />/5
                   </div>
-                <p className="text-gray-600 text-sm font-medium">Kundenbewertung</p>
+                <p className="text-gray-300 text-sm font-medium">Kundenbewertung</p>
               </div>
 
               <div className="text-center">
@@ -414,10 +413,10 @@ export default function Home() {
                     direction="up"
                     duration={2.2}
                     delay={0.9}
-                    className="text-black"
+                    className="text-[#a29a88]"
                   />%
                 </div>
-                <p className="text-gray-600 text-sm font-medium">Seite 1 Ranking</p>
+                <p className="text-gray-300 text-sm font-medium">Seite 1 Ranking</p>
               </div>
 
               <div className="text-center">
@@ -428,10 +427,10 @@ export default function Home() {
                     direction="up"
                     duration={2.8}
                     delay={1.1}
-                    className="text-black"
+                    className="text-[#a29a88]"
                   />%
                 </div>
-                <p className="text-gray-600 text-sm font-medium">Performance Boost</p>
+                <p className="text-gray-300 text-sm font-medium">Performance Boost</p>
               </div>
             </div>
           </ScrollAnimation>
@@ -439,10 +438,10 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 px-8 bg-black flex items-center">
+      <section className="py-16 md:py-24 px-8 bg-gray-50 flex items-center">
         <div className="container mx-auto max-w-4xl text-center">
           <ScrollAnimation animation="slideUp" delay={0.2}>
-            <h2 className="text-3xl md:text-5xl font-light mb-8 leading-tight text-white">
+            <h2 className="text-3xl md:text-5xl font-light mb-8 leading-tight text-black">
               Lassen Sie uns etwas<br />
               Großartiges erschaffen
             </h2>
@@ -451,7 +450,7 @@ export default function Home() {
             <Magnet padding={40} disabled={false} magnetStrength={8}>
               <a 
                 href="/kontakt" 
-                className="inline-block bg-white text-black px-8 py-3 text-sm font-medium hover:bg-black hover:text-white transition-all duration-300 font-semibold border border-black"
+                className="inline-block bg-[#a29a88] text-black px-8 py-3 text-sm font-medium hover:bg-[#b8a896] hover:text-black transition-all duration-300 font-semibold border border-[#a29a88]"
               >
                 Projekt starten
               </a>
@@ -461,13 +460,13 @@ export default function Home() {
       </section>
 
       {/* Footer - Phase 4.1 Mobile-First */}
-      <footer className="py-8 px-8 border-t border-gray-300 bg-gray-100">
+      <footer className="py-8 px-8 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
         <div className="container mx-auto max-w-6xl">
           {/* Desktop Footer */}
           <div className="hidden md:grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <h4 className="font-medium mb-3 text-black text-sm">Projekte</h4>
-              <div className="space-y-1 text-xs text-gray-400">
+              <h4 className="font-medium mb-3 text-[#a29a88] text-sm">Projekte</h4>
+              <div className="space-y-1 text-xs text-gray-300">
                 <div>Rechtsanwälte</div>
                 <div>Ärzte & Praxen</div>
                 <div>E-Commerce</div>
@@ -477,8 +476,8 @@ export default function Home() {
             </div>
             
             <div>
-              <h4 className="font-medium mb-3 text-black text-sm">Services</h4>
-              <div className="space-y-1 text-xs text-gray-400">
+              <h4 className="font-medium mb-3 text-[#a29a88] text-sm">Services</h4>
+              <div className="space-y-1 text-xs text-gray-300">
                 <div>Webdesign</div>
                 <div>Development</div>
                 <div>SEO & KI</div>
@@ -488,16 +487,16 @@ export default function Home() {
             </div>
             
             <div>
-              <h4 className="font-medium mb-3 text-black text-sm">Kontakt</h4>
-              <div className="space-y-1 text-xs text-gray-400">
+              <h4 className="font-medium mb-3 text-[#a29a88] text-sm">Kontakt</h4>
+              <div className="space-y-1 text-xs text-gray-300">
                 <div>Termin buchen</div>
                 <div>Email schreiben</div>
               </div>
             </div>
             
             <div>
-              <h4 className="font-medium mb-3 text-black text-sm">Social</h4>
-              <div className="space-y-1 text-xs text-gray-400">
+              <h4 className="font-medium mb-3 text-[#a29a88] text-sm">Social</h4>
+              <div className="space-y-1 text-xs text-gray-300">
                 <div>LinkedIn</div>
                 <div>Instagram</div>
                 <div>Twitter</div>
@@ -552,13 +551,13 @@ export default function Home() {
             </div>
 
             {/* Social Links - sekundär auf Mobile */}
-            <div className="flex justify-center space-x-6 mt-6 pt-6 border-t border-gray-200">
-              <a href="https://linkedin.com/company/sparkscale" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black transition-colors" aria-label="LinkedIn">
+            <div className="flex justify-center space-x-6 mt-6 pt-6 border-t border-gray-700">
+              <a href="https://linkedin.com/company/sparkscale" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#a29a88] transition-colors" aria-label="LinkedIn">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                 </svg>
               </a>
-              <a href="https://instagram.com/sparkscale.de" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black transition-colors" aria-label="Instagram">
+              <a href="https://instagram.com/sparkscale.de" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#a29a88] transition-colors" aria-label="Instagram">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.404-5.965 1.404-5.965s-.359-.717-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.120.112.225.085.347-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.162-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.986C24.007 5.367 18.641.001.012.017z"/>
                 </svg>
@@ -567,17 +566,17 @@ export default function Home() {
           </div>
 
           {/* Newsletter Signup - mit Mehrwert-Versprechen */}
-          <div className="bg-white rounded-xl p-6 mb-6 text-center">
-            <h3 className="font-semibold text-black mb-2">🚀 Website-Tipps direkt in Ihr Postfach</h3>
-            <p className="text-sm text-gray-600 mb-4">Monatlich: SEO-Updates, Performance-Tricks & KI-News</p>
+          <div className="bg-gray-800/50 rounded-xl p-6 mb-6 text-center border border-gray-700">
+            <h3 className="font-semibold text-[#a29a88] mb-2">🚀 Website-Tipps direkt in Ihr Postfach</h3>
+            <p className="text-sm text-gray-300 mb-4">Monatlich: SEO-Updates, Performance-Tricks & KI-News</p>
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input 
                 type="email" 
                 placeholder="Ihre E-Mail Adresse"
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:border-black"
+                className="flex-1 px-4 py-2 border border-gray-600 rounded-full text-sm focus:outline-none focus:border-[#a29a88] bg-gray-700 text-white placeholder-gray-400"
               />
               <Magnet padding={15} disabled={false} magnetStrength={4}>
-                <button className="bg-black text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-gray-800 transition-all duration-300">
+                <button className="bg-[#a29a88] text-black px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#b8a896] transition-all duration-300">
                   Anmelden
                 </button>
               </Magnet>
@@ -588,9 +587,9 @@ export default function Home() {
           {/* Copyright & Legal */}
           <div className="text-center">
             <div className="flex flex-wrap justify-center gap-4 mb-4 text-xs text-gray-400">
-              <a href="#datenschutz" className="hover:text-black transition-colors">Datenschutz</a>
-              <a href="#impressum" className="hover:text-black transition-colors">Impressum</a>
-              <a href="#agb" className="hover:text-black transition-colors">AGB</a>
+              <a href="#datenschutz" className="hover:text-[#a29a88] transition-colors">Datenschutz</a>
+              <a href="#impressum" className="hover:text-[#a29a88] transition-colors">Impressum</a>
+              <a href="#agb" className="hover:text-[#a29a88] transition-colors">AGB</a>
             </div>
             <div className="text-xs text-gray-400">
               © Spark&Scale, 2025. Alle Rechte vorbehalten.

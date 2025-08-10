@@ -6,6 +6,7 @@ import Magnet from '@/components/Magnet';
 import ElegantShapes from '@/components/ElegantShapes';
 import CustomCursor from '@/components/CustomCursor';
 import MobileMenu from '@/components/MobileMenu';
+import Footer from '@/components/Footer';
 
 export default function PortfolioPage() {
   return (
@@ -29,6 +30,7 @@ export default function PortfolioPage() {
               <a href="/leistungen" className="text-gray-600 hover:text-black transition-colors">Leistungen</a>
               <a href="/portfolio" className="text-black font-semibold">Portfolio</a>
               <a href="/preise" className="text-gray-600 hover:text-black transition-colors">Preise</a>
+              <a href="/roi-rechner" className="text-gray-600 hover:text-black transition-colors">ROI-Rechner</a>
               <a href="/blog" className="text-gray-600 hover:text-black transition-colors">Blog</a>
               <a href="/kontakt" className="text-gray-600 hover:text-black transition-colors">Kontakt</a>
             </div>
@@ -449,6 +451,8 @@ export default function PortfolioPage() {
           </ScrollAnimation>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

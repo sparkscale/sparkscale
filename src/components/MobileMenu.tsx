@@ -11,6 +11,7 @@ const MobileMenu: React.FC = () => {
     { href: '/leistungen', label: 'Leistungen' },
     { href: '/portfolio', label: 'Portfolio' },
     { href: '/preise', label: 'Preise' },
+    { href: '/roi-rechner', label: 'ROI-Rechner' },
     { href: '/blog', label: 'Blog' },
     { href: '/kontakt', label: 'Kontakt' },
   ];

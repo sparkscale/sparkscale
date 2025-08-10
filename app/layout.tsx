@@ -21,6 +21,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Spark&Scale - Moderne Webagentur für ambitionierte Unternehmen",
   description: "Mehr Sichtbarkeit. Mehr Leads. Mehr Wachstum. Technisch exzellent. SEO/GEO-smart. Zukunftssicher.",
+  icons: {
+    icon: '/Spark&Scale.png',
+    shortcut: '/Spark&Scale.png',
+    apple: '/Spark&Scale.png',
+  },
 };
 
 export default function RootLayout({

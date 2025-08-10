@@ -5,6 +5,7 @@ import Magnet from '@/components/Magnet';
 import ElegantShapes from '@/components/ElegantShapes';
 import CustomCursor from '@/components/CustomCursor';
 import CountUp from '@/components/CountUp';
+import Footer from '@/components/Footer';
 
 export default function UeberUnsPage() {
   return (
@@ -28,6 +29,7 @@ export default function UeberUnsPage() {
               <a href="/leistungen" className="text-gray-600 hover:text-black transition-colors">Leistungen</a>
               <a href="/portfolio" className="text-gray-600 hover:text-black transition-colors">Portfolio</a>
               <a href="/preise" className="text-gray-600 hover:text-black transition-colors">Preise</a>
+              <a href="/roi-rechner" className="text-gray-600 hover:text-black transition-colors">ROI-Rechner</a>
               <a href="/ueber-uns" className="text-gray-600 hover:text-black transition-colors font-semibold">Über uns</a>
               <a href="/kontakt" className="text-gray-600 hover:text-black transition-colors">Kontakt</a>
             </div>
@@ -495,49 +497,7 @@ export default function UeberUnsPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-black text-white py-16 px-8">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <div className="text-2xl font-bold mb-4">Spark&Scale</div>
-              <p className="text-gray-400 text-sm">
-                Die KI-orientierte Webagentur für KMUs & Local Champions
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="/leistungen" className="hover:text-black transition-colors">Leistungen</a></li>
-                <li><a href="/portfolio" className="hover:text-black transition-colors">Portfolio</a></li>
-                <li><a href="/preise" className="hover:text-black transition-colors">Preise</a></li>
-                <li><a href="/roi-rechner" className="hover:text-black transition-colors">ROI-Rechner</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Unternehmen</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="/ueber-uns" className="hover:text-black transition-colors">Über uns</a></li>
-                <li><a href="/kontakt" className="hover:text-black transition-colors">Kontakt</a></li>
-                <li><a href="/blog" className="hover:text-black transition-colors">Blog</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Legal</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="/impressum" className="hover:text-black transition-colors">Impressum</a></li>
-                <li><a href="/datenschutz" className="hover:text-black transition-colors">Datenschutz</a></li>
-                <li><a href="/agb" className="hover:text-black transition-colors">AGB</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8 text-center">
-            <p className="text-sm text-gray-400">
-              © 2024 Spark&Scale GmbH. Alle Rechte vorbehalten.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import Magnet from '@/components/Magnet';
 import ElegantShapes from '@/components/ElegantShapes';
 import CustomCursor from '@/components/CustomCursor';
 import MobileMenu from '@/components/MobileMenu';
+import Footer from '@/components/Footer';
 
 export default function LeistungenPage() {
   return (
@@ -28,6 +29,7 @@ export default function LeistungenPage() {
               <a href="/leistungen" className="text-black font-semibold">Leistungen</a>
               <a href="/portfolio" className="text-gray-600 hover:text-black transition-colors">Portfolio</a>
               <a href="/preise" className="text-gray-600 hover:text-black transition-colors">Preise</a>
+              <a href="/roi-rechner" className="text-gray-600 hover:text-black transition-colors">ROI-Rechner</a>
               <a href="/blog" className="text-gray-600 hover:text-black transition-colors">Blog</a>
               <a href="/kontakt" className="text-gray-600 hover:text-black transition-colors">Kontakt</a>
             </div>
@@ -312,6 +314,8 @@ export default function LeistungenPage() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }
