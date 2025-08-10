@@ -449,9 +449,12 @@ export default function Home() {
           </ScrollAnimation>
           <ScrollAnimation animation="scaleIn" delay={0.4} triggerStart="top 98%">
             <Magnet padding={40} disabled={false} magnetStrength={8}>
-              <button className="bg-white text-black px-8 py-3 text-sm font-medium hover:bg-black hover:text-white transition-all duration-300 font-semibold border border-black">
+              <a 
+                href="/kontakt" 
+                className="inline-block bg-white text-black px-8 py-3 text-sm font-medium hover:bg-black hover:text-white transition-all duration-300 font-semibold border border-black"
+              >
                 Projekt starten
-              </button>
+              </a>
             </Magnet>
           </ScrollAnimation>
         </div>
