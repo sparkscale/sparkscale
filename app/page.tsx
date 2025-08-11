@@ -139,46 +139,44 @@ export default function Home() {
           <source src="/Spark&Scale (Video).mp4" type="video/mp4" />
         </video>
         
-        {/* Mobile SVG with Clickable Links */}
+        {/* Mobile SVG Inline mit klickbaren Links */}
         <div className="absolute inset-0 w-full h-full md:hidden">
-          <object 
-            data="/Spark&Scale (Telefon-Hintergrundbild).svg" 
-            type="image/svg+xml"
-            className="w-full h-full object-cover"
-            style={{ pointerEvents: 'none' }}
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            xmlns:xlink="http://www.w3.org/1999/xlink" 
+            width="1080" 
+            height="1920" 
+            viewBox="0 0 810 1439.999935" 
+            className="w-full h-full"
+            preserveAspectRatio="xMidYMid meet"
           >
-            <img 
-              src="/Spark&Scale (Telefon-Hintergrundbild).svg" 
-              alt="Mobile Hero Background"
-              className="w-full h-full object-cover" 
-            />
-          </object>
-          
-          {/* Clickable Overlay Areas */}
-          <a 
-            href="/kontakt"
-            className="absolute"
-            style={{
-              bottom: '20%',
-              left: '10%',
-              width: '80%',
-              height: '8%',
-              zIndex: 10
-            }}
-            aria-label="Website kostenlos analysieren"
-          />
-          <a 
-            href="/ueber-uns"
-            className="absolute"
-            style={{
-              bottom: '10%',
-              left: '10%',
-              width: '80%',
-              height: '8%',
-              zIndex: 10
-            }}
-            aria-label="Mehr erfahren"
-          />
+            {/* Background */}
+            <rect x="0" y="0" width="810" height="1440" fill="#1f2937"/>
+            
+            {/* Beige Accent */}
+            <rect x="404" y="0" width="406" height="1440" fill="#a29a88"/>
+            
+            {/* Text SCALE */}
+            <text x="405" y="800" textAnchor="middle" fill="white" fontSize="120" fontFamily="Arial, sans-serif" fontWeight="bold">
+              SCALE
+            </text>
+            
+            {/* Button 1 - Website kostenlos analysieren */}
+            <a href="/kontakt">
+              <rect x="155" y="1080" width="500" height="80" rx="40" fill="#a29a88"/>
+              <text x="405" y="1130" textAnchor="middle" fill="#1f2937" fontSize="28" fontFamily="Arial, sans-serif" fontWeight="600">
+                Website kostenlos analysieren
+              </text>
+            </a>
+            
+            {/* Button 2 - Mehr erfahren */}
+            <a href="/ueber-uns">
+              <rect x="255" y="1180" width="300" height="60" rx="30" fill="#a29a88"/>
+              <text x="405" y="1220" textAnchor="middle" fill="#1f2937" fontSize="24" fontFamily="Arial, sans-serif" fontWeight="600">
+                Mehr erfahren
+              </text>
+            </a>
+          </svg>
         </div>
         
         {/* Overlay Buttons - Desktop Only */}
