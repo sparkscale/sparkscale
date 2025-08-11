@@ -126,124 +126,17 @@ export default function Home() {
         </a>
       </div>
 
-      {/* Hero Section */}
-      <section className="min-h-screen px-4 md:px-8 bg-white relative overflow-hidden flex items-center">
-        {/* Logo Background */}
-        {/* Desktop background */}
-        <div
-          className="absolute inset-0 bg-no-repeat opacity-23 blur-[0.5px] pointer-events-none hidden md:block"
-          style={{
-            backgroundImage: 'url("/Spark&Scale.svg")',
-            backgroundPosition: '-30px -380px',
-            backgroundSize: '105% auto',
-            zIndex: 0,
-          }}
-        />
-        {/* Mobile-optimized background */}
-        <div
-          className="absolute inset-0 bg-no-repeat opacity-23 blur-[0.5px] pointer-events-none md:hidden"
-          style={{
-            backgroundImage: 'url("/Spark&Scale.svg")',
-            backgroundPosition: 'center center',
-            backgroundSize: '120% auto',
-            zIndex: 0,
-          }}
-        />
-
-        <div className="container mx-auto max-w-6xl relative z-10 px-4 pt-24 md:pt-20">
-          <div className="mb-8 md:mb-12 text-center">
-            <ScrollAnimation animation="slideUp" delay={0.2}>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900 text-center">
-                <div className="mb-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-gray-800">
-                  Mehr
-                </div>
-                <RotatingText
-                  texts={[
-                    'Sichtbarkeit',
-                    'Leads',
-                    'Erfolg',
-                    'Wachstum',
-                    'Performance',
-                  ]}
-                  mainClassName="flex justify-center w-full text-gray-900 font-bold"
-                  staggerFrom="last"
-                  initial={{ y: '100%', opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: '-120%', opacity: 0 }}
-                  staggerDuration={0.025}
-                  splitLevelClassName="overflow-hidden"
-                  transition={{ type: 'spring', damping: 30, stiffness: 400 }}
-                  rotationInterval={2500}
-                />
-              </h1>
-            </ScrollAnimation>
-            <ScrollAnimation animation="fadeIn" delay={0.6}>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">
-                <strong>SEO & Performance Spezialisten</strong> für
-                zukunftsfähige Websites. 90% unserer Kunden ranken auf Seite 1 -
-                Performance-Garantie oder Geld zurück.
-              </p>
-            </ScrollAnimation>
-          </div>
-
-          {/* Trust Indicators */}
-          <ScrollAnimation
-            animation="staggerUp"
-            delay={0.6}
-            stagger={0.2}
-            triggerStart="top 95%"
-          >
-            <div className="flex flex-wrap justify-center gap-8 mb-8 md:mb-12">
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-gray-900">
-                  +3.800
-                </div>
-                <div className="text-sm text-gray-700">
-                  Core Web Vital Fixes
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-gray-900">
-                  4.9/5
-                </div>
-                <div className="text-sm text-gray-700">Kundenbewertung</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-gray-900">
-                  90%
-                </div>
-                <div className="text-sm text-gray-700">
-                  Seite 1 in 6 Monaten
-                </div>
-              </div>
-            </div>
-          </ScrollAnimation>
-
-          <ScrollAnimation
-            animation="slideUp"
-            delay={0.4}
-            triggerStart="top 98%"
-          >
-            <div className="flex flex-col sm:flex-row gap-6 sm:gap-16 md:gap-24 lg:gap-36 justify-center items-center">
-              <div>
-                <a
-                  href="/kontakt"
-                  className="bg-transparent border-2 border-black text-black px-8 sm:px-10 py-3 sm:py-4 text-sm font-medium hover:bg-black hover:text-white transition-all duration-300 rounded-full inline-block"
-                >
-                  Website kostenlos analysieren
-                </a>
-              </div>
-              <div>
-                <a
-                  href="/portfolio"
-                  className="bg-transparent border-2 border-black text-black px-8 sm:px-10 py-3 sm:py-4 text-sm font-medium hover:bg-black hover:text-white transition-all duration-300 rounded-full inline-block"
-                >
-                  Erfolgsgeschichten ansehen
-                </a>
-              </div>
-            </div>
-          </ScrollAnimation>
-        </div>
+      {/* Hero Section - Video Only */}
+      <section className="min-h-screen relative overflow-hidden">
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src="/Spark&Scale (Video).mp4" type="video/mp4" />
+        </video>
       </section>
 
       {/* 3 Hauptbenefits - Conversion Focus mit schwarzem Hintergrund */}
