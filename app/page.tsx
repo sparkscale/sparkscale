@@ -149,8 +149,8 @@ export default function Home() {
           <source src="/Spark&Scale (Telefon-Hintergrundbild).mp4" type="video/mp4" />
         </video>
         
-        {/* Overlay Buttons */}
-        <div className="absolute bottom-20 left-[200px] flex flex-col sm:flex-row gap-6 z-10">
+        {/* Overlay Buttons - Desktop Only */}
+        <div className="absolute bottom-20 left-[200px] flex-col sm:flex-row gap-6 z-10 hidden md:flex">
           <a
             href="/kontakt"
             className="bg-[#a29a88] text-[#1f2937] px-8 py-3 text-sm font-medium hover:bg-[#b8a896] transition-all duration-300 rounded-full"
