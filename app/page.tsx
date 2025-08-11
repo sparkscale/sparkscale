@@ -142,13 +142,13 @@ export default function Home() {
         <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex flex-col sm:flex-row gap-6 z-10">
           <a
             href="/kontakt"
-            className="bg-transparent border-2 border-white text-white px-8 py-3 text-sm font-medium hover:bg-white hover:text-black transition-all duration-300 rounded-full"
+            className="bg-[#a29a88] text-[#1f2937] px-8 py-3 text-sm font-medium hover:bg-[#b8a896] transition-all duration-300 rounded-full"
           >
             Website kostenlos analysieren
           </a>
           <a
-            href="/ueber-uns"
-            className="bg-transparent border-2 border-white text-white px-8 py-3 text-sm font-medium hover:bg-white hover:text-black transition-all duration-300 rounded-full"
+            href="/portfolio"
+            className="bg-[#a29a88] text-[#1f2937] px-8 py-3 text-sm font-medium hover:bg-[#b8a896] transition-all duration-300 rounded-full"
           >
             Mehr erfahren
           </a>
