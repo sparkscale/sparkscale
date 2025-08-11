@@ -41,7 +41,7 @@ export default function KontaktPage() {
               <a href="/kontakt" className="text-black font-semibold">Kontakt</a>
             </div>
             <div className="hidden md:block">
-              <div padding={20} disabled={false} magnetStrength={4} innerClassName="hover:text-white">
+              <div>
                 <a href="/kontakt" className="bg-black text-[#a29a88] px-6 py-2 text-sm font-semibold rounded-full hover:bg-gray-800 hover:text-white transition-all duration-300 shadow-md group" style={{display: 'inline-block'}}>
                   <span className="text-[#a29a88] group-hover:text-white transition-colors duration-300">
                     Kostenlose Analyse
@@ -272,7 +272,7 @@ export default function KontaktPage() {
           {/* Mobile Footer - Nur 3 Touch-Ziele */}
           <div className="md:hidden mb-8">
             <div className="grid grid-cols-3 gap-4 text-center">
-              <div padding={20} disabled={false} magnetStrength={4}>
+              <div>
                 <a 
                   href="https://wa.me/491234567890?text=Hallo! Ich interessiere mich für eine Website-Analyse."
                   className="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
@@ -286,7 +286,7 @@ export default function KontaktPage() {
                 </a>
               </div>
 
-              <div padding={20} disabled={false} magnetStrength={4}>
+              <div>
                 <a 
                   href="/kontakt"
                   className="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
@@ -300,7 +300,7 @@ export default function KontaktPage() {
                 </a>
               </div>
 
-              <div padding={20} disabled={false} magnetStrength={4}>
+              <div>
                 <a 
                   href="tel:+491234567890"
                   className="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
@@ -340,7 +340,7 @@ export default function KontaktPage() {
                 placeholder="Ihre E-Mail Adresse"
                 className="flex-1 px-4 py-2 border border-gray-600 rounded-full text-sm focus:outline-none focus:border-[#a29a88] bg-gray-700 text-white placeholder-gray-400"
               />
-              <div padding={15} disabled={false} magnetStrength={4}>
+              <div>
                 <button className="bg-[#a29a88] text-black px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#b8a896] transition-all duration-300">
                   Anmelden
                 </button>
@@ -365,4 +365,5 @@ export default function KontaktPage() {
     </div>
   );
 }
+
 

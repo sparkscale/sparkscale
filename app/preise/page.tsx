@@ -36,7 +36,7 @@ export default function PreisePage() {
               <a href="/kontakt" className="text-gray-600 hover:text-black transition-colors">Kontakt</a>
             </div>
             <div className="hidden md:block">
-              <div padding={20} disabled={false} magnetStrength={4} innerClassName="hover:text-white">
+              <div>
                 <a href="/kontakt" className="bg-black text-[#a29a88] px-6 py-2 text-sm font-semibold rounded-full hover:bg-gray-800 hover:text-white transition-all duration-300 shadow-md group" style={{display: 'inline-block'}}>
                   <span className="text-[#a29a88] group-hover:text-white transition-colors duration-300">
                     Kostenlose Analyse
@@ -160,7 +160,7 @@ export default function PreisePage() {
                   </div>
                 </div>
 
-                <div padding={30} disabled={false} magnetStrength={6}>
+                <div>
                   <button className="w-full bg-black text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300">
                     Sofort starten
                   </button>
@@ -270,7 +270,7 @@ export default function PreisePage() {
                   </div>
                 </div>
 
-                <div padding={30} disabled={false} magnetStrength={6}>
+                <div>
                   <button className="w-full bg-black text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300 shadow-lg">
                     Beratung buchen
                   </button>
@@ -361,7 +361,7 @@ export default function PreisePage() {
                   </div>
                 </div>
 
-                <div padding={30} disabled={false} magnetStrength={6}>
+                <div>
                   <button className="w-full border-2 border-black text-black px-8 py-4 rounded-full font-semibold hover:bg-black hover:text-white transition-all duration-300">
                     Strategiegespräch
                   </button>
@@ -400,7 +400,7 @@ export default function PreisePage() {
                 und höhere Conversion-Raten. Wir stehen zu unseren Versprechen.
               </p>
               
-              <div padding={30} disabled={false} magnetStrength={6}>
+              <div>
                 <a href="/roi-rechner" className="bg-black text-white px-8 py-4 text-sm font-semibold hover:bg-gray-800 transition-all duration-300 rounded-full shadow-lg inline-block">
                   📊 Kostenlosen ROI-Rechner nutzen
                 </a>
@@ -468,14 +468,14 @@ export default function PreisePage() {
 
           <ScrollAnimation animation="staggerUp" delay={0.1} stagger={0.2}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <div padding={30} disabled={false} magnetStrength={6} innerClassName="hover:text-white">
+              <div>
                 <button className="bg-black text-[#a29a88] px-8 py-4 text-sm font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300 rounded-full shadow-lg group" style={{display: 'inline-block'}}>
                   <span className="text-[#a29a88] group-hover:text-white transition-colors duration-300">
                     Kostenlose Website-Analyse
                   </span>
                 </button>
               </div>
-              <div padding={30} disabled={false} magnetStrength={6}>
+              <div>
                 <button className="border-2 border-black text-black px-12 py-4 text-sm font-semibold hover:bg-black hover:text-white transition-all duration-300 rounded-full">
                   Strategiegespräch buchen
                 </button>
@@ -513,4 +513,5 @@ export default function PreisePage() {
     </div>
   );
 }
+
 

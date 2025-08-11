@@ -230,7 +230,7 @@ export default function Home() {
             triggerStart="top 98%"
           >
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-16 md:gap-24 lg:gap-36 justify-center items-center">
-              <div padding={40} disabled={false} magnetStrength={8}>
+              <div>
                 <a
                   href="/kontakt"
                   className="bg-transparent border-2 border-black text-black px-8 sm:px-10 py-3 sm:py-4 text-sm font-medium hover:bg-black hover:text-white transition-all duration-300 rounded-full inline-block"
@@ -238,7 +238,7 @@ export default function Home() {
                   Website kostenlos analysieren
                 </a>
               </div>
-              <div padding={40} disabled={false} magnetStrength={8}>
+              <div>
                 <a
                   href="/portfolio"
                   className="bg-transparent border-2 border-black text-black px-8 sm:px-10 py-3 sm:py-4 text-sm font-medium hover:bg-black hover:text-white transition-all duration-300 rounded-full inline-block"
@@ -434,7 +434,7 @@ export default function Home() {
                   </span>
                 </a>
               </div>
-              <div padding={40} disabled={false} magnetStrength={8}>
+              <div>
                 <a
                   href="/preise"
                   className="border-2 border-[#a29a88] text-[#a29a88] px-10 py-4 text-lg font-semibold hover:bg-[#a29a88] hover:text-black transition-all duration-300 rounded-full inline-block"
@@ -665,7 +665,7 @@ export default function Home() {
             delay={0.4}
             triggerStart="top 98%"
           >
-            <div padding={40} disabled={false} magnetStrength={8}>
+            <div>
               <a
                 href="/kontakt"
                 className="inline-block bg-[#a29a88] text-black px-8 py-3 text-sm font-medium hover:bg-[#b8a896] hover:text-black transition-all duration-300 font-semibold border border-[#a29a88]"
@@ -733,7 +733,7 @@ export default function Home() {
           {/* Mobile Footer - Nur 3 Touch-Ziele */}
           <div className="md:hidden mb-8">
             <div className="grid grid-cols-3 gap-4 text-center">
-              <div padding={20} disabled={false} magnetStrength={4}>
+              <div>
                 <a
                   href="https://wa.me/491234567890?text=Hallo! Ich interessiere mich für eine Website-Analyse."
                   className="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
@@ -753,7 +753,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <div padding={20} disabled={false} magnetStrength={4}>
+              <div>
                 <a
                   href="/kontakt"
                   className="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
@@ -779,7 +779,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <div padding={20} disabled={false} magnetStrength={4}>
+              <div>
                 <a
                   href="tel:+491234567890"
                   className="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
@@ -855,7 +855,7 @@ export default function Home() {
                 placeholder="Ihre E-Mail Adresse"
                 className="flex-1 px-4 py-2 border border-gray-600 rounded-full text-sm focus:outline-none focus:border-[#a29a88] bg-gray-700 text-white placeholder-gray-400"
               />
-              <div padding={15} disabled={false} magnetStrength={4}>
+              <div>
                 <button className="bg-[#a29a88] text-black px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#b8a896] transition-all duration-300">
                   Anmelden
                 </button>
@@ -897,5 +897,6 @@ export default function Home() {
     </div>
   );
 }
+
 
 

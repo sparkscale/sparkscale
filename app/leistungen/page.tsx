@@ -34,7 +34,7 @@ export default function LeistungenPage() {
               <a href="/kontakt" className="text-gray-600 hover:text-black transition-colors">Kontakt</a>
             </div>
             <div className="hidden md:block">
-              <div padding={20} disabled={false} magnetStrength={4} innerClassName="hover:text-white">
+              <div>
                 <a href="/kontakt" className="bg-black text-[#a29a88] px-6 py-2 text-sm font-semibold rounded-full hover:bg-gray-800 hover:text-white transition-all duration-300 shadow-md group" style={{display: 'inline-block'}}>
                   <span className="text-[#a29a88] group-hover:text-white transition-colors duration-300">
                     Kostenlose Analyse
@@ -292,7 +292,7 @@ export default function LeistungenPage() {
           </ScrollAnimation>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <div padding={30} disabled={false} magnetStrength={6}>
+            <div>
               <a 
                 href="/preise"
                 className="bg-black text-white px-8 py-4 text-lg font-semibold hover:bg-gray-800 transition-all duration-300 rounded-full shadow-lg"
@@ -300,7 +300,7 @@ export default function LeistungenPage() {
                 Pakete & Preise ansehen
               </a>
             </div>
-              <div padding={30} disabled={false} magnetStrength={6} innerClassName="hover:text-white">
+              <div>
               <a 
                 href="/kontakt"
                   className="bg-black text-[#a29a88] px-8 py-4 text-lg font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300 rounded-full shadow-lg group"
@@ -319,4 +319,5 @@ export default function LeistungenPage() {
     </div>
   );
 }
+
 
