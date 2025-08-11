@@ -129,13 +129,24 @@ export default function Home() {
 
       {/* Hero Section - Video with Overlay Buttons */}
       <section className="min-h-screen relative overflow-hidden">
+        {/* Desktop Video */}
         <video
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover hidden md:block"
           autoPlay
           muted
           playsInline
         >
           <source src="/Spark&Scale (Video).mp4" type="video/mp4" />
+        </video>
+        
+        {/* Mobile Video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover md:hidden"
+          autoPlay
+          muted
+          playsInline
+        >
+          <source src="/Spark&Scale (Telefon-Hintergrundbild).mp4" type="video/mp4" />
         </video>
         
         {/* Overlay Buttons */}
