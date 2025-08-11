@@ -68,6 +68,106 @@ export default function LeistungenPage() {
         </div>
       </section>
 
+      {/* 4-Schritte-Prozess */}
+      <section className="py-16 md:py-24 px-8 bg-gray-50">
+        <div className="container mx-auto max-w-6xl">
+          <ScrollAnimation animation="slideUp" delay={0.2}>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Unser bewährter <span className="text-gray-300">4-Schritte-Prozess</span>
+              </h2>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                Von der Analyse bis zur Performance-Garantie - so funktioniert Ihr Erfolg
+              </p>
+            </div>
+          </ScrollAnimation>
+
+          <ScrollAnimation animation="staggerUp" delay={0.3} stagger={0.2}>
+            <div className="grid md:grid-cols-4 gap-8">
+              {/* Schritt 1: Analyse */}
+              <div className="relative">
+                <div className="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 relative z-10">
+                  <div className="w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span className="text-2xl font-bold text-white">1</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Tiefgehende Analyse</h3>
+                  <p className="text-gray-600 leading-relaxed mb-6">
+                    Wir analysieren Ihre aktuelle Website, Konkurrenz und Zielgruppe. 
+                    Core Web Vitals, SEO-Status und Conversion-Potenzial.
+                  </p>
+                  <div className="text-sm text-gray-700 font-semibold">
+                    ✓ Website-Audit<br />
+                    ✓ Competitor-Analyse<br />
+                    ✓ Keyword-Research
+                  </div>
+                </div>
+                {/* Verbindungslinie */}
+                <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-[#a29a88] z-0"></div>
+              </div>
+
+              {/* Schritt 2: Strategie */}
+              <div className="relative">
+                <div className="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 relative z-10">
+                  <div className="w-16 h-16 bg-gray-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span className="text-2xl font-bold text-white">2</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Maßgeschneiderte Strategie</h3>
+                  <p className="text-gray-600 leading-relaxed mb-6">
+                    Basierend auf den Analyseergebnissen entwickeln wir eine 
+                    individuelle Strategie für maximale Performance und ROI.
+                  </p>
+                  <div className="text-sm text-gray-700 font-semibold">
+                    ✓ Performance-Plan<br />
+                    ✓ SEO-Roadmap<br />
+                    ✓ Conversion-Strategie
+                  </div>
+                </div>
+                <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-[#a29a88] z-0"></div>
+              </div>
+
+              {/* Schritt 3: Umsetzung */}
+              <div className="relative">
+                <div className="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 relative z-10">
+                  <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span className="text-2xl font-bold text-white">3</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Professionelle Umsetzung</h3>
+                  <p className="text-gray-600 leading-relaxed mb-6">
+                    Mit modernster Technologie (Next.js, GSAP, WebGL) setzen wir 
+                    Ihre Performance-Website um - schnell und fehlerfrei.
+                  </p>
+                  <div className="text-sm text-gray-800 font-semibold">
+                    ✓ Development<br />
+                    ✓ Performance-Optimierung<br />
+                    ✓ Testing & QA
+                  </div>
+                </div>
+                <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-[#a29a88] z-0"></div>
+              </div>
+
+              {/* Schritt 4: Garantie */}
+              <div className="relative">
+                <div className="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 relative z-10">
+                  <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span className="text-2xl font-bold text-white">4</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Performance-Garantie</h3>
+                  <p className="text-gray-600 leading-relaxed mb-6">
+                    Wir garantieren messbare Ergebnisse: Core Web Vitals, 
+                    Rankings und Conversions - oder Sie bekommen Ihr Geld zurück.
+                  </p>
+                <div className="text-sm text-[#a29a88] font-semibold">
+                    ✓ Live-Monitoring<br />
+                    ✓ Monatliche Reports<br />
+                    ✓ Geld-zurück-Garantie
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollAnimation>
+        </div>
+      </section>
+
       {/* 4 Hauptleistungen - Detailliert */}
       <section className="py-20 px-8 bg-white">
         <div className="container mx-auto max-w-6xl">
