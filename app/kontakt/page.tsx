@@ -1,7 +1,7 @@
 "use client";
 
 import ScrollAnimation from '@/components/ScrollAnimation';
-import ConditionalMagnet from '@/components/ConditionalMagnet';
+// Mobile-optimized: Magnet effects removed
 import ElegantShapes from '@/components/ElegantShapes';
 import CustomCursor from '@/components/CustomCursor';
 import MultiStepContactForm from '@/components/MultiStepContactForm';
@@ -41,13 +41,13 @@ export default function KontaktPage() {
               <a href="/kontakt" className="text-black font-semibold">Kontakt</a>
             </div>
             <div className="hidden md:block">
-              <ConditionalMagnet padding={20} disabled={false} magnetStrength={4} innerClassName="hover:text-white">
+              <div padding={20} disabled={false} magnetStrength={4} innerClassName="hover:text-white">
                 <a href="/kontakt" className="bg-black text-[#a29a88] px-6 py-2 text-sm font-semibold rounded-full hover:bg-gray-800 hover:text-white transition-all duration-300 shadow-md group" style={{display: 'inline-block'}}>
                   <span className="text-[#a29a88] group-hover:text-white transition-colors duration-300">
                     Kostenlose Analyse
                   </span>
                 </a>
-              </ConditionalMagnet>
+              </div>
             </div>
             
             {/* Mobile Menu */}
@@ -129,11 +129,11 @@ export default function KontaktPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">Telefon</h3>
                 <p className="text-gray-600 mb-4">Sofortige Beratung</p>
-                <ConditionalMagnet>
+                <div>
                   <a href="tel:+491234567890" className="inline-block bg-black text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
                     +49 123 456 7890
                   </a>
-                </ConditionalMagnet>
+                </div>
               </div>
 
               {/* WhatsApp */}
@@ -145,11 +145,11 @@ export default function KontaktPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">WhatsApp</h3>
                 <p className="text-gray-600 mb-4">Schnelle Antworten</p>
-                <ConditionalMagnet>
+                <div>
                   <a href="https://wa.me/491234567890" className="inline-block bg-gray-700 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
                     Chat starten
                   </a>
-                </ConditionalMagnet>
+                </div>
               </div>
 
               {/* E-Mail */}
@@ -161,11 +161,11 @@ export default function KontaktPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">E-Mail</h3>
                 <p className="text-gray-600 mb-4">Detaillierte Anfragen</p>
-                <ConditionalMagnet>
+                <div>
                   <a href="mailto:hallo@sparkscale.de" className="inline-block bg-gray-800 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
                     hallo@sparkscale.de
                   </a>
-                </ConditionalMagnet>
+                </div>
               </div>
             </div>
           </ScrollAnimation>
@@ -272,7 +272,7 @@ export default function KontaktPage() {
           {/* Mobile Footer - Nur 3 Touch-Ziele */}
           <div className="md:hidden mb-8">
             <div className="grid grid-cols-3 gap-4 text-center">
-              <ConditionalMagnet padding={20} disabled={false} magnetStrength={4}>
+              <div padding={20} disabled={false} magnetStrength={4}>
                 <a 
                   href="https://wa.me/491234567890?text=Hallo! Ich interessiere mich für eine Website-Analyse."
                   className="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
@@ -284,9 +284,9 @@ export default function KontaktPage() {
                   </div>
                   <span className="text-xs font-medium text-gray-700">WhatsApp</span>
                 </a>
-              </ConditionalMagnet>
+              </div>
 
-              <ConditionalMagnet padding={20} disabled={false} magnetStrength={4}>
+              <div padding={20} disabled={false} magnetStrength={4}>
                 <a 
                   href="/kontakt"
                   className="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
@@ -298,9 +298,9 @@ export default function KontaktPage() {
                   </div>
                   <span className="text-xs font-medium text-gray-700">Termin</span>
                 </a>
-              </ConditionalMagnet>
+              </div>
 
-              <ConditionalMagnet padding={20} disabled={false} magnetStrength={4}>
+              <div padding={20} disabled={false} magnetStrength={4}>
                 <a 
                   href="tel:+491234567890"
                   className="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
@@ -312,7 +312,7 @@ export default function KontaktPage() {
                   </div>
                   <span className="text-xs font-medium text-gray-700">Anruf</span>
                 </a>
-              </ConditionalMagnet>
+              </div>
             </div>
 
             {/* Social Links - sekundär auf Mobile */}
@@ -340,11 +340,11 @@ export default function KontaktPage() {
                 placeholder="Ihre E-Mail Adresse"
                 className="flex-1 px-4 py-2 border border-gray-600 rounded-full text-sm focus:outline-none focus:border-[#a29a88] bg-gray-700 text-white placeholder-gray-400"
               />
-              <ConditionalMagnet padding={15} disabled={false} magnetStrength={4}>
+              <div padding={15} disabled={false} magnetStrength={4}>
                 <button className="bg-[#a29a88] text-black px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#b8a896] transition-all duration-300">
                   Anmelden
                 </button>
-              </ConditionalMagnet>
+              </div>
             </div>
             <p className="text-xs text-gray-400 mt-2">Kostenlos, jederzeit abbestellbar. Kein Spam.</p>
           </div>
@@ -365,3 +365,4 @@ export default function KontaktPage() {
     </div>
   );
 }
+

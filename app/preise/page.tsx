@@ -1,7 +1,7 @@
 "use client";
 
 import ScrollAnimation from '@/components/ScrollAnimation';
-import ConditionalMagnet from '@/components/ConditionalMagnet';
+// Mobile-optimized: Magnet effects removed
 import ElegantShapes from '@/components/ElegantShapes';
 import CustomCursor from '@/components/CustomCursor';
 import MobileMenu from '@/components/MobileMenu';
@@ -36,13 +36,13 @@ export default function PreisePage() {
               <a href="/kontakt" className="text-gray-600 hover:text-black transition-colors">Kontakt</a>
             </div>
             <div className="hidden md:block">
-              <ConditionalMagnet padding={20} disabled={false} magnetStrength={4} innerClassName="hover:text-white">
+              <div padding={20} disabled={false} magnetStrength={4} innerClassName="hover:text-white">
                 <a href="/kontakt" className="bg-black text-[#a29a88] px-6 py-2 text-sm font-semibold rounded-full hover:bg-gray-800 hover:text-white transition-all duration-300 shadow-md group" style={{display: 'inline-block'}}>
                   <span className="text-[#a29a88] group-hover:text-white transition-colors duration-300">
                     Kostenlose Analyse
                   </span>
                 </a>
-              </ConditionalMagnet>
+              </div>
             </div>
             
             {/* Mobile Menu */}
@@ -160,11 +160,11 @@ export default function PreisePage() {
                   </div>
                 </div>
 
-                <ConditionalMagnet padding={30} disabled={false} magnetStrength={6}>
+                <div padding={30} disabled={false} magnetStrength={6}>
                   <button className="w-full bg-black text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300">
                     Sofort starten
                   </button>
-                </ConditionalMagnet>
+                </div>
               </div>
 
               {/* Pro Paket - Featured */}
@@ -270,11 +270,11 @@ export default function PreisePage() {
                   </div>
                 </div>
 
-                <ConditionalMagnet padding={30} disabled={false} magnetStrength={6}>
+                <div padding={30} disabled={false} magnetStrength={6}>
                   <button className="w-full bg-black text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300 shadow-lg">
                     Beratung buchen
                   </button>
-                </ConditionalMagnet>
+                </div>
               </div>
 
               {/* Enterprise Paket */}
@@ -361,11 +361,11 @@ export default function PreisePage() {
                   </div>
                 </div>
 
-                <ConditionalMagnet padding={30} disabled={false} magnetStrength={6}>
+                <div padding={30} disabled={false} magnetStrength={6}>
                   <button className="w-full border-2 border-black text-black px-8 py-4 rounded-full font-semibold hover:bg-black hover:text-white transition-all duration-300">
                     Strategiegespräch
                   </button>
-                </ConditionalMagnet>
+                </div>
               </div>
             </div>
           </ScrollAnimation>
@@ -400,11 +400,11 @@ export default function PreisePage() {
                 und höhere Conversion-Raten. Wir stehen zu unseren Versprechen.
               </p>
               
-              <ConditionalMagnet padding={30} disabled={false} magnetStrength={6}>
+              <div padding={30} disabled={false} magnetStrength={6}>
                 <a href="/roi-rechner" className="bg-black text-white px-8 py-4 text-sm font-semibold hover:bg-gray-800 transition-all duration-300 rounded-full shadow-lg inline-block">
                   📊 Kostenlosen ROI-Rechner nutzen
                 </a>
-              </ConditionalMagnet>
+              </div>
             </div>
           </ScrollAnimation>
 
@@ -468,18 +468,18 @@ export default function PreisePage() {
 
           <ScrollAnimation animation="staggerUp" delay={0.1} stagger={0.2}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <ConditionalMagnet padding={30} disabled={false} magnetStrength={6} innerClassName="hover:text-white">
+              <div padding={30} disabled={false} magnetStrength={6} innerClassName="hover:text-white">
                 <button className="bg-black text-[#a29a88] px-8 py-4 text-sm font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300 rounded-full shadow-lg group" style={{display: 'inline-block'}}>
                   <span className="text-[#a29a88] group-hover:text-white transition-colors duration-300">
                     Kostenlose Website-Analyse
                   </span>
                 </button>
-              </ConditionalMagnet>
-              <ConditionalMagnet padding={30} disabled={false} magnetStrength={6}>
+              </div>
+              <div padding={30} disabled={false} magnetStrength={6}>
                 <button className="border-2 border-black text-black px-12 py-4 text-sm font-semibold hover:bg-black hover:text-white transition-all duration-300 rounded-full">
                   Strategiegespräch buchen
                 </button>
-              </ConditionalMagnet>
+              </div>
             </div>
           </ScrollAnimation>
 
@@ -513,3 +513,4 @@ export default function PreisePage() {
     </div>
   );
 }
+

@@ -1,7 +1,7 @@
 "use client";
 
 import ScrollAnimation from '@/components/ScrollAnimation';
-import ConditionalMagnet from '@/components/ConditionalMagnet';
+// Mobile-optimized: Magnet effects removed
 import ElegantShapes from '@/components/ElegantShapes';
 import CustomCursor from '@/components/CustomCursor';
 import ROICalculator from '@/components/ROICalculator';
@@ -33,13 +33,13 @@ export default function ROIRechnerPage() {
               <a href="/blog" className="text-gray-600 hover:text-black transition-colors">Blog</a>
               <a href="/kontakt" className="text-gray-600 hover:text-black transition-colors">Kontakt</a>
             </div>
-            <ConditionalMagnet innerClassName="hover:text-white">
+            <div innerClassName="hover:text-white">
               <a href="/kontakt" className="bg-black text-[#a29a88] px-6 py-2 rounded-full text-sm font-semibold hover:text-white hover:shadow-lg transition-all duration-300 group" style={{display: 'inline-block'}}>
                 <span className="text-[#a29a88] group-hover:text-white transition-colors duration-300">
                   Kostenlose Analyse
                 </span>
               </a>
-            </ConditionalMagnet>
+            </div>
           </div>
         </div>
       </nav>
@@ -88,3 +88,4 @@ export default function ROIRechnerPage() {
     </div>
   );
 }
+
