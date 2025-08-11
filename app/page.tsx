@@ -17,14 +17,26 @@ import MobileMenu from '@/components/MobileMenu';
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY < 50) {
+        setIsScrolled(false);
+      } else if (currentScrollY > lastScrollY) {
+        setIsScrolled(true); // Scrolling down
+      } else {
+        setIsScrolled(false); // Scrolling up
+      }
+      
+      setLastScrollY(currentScrollY);
     };
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   return (
     <div className="min-h-screen bg-gray-50">
