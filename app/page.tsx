@@ -19,7 +19,7 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
       <CustomCursor />
       {/* Navigation - Phase 4.3 */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
+      <nav className="fixed top-0 w-full bg-transparent z-50">
         <div className="container mx-auto px-4 md:px-8 py-3 md:py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
@@ -132,7 +132,6 @@ export default function Home() {
           className="absolute inset-0 w-full h-full object-cover"
           autoPlay
           muted
-          loop
           playsInline
         >
           <source src="/Spark&Scale (Video).mp4" type="video/mp4" />
