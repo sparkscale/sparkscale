@@ -143,7 +143,6 @@ export default function Home() {
         <div className="absolute inset-0 w-full h-full md:hidden">
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
-            xmlns:xlink="http://www.w3.org/1999/xlink" 
             width="1080" 
             height="1920" 
             viewBox="0 0 810 1439.999935" 
