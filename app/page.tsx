@@ -150,7 +150,7 @@ export default function Home() {
           style={{
             backgroundImage: 'url("/Spark&Scale (1).png")',
             backgroundPosition: 'center center',
-            backgroundSize: '80% auto',
+            backgroundSize: '120% auto',
             zIndex: 0,
           }}
         />
@@ -897,3 +897,4 @@ export default function Home() {
     </div>
   );
 }
+

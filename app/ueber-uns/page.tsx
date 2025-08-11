@@ -1,7 +1,7 @@
 "use client";
 
 import ScrollAnimation from '@/components/ScrollAnimation';
-import ConditionalConditionalMagnet from '@/components/ConditionalConditionalMagnet';
+import ConditionalMagnet from '@/components/ConditionalMagnet';
 import ElegantShapes from '@/components/ElegantShapes';
 import CustomCursor from '@/components/CustomCursor';
 import CountUp from '@/components/CountUp';

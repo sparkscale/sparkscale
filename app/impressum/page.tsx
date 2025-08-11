@@ -2,7 +2,7 @@
 
 import ScrollAnimation from '@/components/ScrollAnimation';
 import CustomCursor from '@/components/CustomCursor';
-import ConditionalConditionalMagnet from '@/components/ConditionalConditionalMagnet';
+import ConditionalMagnet from '@/components/ConditionalMagnet';
 
 export default function ImpressumPage() {
   return (
