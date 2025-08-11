@@ -31,7 +31,7 @@ export default function Home() {
               </button>
               
               {/* Dropdown Menu */}
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg py-2 min-w-[150px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg py-2 min-w-[150px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 text-center">
                 <a href="/leistungen" className="block px-4 py-2 text-sm text-gray-600 hover:text-black hover:bg-gray-50 transition-colors">
                   Leistungen
                 </a>
