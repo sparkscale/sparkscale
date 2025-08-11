@@ -145,6 +145,8 @@ export default function Home() {
           autoPlay
           muted
           playsInline
+          webkit-playsinline="true"
+          preload="auto"
         >
           <source src="/Spark&Scale (Telefon-Hintergrundbild).mp4" type="video/mp4" />
         </video>
