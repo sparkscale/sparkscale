@@ -157,7 +157,7 @@ export default function Home() {
             document.addEventListener('DOMContentLoaded', () => {
               const video = document.querySelector('.hero-video-mobile');
               
-              // Detect mobile devices (iOS, Android, Windows Phone)
+              // Detect mobile devices
               const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
               
               if (isMobile && video) {
@@ -170,21 +170,26 @@ export default function Home() {
                 video.playsInline = true;
                 video.autoplay = true;
                 
-                // Multiple attempts to play
-                const tryPlay = () => {
-                  video.play().catch(err => {
-                    console.log('Autoplay attempt failed:', err);
-                    // Retry after user interaction
-                    document.addEventListener('touchstart', () => {
-                      video.play().catch(e => console.log('Touch play failed:', e));
-                    }, { once: true });
-                  });
+                // Immediate touch listener for any interaction
+                const playOnInteraction = () => {
+                  video.play().catch(e => console.log('Play failed:', e));
                 };
                 
-                // Try immediately and after load
-                tryPlay();
-                video.addEventListener('loadedmetadata', tryPlay);
-                video.addEventListener('canplay', tryPlay);
+                // Listen for any touch/scroll/click
+                document.addEventListener('touchstart', playOnInteraction, { once: true, passive: true });
+                document.addEventListener('touchmove', playOnInteraction, { once: true, passive: true });
+                document.addEventListener('scroll', playOnInteraction, { once: true, passive: true });
+                document.addEventListener('click', playOnInteraction, { once: true });
+                
+                // Try to play immediately
+                video.play().catch(err => {
+                  console.log('Initial autoplay blocked:', err);
+                });
+                
+                // Also try when video is ready
+                video.addEventListener('loadeddata', () => {
+                  video.play().catch(e => console.log('Loadeddata play failed:', e));
+                });
               }
             });
           `
