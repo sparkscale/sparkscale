@@ -73,7 +73,7 @@ export default function Home() {
             </div>
             {/* Desktop CTA Button */}
             <div className="hidden md:block">
-              <div
+              <ConditionalMagnet
                 padding={20}
                 disabled={false}
                 magnetStrength={4}
@@ -88,7 +88,7 @@ export default function Home() {
                     Kostenlose Analyse
                   </span>
                 </a>
-              </div>
+              </ConditionalMagnet>
             </div>
           </div>
         </div>
@@ -138,7 +138,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-no-repeat opacity-23 blur-[0.5px] pointer-events-none hidden md:block"
           style={{
-            backgroundImage: 'url("/Spark&Scale (1).png")',
+            backgroundImage: 'url("/Spark&Scale.svg")',
             backgroundPosition: '40px -260px',
             backgroundSize: '100% auto',
             zIndex: 0,
@@ -148,7 +148,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-no-repeat opacity-23 blur-[0.5px] pointer-events-none md:hidden"
           style={{
-            backgroundImage: 'url("/Spark&Scale (1).png")',
+            backgroundImage: 'url("/Spark&Scale.svg")',
             backgroundPosition: 'center center',
             backgroundSize: '120% auto',
             zIndex: 0,
@@ -230,22 +230,22 @@ export default function Home() {
             triggerStart="top 98%"
           >
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-16 md:gap-24 lg:gap-36 justify-center items-center">
-              <div>
+              <ConditionalMagnet padding={40} disabled={false} magnetStrength={8}>
                 <a
                   href="/kontakt"
                   className="bg-transparent border-2 border-black text-black px-8 sm:px-10 py-3 sm:py-4 text-sm font-medium hover:bg-black hover:text-white transition-all duration-300 rounded-full inline-block"
                 >
                   Website kostenlos analysieren
                 </a>
-              </div>
-              <div>
+              </ConditionalMagnet>
+              <ConditionalMagnet padding={40} disabled={false} magnetStrength={8}>
                 <a
                   href="/portfolio"
                   className="bg-transparent border-2 border-black text-black px-8 sm:px-10 py-3 sm:py-4 text-sm font-medium hover:bg-black hover:text-white transition-all duration-300 rounded-full inline-block"
                 >
                   Erfolgsgeschichten ansehen
                 </a>
-              </div>
+              </ConditionalMagnet>
             </div>
           </ScrollAnimation>
         </div>
@@ -418,7 +418,7 @@ export default function Home() {
             triggerStart="top 98%"
           >
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <div
+              <ConditionalMagnet
                 padding={40}
                 disabled={false}
                 magnetStrength={8}
@@ -433,15 +433,15 @@ export default function Home() {
                     Kostenlose Website-Analyse
                   </span>
                 </a>
-              </div>
-              <div>
+              </ConditionalMagnet>
+              <ConditionalMagnet padding={40} disabled={false} magnetStrength={8}>
                 <a
                   href="/preise"
                   className="border-2 border-[#a29a88] text-[#a29a88] px-10 py-4 text-lg font-semibold hover:bg-[#a29a88] hover:text-black transition-all duration-300 rounded-full inline-block"
                 >
                   Pakete & Preise ansehen
                 </a>
-              </div>
+              </ConditionalMagnet>
             </div>
           </ScrollAnimation>
 
@@ -665,14 +665,14 @@ export default function Home() {
             delay={0.4}
             triggerStart="top 98%"
           >
-            <div>
+            <ConditionalMagnet padding={40} disabled={false} magnetStrength={8}>
               <a
                 href="/kontakt"
                 className="inline-block bg-[#a29a88] text-black px-8 py-3 text-sm font-medium hover:bg-[#b8a896] hover:text-black transition-all duration-300 font-semibold border border-[#a29a88]"
               >
                 Projekt starten
               </a>
-            </div>
+            </ConditionalMagnet>
           </ScrollAnimation>
         </div>
       </section>
@@ -733,7 +733,7 @@ export default function Home() {
           {/* Mobile Footer - Nur 3 Touch-Ziele */}
           <div className="md:hidden mb-8">
             <div className="grid grid-cols-3 gap-4 text-center">
-              <div>
+              <ConditionalMagnet padding={20} disabled={false} magnetStrength={4}>
                 <a
                   href="https://wa.me/491234567890?text=Hallo! Ich interessiere mich für eine Website-Analyse."
                   className="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
@@ -751,9 +751,9 @@ export default function Home() {
                     WhatsApp
                   </span>
                 </a>
-              </div>
+              </ConditionalMagnet>
 
-              <div>
+              <ConditionalMagnet padding={20} disabled={false} magnetStrength={4}>
                 <a
                   href="/kontakt"
                   className="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
@@ -777,9 +777,9 @@ export default function Home() {
                     Termin
                   </span>
                 </a>
-              </div>
+              </ConditionalMagnet>
 
-              <div>
+              <ConditionalMagnet padding={20} disabled={false} magnetStrength={4}>
                 <a
                   href="tel:+491234567890"
                   className="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
@@ -803,7 +803,7 @@ export default function Home() {
                     Anruf
                   </span>
                 </a>
-              </div>
+              </ConditionalMagnet>
             </div>
 
             {/* Social Links - sekundär auf Mobile */}
@@ -855,11 +855,11 @@ export default function Home() {
                 placeholder="Ihre E-Mail Adresse"
                 className="flex-1 px-4 py-2 border border-gray-600 rounded-full text-sm focus:outline-none focus:border-[#a29a88] bg-gray-700 text-white placeholder-gray-400"
               />
-              <div>
+              <ConditionalMagnet padding={15} disabled={false} magnetStrength={4}>
                 <button className="bg-[#a29a88] text-black px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#b8a896] transition-all duration-300">
                   Anmelden
                 </button>
-              </div>
+              </ConditionalMagnet>
             </div>
             <p className="text-xs text-gray-400 mt-2">
               Kostenlos, jederzeit abbestellbar. Kein Spam.
@@ -897,6 +897,4 @@ export default function Home() {
     </div>
   );
 }
-
-
 

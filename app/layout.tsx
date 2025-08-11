@@ -22,12 +22,9 @@ export const metadata: Metadata = {
   title: "Spark&Scale - Moderne Webagentur für ambitionierte Unternehmen",
   description: "Mehr Sichtbarkeit. Mehr Leads. Mehr Wachstum. Technisch exzellent. SEO/GEO-smart. Zukunftssicher.",
   icons: {
-    icon: [
-      { url: '/Spark&Scale.png', sizes: '32x32', type: 'image/png' },
-      { url: '/Spark&Scale.png', sizes: '16x16', type: 'image/png' }
-    ],
-    shortcut: '/Spark&Scale.png',
-    apple: '/Spark&Scale.png',
+    icon: '/Spark&Scale (1).png',
+    shortcut: '/Spark&Scale (1).png',
+    apple: '/Spark&Scale (1).png',
   },
 };
 
