@@ -151,19 +151,40 @@ export default function Home() {
           <source src="/Spark&Scale (Telefon-Hintergrundbild).mp4" type="video/mp4" />
         </video>
         
-        {/* Safari Mobile Autoplay Fix */}
+        {/* Universal Mobile Autoplay Fix */}
         <script dangerouslySetInnerHTML={{
           __html: `
             document.addEventListener('DOMContentLoaded', () => {
               const video = document.querySelector('.hero-video-mobile');
               
-              if (/Mobi|Android/i.test(navigator.userAgent)) {
-                video.setAttribute('muted', '');
-                video.setAttribute('playsinline', '');
-                video.setAttribute('autoplay', '');
-                video.play().catch(err => {
-                  console.log('Autoplay blockiert auf Mobile:', err);
-                });
+              // Detect mobile devices (iOS, Android, Windows Phone)
+              const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+              
+              if (isMobile && video) {
+                // Force all attributes
+                video.setAttribute('muted', 'true');
+                video.setAttribute('playsinline', 'true');
+                video.setAttribute('autoplay', 'true');
+                video.setAttribute('webkit-playsinline', 'true');
+                video.muted = true;
+                video.playsInline = true;
+                video.autoplay = true;
+                
+                // Multiple attempts to play
+                const tryPlay = () => {
+                  video.play().catch(err => {
+                    console.log('Autoplay attempt failed:', err);
+                    // Retry after user interaction
+                    document.addEventListener('touchstart', () => {
+                      video.play().catch(e => console.log('Touch play failed:', e));
+                    }, { once: true });
+                  });
+                };
+                
+                // Try immediately and after load
+                tryPlay();
+                video.addEventListener('loadedmetadata', tryPlay);
+                video.addEventListener('canplay', tryPlay);
               }
             });
           `
