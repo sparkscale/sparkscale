@@ -19,8 +19,10 @@ export default function ConditionalMagnet({
   innerClassName = '' 
 }: ConditionalMagnetProps) {
   const [isMobile, setIsMobile] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -30,7 +32,8 @@ export default function ConditionalMagnet({
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  if (isMobile) {
+  // During SSR or before hydration, always render without Magnet
+  if (!isClient || isMobile) {
     return <>{children}</>;
   }
 

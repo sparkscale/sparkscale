@@ -1,6 +1,6 @@
 "use client";
 
-import Magnet from './Magnet';
+import ConditionalConditionalMagnet from './ConditionalConditionalMagnet';
 
 export default function Footer() {
   return (
@@ -51,7 +51,7 @@ export default function Footer() {
         {/* Mobile Footer - Nur 3 Touch-Ziele */}
         <div className="md:hidden mb-8">
           <div className="grid grid-cols-3 gap-4 text-center">
-            <Magnet padding={20} disabled={false} magnetStrength={4}>
+            <ConditionalMagnet padding={20} disabled={false} magnetStrength={4}>
               <a 
                 href="https://wa.me/491234567890?text=Hallo! Ich interessiere mich für eine Website-Analyse."
                 className="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
@@ -63,9 +63,9 @@ export default function Footer() {
                 </div>
                 <span className="text-xs font-medium text-gray-700">WhatsApp</span>
               </a>
-            </Magnet>
+            </ConditionalMagnet>
 
-            <Magnet padding={20} disabled={false} magnetStrength={4}>
+            <ConditionalMagnet padding={20} disabled={false} magnetStrength={4}>
               <a 
                 href="/kontakt"
                 className="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
@@ -77,9 +77,9 @@ export default function Footer() {
                 </div>
                 <span className="text-xs font-medium text-gray-700">Termin</span>
               </a>
-            </Magnet>
+            </ConditionalMagnet>
 
-            <Magnet padding={20} disabled={false} magnetStrength={4}>
+            <ConditionalMagnet padding={20} disabled={false} magnetStrength={4}>
               <a 
                 href="tel:+491234567890"
                 className="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
@@ -91,7 +91,7 @@ export default function Footer() {
                 </div>
                 <span className="text-xs font-medium text-gray-700">Anruf</span>
               </a>
-            </Magnet>
+            </ConditionalMagnet>
           </div>
 
           {/* Social Links - sekundär auf Mobile */}
@@ -119,11 +119,11 @@ export default function Footer() {
               placeholder="Ihre E-Mail Adresse"
               className="flex-1 px-4 py-2 border border-gray-600 rounded-full text-sm focus:outline-none focus:border-[#a29a88] bg-gray-700 text-white placeholder-gray-400"
             />
-            <Magnet padding={15} disabled={false} magnetStrength={4}>
+            <ConditionalMagnet padding={15} disabled={false} magnetStrength={4}>
               <button className="bg-[#a29a88] text-black px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#b8a896] transition-all duration-300">
                 Anmelden
               </button>
-            </Magnet>
+            </ConditionalMagnet>
           </div>
           <p className="text-xs text-gray-400 mt-2">Kostenlos, jederzeit abbestellbar. Kein Spam.</p>
         </div>

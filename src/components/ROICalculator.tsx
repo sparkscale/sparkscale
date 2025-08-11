@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import ScrollAnimation from './ScrollAnimation';
-import Magnet from './Magnet';
+import ConditionalConditionalMagnet from './ConditionalConditionalMagnet';
 
 interface ROIData {
   visitors: number;
@@ -101,7 +101,7 @@ export default function ROICalculator() {
 
               {/* Lead Generation CTA */}
               <div className="mt-8 pt-6 border-t border-gray-200">
-                <Magnet padding={30} disabled={false} magnetStrength={6}>
+                <ConditionalMagnet padding={30} disabled={false} magnetStrength={6}>
                   <a 
                     href="/kontakt"
                     className="w-full bg-[#a29a88] text-black px-6 py-4 text-lg font-bold hover:bg-[#b8a896] transition-all duration-300 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2"
@@ -111,7 +111,7 @@ export default function ROICalculator() {
                     </svg>
                     Jetzt kostenlose Analyse anfordern
                   </a>
-                </Magnet>
+                </ConditionalMagnet>
                 <p className="text-left text-xs text-gray-500 mt-2">
                   Unverbindlich • Performance-Garantie • 24h Antwort
                 </p>
@@ -180,14 +180,14 @@ export default function ROICalculator() {
           <p className="text-gray-600 mb-6 text-lg max-w-2xl mx-auto">
             90% unserer Kunden erreichen Seite 1. Starten Sie jetzt Ihre kostenlose Website-Analyse.
           </p>
-          <Magnet padding={40} disabled={false} magnetStrength={8}>
+          <ConditionalMagnet padding={40} disabled={false} magnetStrength={8}>
             <a 
               href="/kontakt"
               className="bg-[#a29a88] text-black px-10 py-4 text-lg font-bold hover:bg-[#b8a896] transition-all duration-300 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 inline-block"
             >
               Kostenlose Website-Analyse starten
             </a>
-          </Magnet>
+          </ConditionalMagnet>
         </div>
       </ScrollAnimation>
     </div>
