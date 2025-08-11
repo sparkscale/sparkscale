@@ -127,7 +127,7 @@ export default function Home() {
         </a>
       </div>
 
-      {/* Hero Section - Video Only */}
+      {/* Hero Section - Video with Overlay Buttons */}
       <section className="min-h-screen relative overflow-hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover"
@@ -137,6 +137,22 @@ export default function Home() {
         >
           <source src="/Spark&Scale (Video).mp4" type="video/mp4" />
         </video>
+        
+        {/* Overlay Buttons */}
+        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex flex-col sm:flex-row gap-6 z-10">
+          <a
+            href="/kontakt"
+            className="bg-transparent border-2 border-white text-white px-8 py-3 text-sm font-medium hover:bg-white hover:text-black transition-all duration-300 rounded-full"
+          >
+            Website kostenlos analysieren
+          </a>
+          <a
+            href="/ueber-uns"
+            className="bg-transparent border-2 border-white text-white px-8 py-3 text-sm font-medium hover:bg-white hover:text-black transition-all duration-300 rounded-full"
+          >
+            Mehr erfahren
+          </a>
+        </div>
       </section>
 
       {/* 3 Hauptbenefits - Conversion Focus mit schwarzem Hintergrund */}
