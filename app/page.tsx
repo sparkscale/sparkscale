@@ -139,61 +139,16 @@ export default function Home() {
           <source src="/Spark&Scale (Video).mp4" type="video/mp4" />
         </video>
         
-        {/* Mobile Video */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover md:hidden hero-video-mobile"
-          autoPlay
-          muted
-          playsInline
-          loop
-          preload="auto"
-        >
-          <source src="/Spark&Scale (Telefon-Hintergrundbild).mp4" type="video/mp4" />
-        </video>
-        
-        {/* Universal Mobile Autoplay Fix */}
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            document.addEventListener('DOMContentLoaded', () => {
-              const video = document.querySelector('.hero-video-mobile');
-              
-              // Detect mobile devices
-              const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-              
-              if (isMobile && video) {
-                // Force all attributes
-                video.setAttribute('muted', 'true');
-                video.setAttribute('playsinline', 'true');
-                video.setAttribute('autoplay', 'true');
-                video.setAttribute('webkit-playsinline', 'true');
-                video.muted = true;
-                video.playsInline = true;
-                video.autoplay = true;
-                
-                // Immediate touch listener for any interaction
-                const playOnInteraction = () => {
-                  video.play().catch(e => console.log('Play failed:', e));
-                };
-                
-                // Listen for any touch/scroll/click
-                document.addEventListener('touchstart', playOnInteraction, { once: true, passive: true });
-                document.addEventListener('touchmove', playOnInteraction, { once: true, passive: true });
-                document.addEventListener('scroll', playOnInteraction, { once: true, passive: true });
-                document.addEventListener('click', playOnInteraction, { once: true });
-                
-                // Try to play immediately
-                video.play().catch(err => {
-                  console.log('Initial autoplay blocked:', err);
-                });
-                
-                // Also try when video is ready
-                video.addEventListener('loadeddata', () => {
-                  video.play().catch(e => console.log('Loadeddata play failed:', e));
-                });
-              }
-            });
-          `
-        }} />
+        {/* Mobile Background Image */}
+        <div
+          className="absolute inset-0 w-full h-full md:hidden"
+          style={{
+            backgroundImage: "url('/Spark&Scale (Telefon-Hintergrundbild).svg')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        />
         
         {/* Overlay Buttons - Desktop Only */}
         <div className="absolute bottom-20 left-[200px] flex-col sm:flex-row gap-6 z-10 hidden md:flex">
