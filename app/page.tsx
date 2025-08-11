@@ -32,11 +32,11 @@ export default function Home() {
       {/* Navigation - Phase 4.3 */}
       <nav className={`fixed top-0 w-full bg-transparent z-50 transition-transform duration-300 ${isScrolled ? '-translate-y-full' : 'translate-y-0'}`}>
         <div className="container mx-auto px-4 md:px-8 py-3 md:py-4">
-          <div className="flex justify-center items-center">
+          <div className="flex justify-start items-start">
             {/* Mobile Menu */}
             <MobileMenu />
 
-            <div className="hidden md:flex space-x-8 text-sm">
+            <div className="hidden md:flex flex-col items-start space-y-2 text-sm">
               <a
                 href="/leistungen"
                 className="text-gray-600 hover:text-black transition-colors"
