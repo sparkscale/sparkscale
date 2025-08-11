@@ -147,7 +147,7 @@ export default function Home() {
             Website kostenlos analysieren
           </a>
           <a
-            href="/portfolio"
+            href="/ueber-uns"
             className="bg-[#a29a88] text-[#1f2937] px-8 py-3 text-sm font-medium hover:bg-[#b8a896] transition-all duration-300 rounded-full"
           >
             Mehr erfahren
