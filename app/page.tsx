@@ -141,16 +141,33 @@ export default function Home() {
         
         {/* Mobile Video */}
         <video
-          className="absolute inset-0 w-full h-full object-cover md:hidden"
+          className="absolute inset-0 w-full h-full object-cover md:hidden hero-video-mobile"
           autoPlay
           muted
           playsInline
-          controls={false}
-          preload="metadata"
-          onLoadedData={(e) => e.target.play()}
+          loop
+          preload="auto"
         >
           <source src="/Spark&Scale (Telefon-Hintergrundbild).mp4" type="video/mp4" />
         </video>
+        
+        {/* Safari Mobile Autoplay Fix */}
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            document.addEventListener('DOMContentLoaded', () => {
+              const video = document.querySelector('.hero-video-mobile');
+              
+              if (/Mobi|Android/i.test(navigator.userAgent)) {
+                video.setAttribute('muted', '');
+                video.setAttribute('playsinline', '');
+                video.setAttribute('autoplay', '');
+                video.play().catch(err => {
+                  console.log('Autoplay blockiert auf Mobile:', err);
+                });
+              }
+            });
+          `
+        }} />
         
         {/* Overlay Buttons - Desktop Only */}
         <div className="absolute bottom-20 left-[200px] flex-col sm:flex-row gap-6 z-10 hidden md:flex">
@@ -807,9 +824,31 @@ export default function Home() {
 
       {/* Dynamic CTAs - Phase 4.2 */}
       <DynamicCTA />
+      
+      {/* Mobile Video Autoplay Script */}
+      <MobileVideoScript />
     </div>
   );
 }
+
+// Mobile Video Autoplay Script
+const MobileVideoScript = () => (
+  <script dangerouslySetInnerHTML={{
+    __html: `
+      document.addEventListener('DOMContentLoaded', () => {
+        const video = document.querySelector('.hero-video-mobile');
+        if (video && /Mobi|Android/i.test(navigator.userAgent)) {
+          video.setAttribute('muted', '');
+          video.setAttribute('playsinline', '');
+          video.setAttribute('autoplay', '');
+          video.play().catch(err => {
+            console.log('Autoplay blockiert auf Mobile:', err);
+          });
+        }
+      });
+    `
+  }} />
+);
 
 
 
