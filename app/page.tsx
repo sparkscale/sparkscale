@@ -93,23 +93,23 @@ export default function Home() {
       {/* Mobile CTAs - Phase 4.1 */}
       {/* WhatsApp Button - Sticky rechts unten */}
       <div className="fixed bottom-6 right-6 z-50 md:hidden">
-        <a
-          href="https://wa.me/491234567890?text=Hallo! Ich interessiere mich für eine Website-Analyse."
+          <a 
+            href="https://wa.me/491234567890?text=Hallo! Ich interessiere mich für eine Website-Analyse." 
           className="bg-gray-700 hover:bg-gray-800 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-300"
-          aria-label="WhatsApp Chat"
-        >
-          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            aria-label="WhatsApp Chat"
+          >
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.520-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
-          </svg>
-        </a>
+            </svg>
+          </a>
       </div>
 
       {/* Click-to-Call Button - Mobile */}
       <div className="fixed bottom-6 left-6 z-50 md:hidden">
-        <a
-          href="tel:+491234567890"
+          <a 
+            href="tel:+491234567890" 
           className="bg-gray-800 hover:bg-gray-900 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-300"
-          aria-label="Anrufen"
+            aria-label="Anrufen"
         >
           <svg
             className="w-6 h-6"
@@ -123,8 +123,8 @@ export default function Home() {
               strokeWidth={2}
               d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
             />
-          </svg>
-        </a>
+            </svg>
+          </a>
       </div>
 
       {/* Hero Section - Video with Overlay Buttons */}
@@ -139,31 +139,62 @@ export default function Home() {
           <source src="/Spark&Scale (Video).mp4" type="video/mp4" />
         </video>
         
-        {/* Mobile Background Image */}
-        <div
-          className="absolute inset-0 w-full h-full md:hidden"
-          style={{
-            backgroundImage: "url('/Spark&Scale (Telefon-Hintergrundbild).svg')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        />
+        {/* Mobile SVG with Clickable Links */}
+        <div className="absolute inset-0 w-full h-full md:hidden">
+          <object 
+            data="/Spark&Scale (Telefon-Hintergrundbild).svg" 
+            type="image/svg+xml"
+            className="w-full h-full object-cover"
+            style={{ pointerEvents: 'none' }}
+          >
+            <img 
+              src="/Spark&Scale (Telefon-Hintergrundbild).svg" 
+              alt="Mobile Hero Background"
+              className="w-full h-full object-cover" 
+            />
+          </object>
+          
+          {/* Clickable Overlay Areas */}
+          <a 
+            href="/kontakt"
+            className="absolute"
+            style={{
+              bottom: '20%',
+              left: '10%',
+              width: '80%',
+              height: '8%',
+              zIndex: 10
+            }}
+            aria-label="Website kostenlos analysieren"
+          />
+          <a 
+            href="/ueber-uns"
+            className="absolute"
+            style={{
+              bottom: '10%',
+              left: '10%',
+              width: '80%',
+              height: '8%',
+              zIndex: 10
+            }}
+            aria-label="Mehr erfahren"
+          />
+        </div>
         
         {/* Overlay Buttons - Desktop Only */}
         <div className="absolute bottom-20 left-[200px] flex-col sm:flex-row gap-6 z-10 hidden md:flex">
-          <a
-            href="/kontakt"
+                <a 
+                  href="/kontakt"
             className="bg-[#a29a88] text-[#1f2937] px-8 py-3 text-sm font-medium hover:bg-[#b8a896] transition-all duration-300 rounded-full"
-          >
-            Website kostenlos analysieren
-          </a>
-          <a
+                >
+                    Website kostenlos analysieren
+                </a>
+                <a 
             href="/ueber-uns"
             className="bg-[#a29a88] text-[#1f2937] px-8 py-3 text-sm font-medium hover:bg-[#b8a896] transition-all duration-300 rounded-full"
-          >
+                >
             Mehr erfahren
-          </a>
+                </a>
         </div>
       </section>
 
@@ -172,7 +203,7 @@ export default function Home() {
         <div className="container mx-auto max-w-6xl">
           <ScrollAnimation animation="slideUp" delay={0.2}>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-light mb-4 text-white">
+                                <h2 className="text-3xl md:text-4xl font-light mb-4 text-white">
                 Warum{' '}
                 <span className="font-bold text-[#a29a88]">Spark&Scale</span>?
               </h2>
@@ -335,7 +366,7 @@ export default function Home() {
           >
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <div>
-                <a
+                <a 
                   href="/kontakt"
                   className="bg-gradient-to-r from-gray-900 to-black text-[#a29a88] px-10 py-4 text-lg font-semibold hover:from-gray-800 hover:to-gray-900 hover:text-white transition-all duration-300 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 inline-block group"
                   style={{ display: 'inline-block' }}
@@ -346,7 +377,7 @@ export default function Home() {
                 </a>
               </div>
               <div>
-                <a
+                <a 
                   href="/preise"
                   className="border-2 border-[#a29a88] text-[#a29a88] px-10 py-4 text-lg font-semibold hover:bg-[#a29a88] hover:text-black transition-all duration-300 rounded-full inline-block"
                 >
@@ -356,7 +387,7 @@ export default function Home() {
             </div>
           </ScrollAnimation>
 
-          {/* Trust Badges */}
+                    {/* Trust Badges */}
           <ScrollAnimation
             animation="staggerUp"
             delay={0.8}
@@ -516,7 +547,7 @@ export default function Home() {
                     className="text-[#a29a88]"
                   />
                   /5
-                </div>
+                  </div>
                 <p className="text-gray-300 text-sm font-medium">
                   Kundenbewertung
                 </p>
@@ -605,7 +636,7 @@ export default function Home() {
                 <div>SaaS</div>
               </div>
             </div>
-
+            
             <div>
               <h4 className="font-medium mb-3 text-[#a29a88] text-sm">
                 Services
@@ -618,7 +649,7 @@ export default function Home() {
                 <div>Hosting</div>
               </div>
             </div>
-
+            
             <div>
               <h4 className="font-medium mb-3 text-[#a29a88] text-sm">
                 Kontakt
@@ -628,7 +659,7 @@ export default function Home() {
                 <div>Email schreiben</div>
               </div>
             </div>
-
+            
             <div>
               <h4 className="font-medium mb-3 text-[#a29a88] text-sm">
                 Social
@@ -645,7 +676,7 @@ export default function Home() {
           <div className="md:hidden mb-8">
             <div className="grid grid-cols-3 gap-4 text-center">
               <div>
-                <a
+                <a 
                   href="https://wa.me/491234567890?text=Hallo! Ich interessiere mich für eine Website-Analyse."
                   className="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
                 >
@@ -665,7 +696,7 @@ export default function Home() {
               </div>
 
               <div>
-                <a
+                <a 
                   href="/kontakt"
                   className="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
                 >
@@ -691,7 +722,7 @@ export default function Home() {
               </div>
 
               <div>
-                <a
+                <a 
                   href="tel:+491234567890"
                   className="flex flex-col items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
                 >
@@ -761,8 +792,8 @@ export default function Home() {
               Monatlich: SEO-Updates, Performance-Tricks & KI-News
             </p>
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input
-                type="email"
+              <input 
+                type="email" 
                 placeholder="Ihre E-Mail Adresse"
                 className="flex-1 px-4 py-2 border border-gray-600 rounded-full text-sm focus:outline-none focus:border-[#a29a88] bg-gray-700 text-white placeholder-gray-400"
               />
@@ -776,7 +807,7 @@ export default function Home() {
               Kostenlos, jederzeit abbestellbar. Kein Spam.
             </p>
           </div>
-
+          
           {/* Copyright & Legal */}
           <div className="text-center">
             <div className="flex flex-wrap justify-center gap-4 mb-4 text-xs text-gray-400">
