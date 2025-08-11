@@ -139,7 +139,7 @@ export default function Home() {
         </video>
         
         {/* Overlay Buttons */}
-        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex flex-col sm:flex-row gap-6 z-10">
+        <div className="absolute bottom-20 left-[200px] flex flex-col sm:flex-row gap-6 z-10">
           <a
             href="/kontakt"
             className="bg-[#a29a88] text-[#1f2937] px-8 py-3 text-sm font-medium hover:bg-[#b8a896] transition-all duration-300 rounded-full"
