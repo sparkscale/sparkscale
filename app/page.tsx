@@ -21,15 +21,7 @@ export default function Home() {
       {/* Navigation - Phase 4.3 */}
       <nav className="fixed top-0 w-full bg-transparent z-50">
         <div className="container mx-auto px-4 md:px-8 py-3 md:py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center">
-              <img
-                src="/S&S (1)-Photoroom.png"
-                alt="Spark&Scale Logo"
-                className="logo-global"
-              />
-            </div>
-
+          <div className="flex justify-center items-center">
             {/* Mobile Menu */}
             <MobileMenu />
 
@@ -70,20 +62,6 @@ export default function Home() {
               >
                 Kontakt
               </a>
-            </div>
-            {/* Desktop CTA Button */}
-            <div className="hidden md:block">
-              <div>
-                <a
-                  href="/kontakt"
-                  className="bg-gradient-to-r from-gray-900 to-black text-[#a29a88] px-6 py-2 text-sm font-semibold rounded-full hover:from-gray-800 hover:to-gray-900 hover:text-white transition-all duration-300 shadow-md group"
-                  style={{ display: 'inline-block' }}
-                >
-                  <span className="text-[#a29a88] group-hover:text-white transition-colors duration-300">
-                    Kostenlose Analyse
-                  </span>
-                </a>
-              </div>
             </div>
           </div>
         </div>
