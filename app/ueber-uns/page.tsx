@@ -33,7 +33,7 @@ export default function UeberUnsPage() {
               <a href="/ueber-uns" className="text-gray-600 hover:text-black transition-colors font-semibold">Über uns</a>
               <a href="/kontakt" className="text-gray-600 hover:text-black transition-colors">Kontakt</a>
             </div>
-            <div innerClassName="hover:text-white">
+            <div >
               <a href="/kontakt" className="bg-black text-[#a29a88] px-6 py-2 rounded-full text-sm font-semibold hover:text-white hover:shadow-lg transition-all duration-300 group" style={{display: 'inline-block'}}>
                 <span className="text-[#a29a88] group-hover:text-white transition-colors duration-300">
                   Kostenlose Analyse
@@ -450,7 +450,7 @@ export default function UeberUnsPage() {
 
           <ScrollAnimation animation="scaleIn" delay={0.4}>
             <div className="flex flex-wrap justify-center gap-6">
-            <div innerClassName="hover:text-white">
+            <div >
               <a
                 href="/kontakt"
                 className="bg-black text-[#a29a88] px-10 py-4 rounded-full text-lg font-bold hover:text-white hover:shadow-2xl transition-all duration-300 group"
@@ -501,5 +501,7 @@ export default function UeberUnsPage() {
     </div>
   );
 }
+
+
 
 

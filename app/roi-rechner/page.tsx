@@ -33,7 +33,7 @@ export default function ROIRechnerPage() {
               <a href="/blog" className="text-gray-600 hover:text-black transition-colors">Blog</a>
               <a href="/kontakt" className="text-gray-600 hover:text-black transition-colors">Kontakt</a>
             </div>
-            <div innerClassName="hover:text-white">
+            <div >
               <a href="/kontakt" className="bg-black text-[#a29a88] px-6 py-2 rounded-full text-sm font-semibold hover:text-white hover:shadow-lg transition-all duration-300 group" style={{display: 'inline-block'}}>
                 <span className="text-[#a29a88] group-hover:text-white transition-colors duration-300">
                   Kostenlose Analyse
@@ -88,5 +88,6 @@ export default function ROIRechnerPage() {
     </div>
   );
 }
+
 
 
