@@ -139,43 +139,38 @@ export default function Home() {
           <source src="/Spark&Scale (Video).mp4" type="video/mp4" />
         </video>
         
-        {/* Mobile SVG Inline mit klickbaren Links */}
+        {/* Mobile Canva Design */}
         <div className="absolute inset-0 w-full h-full md:hidden">
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            width="1080" 
-            height="1920" 
-            viewBox="0 0 810 1439.999935" 
-            className="w-full h-full"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            {/* Background */}
-            <rect x="0" y="0" width="810" height="1440" fill="#1f2937"/>
-            
-            {/* Beige Accent */}
-            <rect x="404" y="0" width="406" height="1440" fill="#a29a88"/>
-            
-            {/* Text SCALE */}
-            <text x="405" y="800" textAnchor="middle" fill="white" fontSize="120" fontFamily="Arial, sans-serif" fontWeight="bold">
-              SCALE
-            </text>
-            
-            {/* Button 1 - Website kostenlos analysieren */}
-            <a href="/kontakt">
-              <rect x="155" y="1080" width="500" height="80" rx="40" fill="#a29a88"/>
-              <text x="405" y="1130" textAnchor="middle" fill="#1f2937" fontSize="28" fontFamily="Arial, sans-serif" fontWeight="600">
-                Website kostenlos analysieren
-              </text>
-            </a>
-            
-            {/* Button 2 - Mehr erfahren */}
-            <a href="/ueber-uns">
-              <rect x="255" y="1180" width="300" height="60" rx="30" fill="#a29a88"/>
-              <text x="405" y="1220" textAnchor="middle" fill="#1f2937" fontSize="24" fontFamily="Arial, sans-serif" fontWeight="600">
-                Mehr erfahren
-              </text>
-            </a>
-          </svg>
+          <div style={{
+            position: "relative", 
+            width: "100%", 
+            height: "0", 
+            paddingTop: "177.7778%",
+            paddingBottom: "0", 
+            boxShadow: "0 2px 8px 0 rgba(63,69,81,0.16)", 
+            marginTop: "1.6em", 
+            marginBottom: "0.9em", 
+            overflow: "hidden",
+            borderRadius: "8px", 
+            willChange: "transform"
+          }}>
+            <iframe 
+              loading="lazy" 
+              style={{
+                position: "absolute", 
+                width: "100%", 
+                height: "100%", 
+                top: "0", 
+                left: "0", 
+                border: "none", 
+                padding: "0",
+                margin: "0"
+              }}
+              src="https://www.canva.com/design/DAGv0DoSPHs/g6yJkuzaDPdE-ny0o_QMfA/watch?embed" 
+              allowFullScreen={true}
+              allow="fullscreen"
+            />
+          </div>
         </div>
         
         {/* Overlay Buttons - Desktop Only */}
