@@ -141,17 +141,14 @@ export default function Home() {
         
         {/* Mobile SVG Background */}
         <div className="absolute inset-0 w-full h-full md:hidden">
-          <object 
-            data="/Spark&Scale (Telefon-Hintergrundbild).svg" 
-            type="image/svg+xml"
-            className="w-full h-full object-cover"
-          >
-            <img 
-              src="/Spark&Scale (Telefon-Hintergrundbild).svg" 
-              alt="Mobile Hero Background"
-              className="w-full h-full object-cover" 
+          <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+            <iframe
+              title="Spark&Scale Mobile Animation"
+              src="/Spark&Scale (Telefon-Hintergrundbild).svg"
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
+              loading="eager"
             />
-          </object>
+          </div>
         </div>
         
         {/* Overlay Buttons - Desktop Only */}
