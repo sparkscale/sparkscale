@@ -332,7 +332,7 @@ export default function KontaktPage() {
 
           {/* Newsletter Signup - mit Mehrwert-Versprechen */}
           <div className="bg-gray-800/50 rounded-xl p-6 mb-6 text-center border border-gray-700">
-            <h3 className="font-semibold text-[#a29a88] mb-2">🚀 Website-Tipps direkt in Ihr Postfach</h3>
+            <h3 className="font-semibold text-[#a29a88] mb-2">Website-Tipps direkt in Ihr Postfach</h3>
             <p className="text-sm text-gray-300 mb-4">Monatlich: SEO-Updates, Performance-Tricks & KI-News</p>
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input 

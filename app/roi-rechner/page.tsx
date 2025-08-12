@@ -48,7 +48,7 @@ export default function ROIRechnerPage() {
 
       {/* ROI Calculator - Clean Full Page */}
       <section className="pt-32 pb-24 bg-gray-50 min-h-screen">
-        <ScrollAnimation animation="slideUp" delay={0.2}>
+          <ScrollAnimation animation="slideUp" delay={0.2}>
           <div className="text-center mb-16 px-8">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black">
               ROI-Rechner
@@ -81,7 +81,7 @@ export default function ROIRechnerPage() {
         
         <ScrollAnimation animation="slideUp" delay={0.4}>
           <ROICalculator />
-        </ScrollAnimation>
+          </ScrollAnimation>
       </section>
 
       <Footer />

@@ -402,7 +402,7 @@ export default function PreisePage() {
               
               <div>
                 <a href="/roi-rechner" className="bg-black text-white px-8 py-4 text-sm font-semibold hover:bg-gray-800 transition-all duration-300 rounded-full shadow-lg inline-block">
-                  📊 Kostenlosen ROI-Rechner nutzen
+                  Kostenlosen ROI-Rechner nutzen
                 </a>
               </div>
             </div>
