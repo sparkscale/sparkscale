@@ -14,6 +14,7 @@ import ScrollAnimation from '@/components/ScrollAnimation';
 import CountUp from '@/components/CountUp';
 import DynamicCTA from '@/components/DynamicCTA';
 import MobileMenu from '@/components/MobileMenu';
+import MobileSVG from '@/components/MobileSVG';
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -139,16 +140,12 @@ export default function Home() {
           <source src="/Spark&Scale (Video).mp4" type="video/mp4" />
         </video>
         
-        {/* Mobile SVG Background */}
+        {/* Mobile SVG Background (inline for animations) */}
         <div className="absolute inset-0 w-full h-full md:hidden">
-          <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-            <iframe
-              title="Spark&Scale Mobile Animation"
-              src="/spark-and-scale-telefon.svg?v=3"
-              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
-              loading="eager"
-            />
-          </div>
+          {/* Inline injected SVG to preserve SMIL/CSS animations */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          {/* Client component will inject the SVG markup */}
+          <MobileSVG src="/spark-and-scale-telefon.svg?v=3" />
         </div>
         
         {/* Overlay Buttons - Desktop Only */}
