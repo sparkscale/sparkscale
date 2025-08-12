@@ -144,7 +144,7 @@ export default function Home() {
           <div style={{ position: 'relative', width: '100%', height: '100%' }}>
             <iframe
               title="Spark&Scale Mobile Animation"
-              src="/Spark&Scale (Telefon-Hintergrundbild).svg"
+              src="/Spark%26Scale%20(Telefon-Hintergrundbild).svg?v=2"
               style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
               loading="eager"
             />
