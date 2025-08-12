@@ -139,38 +139,19 @@ export default function Home() {
           <source src="/Spark&Scale (Video).mp4" type="video/mp4" />
         </video>
         
-        {/* Mobile Canva Design */}
+        {/* Mobile SVG Background */}
         <div className="absolute inset-0 w-full h-full md:hidden">
-          <div style={{
-            position: "relative", 
-            width: "100%", 
-            height: "0", 
-            paddingTop: "177.7778%",
-            paddingBottom: "0", 
-            boxShadow: "0 2px 8px 0 rgba(63,69,81,0.16)", 
-            marginTop: "1.6em", 
-            marginBottom: "0.9em", 
-            overflow: "hidden",
-            borderRadius: "8px", 
-            willChange: "transform"
-          }}>
-            <iframe 
-              loading="lazy" 
-              style={{
-                position: "absolute", 
-                width: "100%", 
-                height: "100%", 
-                top: "0", 
-                left: "0", 
-                border: "none", 
-                padding: "0",
-                margin: "0"
-              }}
-              src="https://www.canva.com/design/DAGv0DoSPHs/g6yJkuzaDPdE-ny0o_QMfA/watch?embed" 
-              allowFullScreen={true}
-              allow="fullscreen"
+          <object 
+            data="/Spark&Scale (Telefon-Hintergrundbild).svg" 
+            type="image/svg+xml"
+            className="w-full h-full object-cover"
+          >
+            <img 
+              src="/Spark&Scale (Telefon-Hintergrundbild).svg" 
+              alt="Mobile Hero Background"
+              className="w-full h-full object-cover" 
             />
-          </div>
+          </object>
         </div>
         
         {/* Overlay Buttons - Desktop Only */}
