@@ -2,7 +2,6 @@
 
 import ScrollAnimation from '@/components/ScrollAnimation';
 // Mobile-optimized: Magnet effects removed
-import ElegantShapes from '@/components/ElegantShapes';
 import CustomCursor from '@/components/CustomCursor';
 import CountUp from '@/components/CountUp';
 import Footer from '@/components/Footer';
@@ -43,8 +42,6 @@ export default function UeberUnsPage() {
           </div>
         </div>
       </nav>
-
-      <ElegantShapes />
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-8 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white relative overflow-hidden">

@@ -79,7 +79,7 @@ export default function KontaktPage() {
     },
   ];
 
-  const handleFormSubmit = (data: any) => {
+  const handleFormSubmit = (data: Record<string, unknown>) => {
     console.log('Lead Score:', data.leadScore);
     console.log('Form Data:', data);
     // Hier würde HubSpot API-Call stattfinden

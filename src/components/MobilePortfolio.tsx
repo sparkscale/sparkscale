@@ -6,56 +6,60 @@ import { motion } from 'framer-motion';
 const MobilePortfolio: React.FC = () => {
   const projects = [
     {
-      title: "Anwaltskanzlei München",
+      title: "Rechtsanwaltskanzlei Schmidt",
       category: "Local SEO",
+      subtitle: "Familienrecht, München",
       result: "+450% Anfragen",
       metrics: [
         { label: "Rankings", value: "Top 3" },
-        { label: "Traffic", value: "+280%" },
-        { label: "Leads", value: "+450%" }
+        { label: "Mandatsanfragen", value: "8 → 44" },
+        { label: "ROI", value: "280%" }
       ],
-      challenge: "Kanzlei war bei lokalen Suchanfragen unsichtbar.",
-      solution: "Local SEO + Mobile-First Design + Core Web Vitals",
+      challenge: "Die Kanzlei war bei lokalen Suchanfragen praktisch unsichtbar. Trotz 15 Jahren Erfahrung rankte sie auf Seite 2-3 für wichtige Keywords wie \"Fachanwalt Familienrecht München\".",
+      solution: "Local SEO Optimierung + Mobile-First Design + Core Web Vitals + Content-Strategie",
       icon: "⚖️"
     },
     {
-      title: "Zahnarztpraxis Berlin",
+      title: "Zahnarztpraxis Dr. Weber",
       category: "Performance",
-      result: "+340% Termine",
+      subtitle: "Implantologie, Hamburg",
+      result: "Seite 1",
       metrics: [
-        { label: "Speed", value: "0.8s" },
-        { label: "Termine", value: "+340%" },
-        { label: "Score", value: "98/100" }
+        { label: "Position", value: "Seite 4 → 1" },
+        { label: "Termine", value: "+280%" },
+        { label: "Follower", value: "0 → 2.400" }
       ],
-      challenge: "Website lud 4 Sekunden - Patienten sprangen ab.",
-      solution: "Performance-Optimierung + Terminbuchung + UX",
+      challenge: "Spezialisiert auf Implantologie, aber bei \"Zahnimplantate Hamburg\" auf Seite 4. Online-Terminbuchungen waren praktisch nicht vorhanden.",
+      solution: "SEO-Optimierung + Social Media Marketing + Online-Terminbuchung + Performance-Optimierung",
       icon: "🦷"
     },
     {
-      title: "Steuerberatung Hamburg",
-      category: "SEO Authority",
+      title: "Steuerberatung Müller & Partner",
+      category: "SEO Authority", 
+      subtitle: "Unternehmensberatung, Berlin",
       result: "+520% Mandanten",
       metrics: [
         { label: "Keywords", value: "35 Top 10" },
         { label: "Traffic", value: "+520%" },
         { label: "Mandanten", value: "+280%" }
       ],
-      challenge: "Konkurrenz dominierte alle wichtigen Keywords.",
-      solution: "Content-Strategie + Technical SEO + E-A-T",
+      challenge: "Konkurrenz dominierte alle wichtigen Keywords. Trotz Expertise war die Online-Sichtbarkeit minimal.",
+      solution: "Content-Strategie + Technical SEO + E-A-T Optimierung + Authority Building",
       icon: "📊"
     },
     {
-      title: "Immobilienmakler Köln",
-      category: "Local Dominance",
-      result: "+680% Leads",
+      title: "E-Commerce Fashion Store",
+      category: "Performance & Conversion",
+      subtitle: "Online-Shop, deutschlandweit",
+      result: "+340% Umsatz",
       metrics: [
-        { label: "Sichtbarkeit", value: "+890%" },
-        { label: "Anrufe", value: "+680%" },
-        { label: "Verkäufe", value: "+45%" }
+        { label: "Conversion", value: "+180%" },
+        { label: "Umsatz", value: "+340%" },
+        { label: "Speed", value: "1.2s" }
       ],
-      challenge: "Große Portale überdeckten lokale Präsenz.",
-      solution: "Local Citations + GMB + Bewertungsmanagement",
-      icon: "🏠"
+      challenge: "Hohe Absprungrate durch langsame Ladezeiten und schlechte Mobile-Experience. Conversion-Rate unter 1%.",
+      solution: "Performance-Optimierung + UX-Redesign + Mobile-First + Conversion-Optimierung",
+      icon: "🛍️"
     }
   ];
 
@@ -86,6 +90,7 @@ const MobilePortfolio: React.FC = () => {
                   <h3 className="font-semibold text-black text-sm leading-tight">
                     {project.title}
                   </h3>
+                  <p className="text-xs text-gray-500 mt-1">{project.subtitle}</p>
                 </div>
               </div>
               <div className="text-right">
