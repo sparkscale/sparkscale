@@ -18,34 +18,26 @@ const MobileMenu: React.FC = () => {
 
   return (
     <>
-      {/* Hamburger Button - Verbessert */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`md:hidden p-3 rounded-full transition-all duration-300 z-50 relative ${
-          isOpen 
-            ? 'bg-black text-white shadow-lg' 
-            : 'bg-gray-100 text-black hover:bg-gray-200 shadow-sm'
-        }`}
-        aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
-      >
-        <div className="w-6 h-6 flex flex-col justify-center items-center">
-          <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-            isOpen ? 'rotate-45 translate-y-0.5' : '-translate-y-1.5'
-          }`} />
-          <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-            isOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
-          }`} />
-          <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-            isOpen ? '-rotate-45 -translate-y-0.5' : 'translate-y-1.5'
-          }`} />
-        </div>
-      </button>
+      {/* Hamburger Button - Fixed Position - Only when closed */}
+      {!isOpen && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className="md:hidden fixed top-4 left-4 p-3 rounded-full transition-all duration-300 z-[60] bg-gray-900/80 text-white hover:bg-gray-900 shadow-sm backdrop-blur-sm"
+          aria-label="Menü öffnen"
+        >
+          <div className="w-6 h-6 flex flex-col justify-center items-center">
+            <span className="block w-5 h-0.5 bg-current -translate-y-1.5" />
+            <span className="block w-5 h-0.5 bg-current" />
+            <span className="block w-5 h-0.5 bg-current translate-y-1.5" />
+          </div>
+        </button>
+      )}
 
-      {/* Mobile Menu Overlay - Komplett überarbeitet */}
+      {/* Mobile Menu Overlay - Vertical Sidebar */}
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Backdrop mit Blur */}
+            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -54,50 +46,50 @@ const MobileMenu: React.FC = () => {
               className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden"
             />
             
-            {/* Menu Panel - Cleaner & Übersichtlicher */}
+            {/* Vertical Menu Panel - Left Side */}
             <motion.div
-              initial={{ y: '-100%' }}
-              animate={{ y: 0 }}
-              exit={{ y: '-100%' }}
-              transition={{ duration: 0.2, ease: 'easeOut' }}
-              className="fixed top-0 left-0 right-0 bg-white shadow-xl z-50 md:hidden"
+              initial={{ x: '-100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '-100%' }}
+              transition={{ duration: 0.3, ease: 'easeOut' }}
+              className="fixed top-0 left-0 h-full w-80 bg-white shadow-2xl z-50 md:hidden flex flex-col"
             >
-              {/* Leerer Header - nur Close Button */}
-              <div className="flex justify-end items-center p-4 border-b border-gray-200">
-                <button
-                  onClick={() => setIsOpen(false)}
-                  className="p-2 text-gray-500 hover:text-black"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
+              {/* Header mit Logo/Branding */}
+              <div className="p-6 border-b border-gray-200">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-xl font-bold text-gray-900">Spark&Scale</h2>
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="p-2 text-gray-500 hover:text-black rounded-full hover:bg-gray-100 transition-colors"
+                  >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
               </div>
 
-              {/* Clean Menu Items */}
-              <div className="py-2">
+              {/* Navigation Items - Vertical */}
+              <div className="flex-1 py-4 overflow-y-auto">
                 {menuItems.map((item, index) => (
                   <motion.a
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="block px-6 py-4 text-lg font-medium text-gray-800 hover:bg-gray-50 hover:text-black transition-colors border-b border-gray-100 last:border-b-0"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex items-center px-6 py-4 text-lg font-medium text-gray-800 hover:bg-yellow-50 hover:text-yellow-600 hover:border-r-4 hover:border-yellow-600 transition-all duration-200 group"
                   >
-                    {item.label}
+                    <span className="group-hover:translate-x-2 transition-transform duration-200">
+                      {item.label}
+                    </span>
                   </motion.a>
                 ))}
               </div>
                 
-              {/* Simple CTA */}
-              <div className="p-4 border-t border-gray-200">
-                <a
-                  href="/kontakt"
-                  onClick={() => setIsOpen(false)}
-                  className="block w-full bg-black text-white text-center py-3 px-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
-                >
-                  Kostenlose Analyse
-                </a>
-              </div>
+              
+              
             </motion.div>
           </>
         )}

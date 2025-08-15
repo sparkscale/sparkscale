@@ -1,13 +1,84 @@
 "use client";
 
+import { useState, useEffect } from 'react';
 import ScrollAnimation from '@/components/ScrollAnimation';
 // Mobile-optimized: Magnet effects removed
-import ElegantShapes from '@/components/ElegantShapes';
+
 import CustomCursor from '@/components/CustomCursor';
 import MultiStepContactForm from '@/components/MultiStepContactForm';
 import MobileMenu from '@/components/MobileMenu';
+import { FloatingNav } from '@/components/FloatingNav';
+import { 
+  IconHome, 
+  IconBriefcase, 
+  IconPhoto, 
+  IconCurrencyDollar, 
+  IconCalculator, 
+  IconNews, 
+  IconMail 
+} from '@tabler/icons-react';
 
 export default function KontaktPage() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY < 50) {
+        setIsScrolled(false);
+      } else if (currentScrollY > lastScrollY) {
+        setIsScrolled(true); // Scrolling down
+      } else {
+        setIsScrolled(false); // Scrolling up
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
+  const navItems = [
+    {
+      name: "Home",
+      link: "/",
+      icon: <IconHome className="h-4 w-4" />,
+    },
+    {
+      name: "Leistungen",
+      link: "/leistungen",
+      icon: <IconBriefcase className="h-4 w-4" />,
+    },
+    {
+      name: "Portfolio", 
+      link: "/portfolio",
+      icon: <IconPhoto className="h-4 w-4" />,
+    },
+    {
+      name: "Preise",
+      link: "/preise", 
+      icon: <IconCurrencyDollar className="h-4 w-4" />,
+    },
+    {
+      name: "ROI-Rechner",
+      link: "/roi-rechner",
+      icon: <IconCalculator className="h-4 w-4" />,
+    },
+    {
+      name: "Blog",
+      link: "/blog",
+      icon: <IconNews className="h-4 w-4" />,
+    },
+    {
+      name: "Kontakt",
+      link: "/kontakt",
+      icon: <IconMail className="h-4 w-4" />,
+    },
+  ];
+
   const handleFormSubmit = (data: any) => {
     console.log('Lead Score:', data.leadScore);
     console.log('Form Data:', data);
@@ -18,54 +89,26 @@ export default function KontaktPage() {
     <div className="min-h-screen bg-gray-50">
       <CustomCursor />
       
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
-        <div className="container mx-auto px-8 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center">
-              <a href="/">
-                <img 
-                  src="/S&S (1)-Photoroom.png" 
-                  alt="Spark&Scale Logo" 
-                  className="logo-global"
-                />
-              </a>
-            </div>
-            <div className="hidden md:flex space-x-8 text-sm">
-              <a href="/" className="text-gray-600 hover:text-black transition-colors">Home</a>
-              <a href="/leistungen" className="text-gray-600 hover:text-black transition-colors">Leistungen</a>
-              <a href="/portfolio" className="text-gray-600 hover:text-black transition-colors">Portfolio</a>
-              <a href="/preise" className="text-gray-600 hover:text-black transition-colors">Preise</a>
-              <a href="/roi-rechner" className="text-gray-600 hover:text-black transition-colors">ROI-Rechner</a>
-              <a href="/blog" className="text-gray-600 hover:text-black transition-colors">Blog</a>
-              <a href="/kontakt" className="text-black font-semibold">Kontakt</a>
-            </div>
-            <div className="hidden md:block">
-              <div>
-                <a href="/kontakt" className="bg-black text-[#a29a88] px-6 py-2 text-sm font-semibold rounded-full hover:bg-gray-800 hover:text-white transition-all duration-300 shadow-md group" style={{display: 'inline-block'}}>
-                  <span className="text-[#a29a88] group-hover:text-white transition-colors duration-300">
-                    Kostenlose Analyse
-                  </span>
-                </a>
-              </div>
-            </div>
-            
-            {/* Mobile Menu */}
-            <MobileMenu />
-          </div>
-        </div>
-      </nav>
+      {/* Mobile Menu */}
+      <MobileMenu />
+      
+      {/* Floating Navigation - Desktop */}
+      <div className="hidden md:block">
+        <FloatingNav navItems={navItems} />
+      </div>
 
-      <ElegantShapes />
+
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-8 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white relative overflow-hidden">
+
+        
         <div className="container mx-auto max-w-4xl text-center relative z-10">
           <ScrollAnimation animation="slideUp" delay={0.2}>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Bereit für mehr <span className="text-gray-300">Performance</span>?
+            <h1 className="text-4xl md:text-6xl text-[#a29a88] font-bold mb-6 leading-tight">
+              Bereit für mehr <span className="text-[#a29a88]">Performance</span>?
             </h1>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl text-[#a29a88] mb-8 leading-relaxed">
               Kostenlose Website-Analyse in 60 Sekunden. Erfahren Sie, wie Sie Ihre Konkurrenz überholen.
             </p>
           </ScrollAnimation>

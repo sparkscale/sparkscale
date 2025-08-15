@@ -1,67 +1,108 @@
 "use client";
 
+import { useState, useEffect } from 'react';
 import ScrollAnimation from '@/components/ScrollAnimation';
 // Mobile-optimized: Magnet effects removed
-import ElegantShapes from '@/components/ElegantShapes';
+
 import CustomCursor from '@/components/CustomCursor';
 import MobileMenu from '@/components/MobileMenu';
 import Footer from '@/components/Footer';
+import { FloatingNav } from '@/components/FloatingNav';
+import { 
+  IconHome, 
+  IconBriefcase, 
+  IconPhoto, 
+  IconCurrencyDollar, 
+  IconCalculator, 
+  IconNews, 
+  IconMail 
+} from '@tabler/icons-react';
 
 import ShinyText from '@/components/ShinyText';
 
 export default function PreisePage() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY < 50) {
+        setIsScrolled(false);
+      } else if (currentScrollY > lastScrollY) {
+        setIsScrolled(true); // Scrolling down
+      } else {
+        setIsScrolled(false); // Scrolling up
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
+  const navItems = [
+    {
+      name: "Home",
+      link: "/",
+      icon: <IconHome className="h-4 w-4" />,
+    },
+    {
+      name: "Leistungen",
+      link: "/leistungen",
+      icon: <IconBriefcase className="h-4 w-4" />,
+    },
+    {
+      name: "Portfolio", 
+      link: "/portfolio",
+      icon: <IconPhoto className="h-4 w-4" />,
+    },
+    {
+      name: "Preise",
+      link: "/preise", 
+      icon: <IconCurrencyDollar className="h-4 w-4" />,
+    },
+    {
+      name: "ROI-Rechner",
+      link: "/roi-rechner",
+      icon: <IconCalculator className="h-4 w-4" />,
+    },
+    {
+      name: "Blog",
+      link: "/blog",
+      icon: <IconNews className="h-4 w-4" />,
+    },
+    {
+      name: "Kontakt",
+      link: "/kontakt",
+      icon: <IconMail className="h-4 w-4" />,
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
       <CustomCursor />
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
-        <div className="container mx-auto px-8 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center">
-              <a href="/">
-                <img 
-                  src="/S&S (1)-Photoroom.png" 
-                  alt="Spark&Scale Logo" 
-                  className="logo-global"
-                />
-              </a>
-            </div>
-                        <div className="hidden md:flex space-x-8 text-sm">
-              <a href="/" className="text-gray-600 hover:text-black transition-colors">Home</a>
-              <a href="/leistungen" className="text-gray-600 hover:text-black transition-colors">Leistungen</a>
-              <a href="/portfolio" className="text-gray-600 hover:text-black transition-colors">Portfolio</a>
-              <a href="/preise" className="text-black font-semibold">Preise</a>
-              <a href="/roi-rechner" className="text-gray-600 hover:text-black transition-colors">ROI-Rechner</a>
-              <a href="/blog" className="text-gray-600 hover:text-black transition-colors">Blog</a>
-              <a href="/kontakt" className="text-gray-600 hover:text-black transition-colors">Kontakt</a>
-            </div>
-            <div className="hidden md:block">
-              <div>
-                <a href="/kontakt" className="bg-black text-[#a29a88] px-6 py-2 text-sm font-semibold rounded-full hover:bg-gray-800 hover:text-white transition-all duration-300 shadow-md group" style={{display: 'inline-block'}}>
-                  <span className="text-[#a29a88] group-hover:text-white transition-colors duration-300">
-                    Kostenlose Analyse
-                  </span>
-                </a>
-              </div>
-            </div>
-            
-            {/* Mobile Menu */}
-            <MobileMenu />
-          </div>
-        </div>
-      </nav>
+      
+      {/* Mobile Menu */}
+      <MobileMenu />
+      
+      {/* Floating Navigation - Desktop */}
+      <div className="hidden md:block">
+        <FloatingNav navItems={navItems} />
+      </div>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-8 bg-white relative overflow-hidden">
-        <ElegantShapes />
+      <section className="pt-24 pb-16 px-8 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white relative overflow-hidden">
         
         <div className="container mx-auto max-w-6xl relative z-10">
           <ScrollAnimation animation="slideUp" delay={0.2}>
             <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-black">
-                Unsere <span className="text-black">Pakete</span>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#a29a88]">
+                Unsere <span className="text-[#a29a88]">Pakete</span>
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-[#a29a88] max-w-3xl mx-auto">
                 Transparent, fair und ergebnisorientiert. Wählen Sie das Paket, das am besten zu 
                 Ihren Zielen und Ihrem Budget passt. Alle Pakete mit Performance-Garantie.
               </p>
@@ -365,6 +406,67 @@ export default function PreisePage() {
                   <button className="w-full border-2 border-black text-black px-8 py-4 rounded-full font-semibold hover:bg-black hover:text-white transition-all duration-300">
                     Strategiegespräch
                   </button>
+                </div>
+              </div>
+            </div>
+          </ScrollAnimation>
+
+          {/* Marketing & Social Media Paket */}
+          <ScrollAnimation animation="slideUp" delay={0.5}>
+            <div className="mb-16">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center gap-2 bg-[#a29a88] text-black px-6 py-3 rounded-full text-sm font-semibold mb-6">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-10 0a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2M9 12l2 2 4-4" />
+                  </svg>
+                  Full-Stack Digital Partner
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
+                  Marketing & Social Media <span className="text-gray-600">Komplettpaket</span>
+                </h2>
+              </div>
+
+              <div className="bg-gradient-to-br from-black to-gray-800 text-white p-8 md:p-12 rounded-2xl shadow-2xl max-w-4xl mx-auto">
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-white mb-4">Ab 1.200 €/Monat</h3>
+                  <p className="text-gray-300 text-lg mb-6">(nur mit Website-Paket buchbar)</p>
+                  
+                  <div className="bg-gray-900 p-6 rounded-xl mb-8">
+                    <h4 className="text-lg font-bold text-[#a29a88] mb-4">Enthalten:</h4>
+                    <div className="grid md:grid-cols-2 gap-6 text-left">
+                      <div>
+                        <p className="text-white font-medium mb-2">✅ Vollständige Betreuung: Instagram, Facebook & TikTok</p>
+                        <p className="text-white font-medium mb-2">✅ 20+ Posts & Stories pro Monat</p>
+                        <p className="text-white font-medium mb-2">✅ Gezielte Werbekampagnen mit garantiertem ROI</p>
+                      </div>
+                      <div>
+                        <p className="text-white font-medium mb-2">✅ Eigene Foto- & Video-Shootings (2× jährlich)</p>
+                        <p className="text-white font-medium mb-2">✅ Community Management – wir antworten für Sie</p>
+                        <p className="text-white font-medium mb-2">✅ Monatliche Strategie-Calls & Reports</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-center mb-8">
+                  <p className="text-lg text-[#a29a88] font-semibold mb-4">
+                    🎯 Perfekt für: Selbstständige mit 50.000 €+ Jahresumsatz, die professionell auftreten wollen
+                  </p>
+                  <p className="text-xl text-white font-bold">
+                    💡 Garantie: Keine Leads in 90 Tagen? Geld zurück.
+                  </p>
+                </div>
+
+                {/* CTA */}
+                <div className="text-center">
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/kontakt" className="bg-[#a29a88] text-black px-8 py-4 rounded-full font-semibold hover:bg-yellow-500 transition-all duration-300">
+                      Marketing-Beratung buchen
+                    </a>
+                    <a href="/portfolio" className="border-2 border-[#a29a88] text-[#a29a88] px-8 py-4 rounded-full font-semibold hover:bg-[#a29a88] hover:text-black transition-all duration-300">
+                      Marketing-Erfolge ansehen
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

@@ -2,8 +2,6 @@
 
 import ScrollAnimation from '@/components/ScrollAnimation';
 import CustomCursor from '@/components/CustomCursor';
-// Mobile-safe Magnet replacement - no import needed
-import ElegantShapes from '@/components/ElegantShapes';
 import Footer from '@/components/Footer';
 
 export default function BlogPage() {
@@ -75,7 +73,6 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <CustomCursor />
-      <ElegantShapes />
       
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">

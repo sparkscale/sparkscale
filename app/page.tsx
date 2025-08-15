@@ -15,6 +15,16 @@ import CountUp from '@/components/CountUp';
 import DynamicCTA from '@/components/DynamicCTA';
 import MobileMenu from '@/components/MobileMenu';
 import MobileSVG from '@/components/MobileSVG';
+import { FloatingNav } from '@/components/FloatingNav';
+import { 
+  IconHome, 
+  IconBriefcase, 
+  IconPhoto, 
+  IconCurrencyDollar, 
+  IconCalculator, 
+  IconNews, 
+  IconMail 
+} from '@tabler/icons-react';
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,59 +49,88 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  const dockItems = [
+    {
+      title: "Home",
+      icon: <IconHome className="h-full w-full" />,
+      href: "/",
+    },
+    {
+      title: "Leistungen",
+      icon: <IconBriefcase className="h-full w-full" />,
+      href: "/leistungen",
+    },
+    {
+      title: "Portfolio",
+      icon: <IconPhoto className="h-full w-full" />,
+      href: "/portfolio",
+    },
+    {
+      title: "Preise",
+      icon: <IconCurrencyDollar className="h-full w-full" />,
+      href: "/preise",
+    },
+    {
+      title: "ROI-Rechner",
+      icon: <IconCalculator className="h-full w-full" />,
+      href: "/roi-rechner",
+    },
+    {
+      title: "Blog",
+      icon: <IconNews className="h-full w-full" />,
+      href: "/blog",
+    },
+    {
+      title: "Kontakt",
+      icon: <IconMail className="h-full w-full" />,
+      href: "/kontakt",
+    },
+  ];
+
+  const navItems = [
+    {
+      name: "Leistungen",
+      link: "/leistungen",
+      icon: <IconBriefcase className="h-4 w-4" />,
+    },
+    {
+      name: "Portfolio", 
+      link: "/portfolio",
+      icon: <IconPhoto className="h-4 w-4" />,
+    },
+    {
+      name: "Preise",
+      link: "/preise", 
+      icon: <IconCurrencyDollar className="h-4 w-4" />,
+    },
+    {
+      name: "ROI-Rechner",
+      link: "/roi-rechner",
+      icon: <IconCalculator className="h-4 w-4" />,
+    },
+    {
+      name: "Blog",
+      link: "/blog",
+      icon: <IconNews className="h-4 w-4" />,
+    },
+    {
+      name: "Kontakt",
+      link: "/kontakt",
+      icon: <IconMail className="h-4 w-4" />,
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
       <CustomCursor />
-      {/* Navigation - Phase 4.3 */}
-      <nav className={`fixed top-0 w-full bg-transparent z-50 transition-transform duration-300 ${isScrolled ? '-translate-y-full' : 'translate-y-0'}`}>
-        <div className="w-full px-4 md:px-8 py-3 md:py-4">
-          <div className="flex justify-center items-center">
-            {/* Mobile Menu */}
-            <MobileMenu />
-
-            <div className="hidden md:flex space-x-8 text-sm">
-              <a
-                href="/leistungen"
-                className="text-gray-600 hover:text-black transition-colors"
-              >
-                Leistungen
-              </a>
-              <a
-                href="/portfolio"
-                className="text-gray-600 hover:text-black transition-colors"
-              >
-                Portfolio
-              </a>
-              <a
-                href="/preise"
-                className="text-gray-600 hover:text-black transition-colors"
-              >
-                Preise
-              </a>
-              <a
-                href="/roi-rechner"
-                className="text-gray-600 hover:text-black transition-colors"
-              >
-                ROI-Rechner
-              </a>
-              <a
-                href="/blog"
-                className="text-gray-600 hover:text-black transition-colors"
-              >
-                Blog
-              </a>
-              <a
-                href="/kontakt"
-                className="text-gray-600 hover:text-black transition-colors"
-              >
-                Kontakt
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-
       
+      {/* Mobile Menu */}
+      <MobileMenu />
+      
+      {/* Floating Navigation - Desktop */}
+      <div className="hidden md:block">
+        <FloatingNav navItems={navItems} />
+      </div>
 
       {/* Hero Section - Video with Overlay Buttons */}
       <section className="min-h-screen relative overflow-hidden">
@@ -145,6 +184,194 @@ export default function Home() {
             Mehr erfahren
                 </a>
         </div>
+      </section>
+
+      {/* Landing Page - Full-Stack Digital Partner */}
+      <section className="py-16 md:py-24 px-8 bg-white">
+          <ScrollAnimation animation="slideUp" delay={0.2}>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black leading-tight">
+                Schluss mit Agentur-Hopping – <span className="text-[#a29a88]">wir kümmern uns um alles</span>
+              </h2>
+              
+              <div className="max-w-4xl mx-auto mb-12">
+                <div className="bg-gray-50 p-8 rounded-2xl mb-8">
+                  <h3 className="text-2xl font-semibold text-black mb-6">Sie kennen das:</h3>
+                  <div className="grid md:grid-cols-3 gap-6 text-left">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#1f2937'}}>
+                        <span className="text-white font-bold text-sm">A</span>
+                      </div>
+                      <span className="text-gray-700">Website bei Agentur A</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#1f2937'}}>
+                        <span className="text-white font-bold text-sm">B</span>
+                      </div>
+                      <span className="text-gray-700">Social Media bei Freelancer B</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#1f2937'}}>
+                        <span className="text-white font-bold text-sm">C</span>
+                      </div>
+                      <span className="text-gray-700">Ads bei Dienstleister C</span>
+                    </div>
+                  </div>
+                  <p className="text-center text-gray-600 mt-6 font-semibold">
+                    Und am Ende passt nichts zusammen. <span style={{color: '#1f2937'}}>Ergebnis: hohe Kosten, schwache Resultate.</span>
+                  </p>
+                </div>
+
+                <div className="bg-gradient-to-br from-black to-gray-800 text-white p-8 rounded-2xl">
+                  <h3 className="text-2xl font-bold text-[#a29a88] mb-4 text-center">
+                    Unser Ansatz: Full-Stack Digital Partner
+                  </h3>
+                  <p className="text-xl text-center mb-8">
+                    Eine Strategie. Ein Team. Messbare Ergebnisse.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </ScrollAnimation>
+
+          <ScrollAnimation animation="staggerUp" delay={0.3} stagger={0.15}>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+              
+              {/* Performance-Website & SEO */}
+              <div className="text-center group">
+                <div className="w-20 h-20 bg-[#a29a88] rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-10 h-10 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-black mb-3">Performance-Website & SEO</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Gefunden werden und Kunden überzeugen
+                </p>
+              </div>
+
+              {/* Social Media auf Autopilot */}
+              <div className="text-center group">
+                <div className="w-20 h-20 bg-[#a29a88] rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-10 h-10 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-10 0a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2M9 12l2 2 4-4" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-black mb-3">Social Media auf Autopilot</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Instagram, Facebook & TikTok, strategisch & konsistent
+                </p>
+              </div>
+
+              {/* Ads, die sich rechnen */}
+              <div className="text-center group">
+                <div className="w-20 h-20 bg-[#a29a88] rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-10 h-10 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-black mb-3">Ads, die sich rechnen</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Gezielte Kampagnen mit garantiertem ROI
+                </p>
+              </div>
+
+              {/* Content aus einer Hand */}
+              <div className="text-center group">
+                <div className="w-20 h-20 bg-[#a29a88] rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-10 h-10 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-black mb-3">📸 Content aus einer Hand</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Fotos & Videos, abgestimmt auf Ihre Marke
+                </p>
+              </div>
+            </div>
+          </ScrollAnimation>
+
+          <ScrollAnimation animation="slideUp" delay={0.5}>
+            <div className="bg-gray-50 p-8 rounded-2xl max-w-4xl mx-auto mb-12">
+              <h3 className="text-2xl font-bold text-black mb-6 text-center">Das Ergebnis für Sie:</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="flex items-center gap-3">
+                  <svg className="w-6 h-6 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="text-gray-700 font-medium">Ein Ansprechpartner statt fünf</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <svg className="w-6 h-6 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="text-gray-700 font-medium">Mehr Zeit fürs Kerngeschäft</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <svg className="w-6 h-6 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="text-gray-700 font-medium">Kampagnen, die perfekt zusammenspielen</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <svg className="w-6 h-6 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="text-gray-700 font-medium">Jeder Euro Werbebudget arbeitet für Sie</span>
+                </div>
+              </div>
+            </div>
+          </ScrollAnimation>
+
+          <ScrollAnimation animation="scaleIn" delay={0.6}>
+            <div className="text-center max-w-4xl mx-auto">
+              <h3 className="text-3xl font-bold text-black mb-6">Jetzt starten – kostenlos & unverbindlich</h3>
+              <p className="text-xl text-gray-700 mb-8">Fordern Sie Ihre individuelle Potenzial-Analyse an:</p>
+              
+              <div className="grid md:grid-cols-3 gap-6 mb-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-[#a29a88] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h4 className="font-semibold mb-2 text-black">Website-Check</h4>
+                  <p className="text-gray-600 text-sm">Wo verlieren Sie Kunden?</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-[#a29a88] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                  </div>
+                  <h4 className="font-semibold mb-2 text-black">Konkurrenz-Analyse</h4>
+                  <p className="text-gray-600 text-sm">Was machen andere besser?</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-[#a29a88] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  </div>
+                  <h4 className="font-semibold mb-2 text-black">Strategie-Roadmap</h4>
+                  <p className="text-gray-600 text-sm">Ihr Weg zu 3× mehr Anfragen</p>
+                </div>
+              </div>
+
+
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+                <a href="/kontakt" className="bg-[#a29a88] text-black px-10 py-4 text-lg font-semibold hover:bg-[#a29a88] transition-all duration-300 rounded-full shadow-lg">
+                  Kostenlose Analyse sichern
+                </a>
+              </div>
+
+              <p className="text-gray-300 text-sm">
+                Keine Verpflichtung. Keine versteckten Kosten. Nur klare Empfehlungen für mehr Kunden und Umsatz.
+              </p>
+            </div>
+          </ScrollAnimation>
       </section>
 
       {/* 3 Hauptbenefits - Conversion Focus mit schwarzem Hintergrund */}

@@ -101,7 +101,7 @@ export default function ROICalculator() {
 
               {/* Lead Generation CTA */}
               <div className="mt-8 pt-6 border-t border-gray-200">
-                <div padding={30} disabled={false} magnetStrength={6}>
+                <div >
                   <a 
                     href="/kontakt"
                     className="w-full bg-[#a29a88] text-black px-6 py-4 text-lg font-bold hover:bg-[#b8a896] transition-all duration-300 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2"
@@ -180,7 +180,7 @@ export default function ROICalculator() {
           <p className="text-gray-600 mb-6 text-lg max-w-2xl mx-auto">
             90% unserer Kunden erreichen Seite 1. Starten Sie jetzt Ihre kostenlose Website-Analyse.
           </p>
-          <div padding={40} disabled={false} magnetStrength={8}>
+          <div >
             <a 
               href="/kontakt"
               className="bg-[#a29a88] text-black px-10 py-4 text-lg font-bold hover:bg-[#b8a896] transition-all duration-300 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 inline-block"

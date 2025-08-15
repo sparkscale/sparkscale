@@ -1,66 +1,107 @@
 "use client";
 
+import { useState, useEffect } from 'react';
 import ScrollAnimation from '@/components/ScrollAnimation';
 import MobilePortfolio from '@/components/MobilePortfolio';
 // Mobile-optimized: Magnet effects removed
-import ElegantShapes from '@/components/ElegantShapes';
+
 import CustomCursor from '@/components/CustomCursor';
 import MobileMenu from '@/components/MobileMenu';
 import Footer from '@/components/Footer';
+import { FloatingNav } from '@/components/FloatingNav';
+import { 
+  IconHome, 
+  IconBriefcase, 
+  IconPhoto, 
+  IconCurrencyDollar, 
+  IconCalculator, 
+  IconNews, 
+  IconMail 
+} from '@tabler/icons-react';
 
 export default function PortfolioPage() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY < 50) {
+        setIsScrolled(false);
+      } else if (currentScrollY > lastScrollY) {
+        setIsScrolled(true); // Scrolling down
+      } else {
+        setIsScrolled(false); // Scrolling up
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
+  const navItems = [
+    {
+      name: "Home",
+      link: "/",
+      icon: <IconHome className="h-4 w-4" />,
+    },
+    {
+      name: "Leistungen",
+      link: "/leistungen",
+      icon: <IconBriefcase className="h-4 w-4" />,
+    },
+    {
+      name: "Portfolio", 
+      link: "/portfolio",
+      icon: <IconPhoto className="h-4 w-4" />,
+    },
+    {
+      name: "Preise",
+      link: "/preise", 
+      icon: <IconCurrencyDollar className="h-4 w-4" />,
+    },
+    {
+      name: "ROI-Rechner",
+      link: "/roi-rechner",
+      icon: <IconCalculator className="h-4 w-4" />,
+    },
+    {
+      name: "Blog",
+      link: "/blog",
+      icon: <IconNews className="h-4 w-4" />,
+    },
+    {
+      name: "Kontakt",
+      link: "/kontakt",
+      icon: <IconMail className="h-4 w-4" />,
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
       <CustomCursor />
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
-        <div className="container mx-auto px-8 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center">
-              <a href="/">
-                              <img 
-                src="/S&S (1)-Photoroom.png" 
-                alt="Spark&Scale Logo" 
-                className="logo-global"
-              />
-              </a>
-            </div>
-            <div className="hidden md:flex space-x-8 text-sm">
-              <a href="/" className="text-gray-600 hover:text-black transition-colors">Home</a>
-              <a href="/leistungen" className="text-gray-600 hover:text-black transition-colors">Leistungen</a>
-              <a href="/portfolio" className="text-black font-semibold">Portfolio</a>
-              <a href="/preise" className="text-gray-600 hover:text-black transition-colors">Preise</a>
-              <a href="/roi-rechner" className="text-gray-600 hover:text-black transition-colors">ROI-Rechner</a>
-              <a href="/blog" className="text-gray-600 hover:text-black transition-colors">Blog</a>
-              <a href="/kontakt" className="text-gray-600 hover:text-black transition-colors">Kontakt</a>
-            </div>
-            <div className="hidden md:block">
-              <div>
-                <a href="/kontakt" className="bg-black text-[#a29a88] px-6 py-2 text-sm font-semibold rounded-full hover:bg-gray-800 hover:text-white transition-all duration-300 shadow-md group" style={{display: 'inline-block'}}>
-                  <span className="text-[#a29a88] group-hover:text-white transition-colors duration-300">
-                    Kostenlose Analyse
-                  </span>
-                </a>
-              </div>
-            </div>
-            
-            {/* Mobile Menu */}
-            <MobileMenu />
-          </div>
-        </div>
-      </nav>
+      
+      {/* Mobile Menu */}
+      <MobileMenu />
+      
+      {/* Floating Navigation - Desktop */}
+      <div className="hidden md:block">
+        <FloatingNav navItems={navItems} />
+      </div>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-8 bg-white relative overflow-hidden">
-        <ElegantShapes />
+      <section className="pt-24 pb-16 px-8 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white relative overflow-hidden">
         
         <div className="container mx-auto max-w-6xl relative z-10">
           <ScrollAnimation animation="slideUp" delay={0.2}>
             <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-black">
-                Ausgewählte <span className="text-black">Projekte</span>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#a29a88]">
+                Ausgewählte <span className="text-[#a29a88]">Projekte</span>
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-[#a29a88] max-w-3xl mx-auto">
                 Echte Ergebnisse unserer Kunden. Von lokalen Dienstleistern bis hin zu 
                 skalierenden E-Commerce Shops – diese Erfolgsgeschichten sprechen für sich.
               </p>
@@ -416,6 +457,117 @@ export default function PortfolioPage() {
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </ScrollAnimation>
+
+          {/* Social Media & Performance Marketing in Aktion */}
+          <ScrollAnimation animation="slideUp" delay={0.4}>
+            <div className="mb-20">
+              <div className="text-center mb-16">
+                <div className="inline-flex items-center gap-2 bg-[#a29a88] text-black px-6 py-3 rounded-full text-sm font-semibold mb-6">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                  Marketing & Social Media
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
+                  Echte Ergebnisse <span className="text-gray-600">statt leere Likes</span>
+                </h2>
+                <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                  Wir zeigen nur Zahlen, die wirklich zählen: mehr Kunden, mehr Umsatz.
+                </p>
+              </div>
+
+              <div className="grid lg:grid-cols-2 gap-12">
+                
+                {/* Zahnarztpraxis Case */}
+                <div className="bg-gray-50 p-8 rounded-xl hover:bg-gray-100 transition-colors duration-300 cursor-pointer group border border-gray-100 hover:border-gray-300">
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-center gap-4">
+                      <div className="w-16 h-16 bg-[#a29a88] rounded-lg flex items-center justify-center">
+                        <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-black group-hover:text-gray-700 transition-colors">📈 Zahnarztpraxis Dr. Weber, Hamburg</h3>
+                        <p className="text-gray-500">Von 0 auf 2.400 Follower in 4 Monaten</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-3xl font-bold text-black">+280%</div>
+                      <div className="text-sm text-gray-500">Online-Terminbuchungen</div>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white p-4 rounded-lg border border-gray-100">
+                    <div className="text-sm text-gray-500 mb-2">ROI: Investition nach 3 Monaten zurück</div>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                      <div>
+                        <div className="text-lg font-bold text-black">2.400</div>
+                        <div className="text-xs text-gray-500">Instagram-Follower</div>
+                      </div>
+                      <div>
+                        <div className="text-lg font-bold text-black">+280%</div>
+                        <div className="text-xs text-gray-500">Online-Termine</div>
+                      </div>
+                      <div>
+                        <div className="text-lg font-bold text-black">3 Monate</div>
+                        <div className="text-xs text-gray-500">ROI-Zeit</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* E-Commerce Fashion Case */}
+                <div className="bg-gray-50 p-8 rounded-xl hover:bg-gray-100 transition-colors duration-300 cursor-pointer group border border-gray-100 hover:border-gray-300">
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-center gap-4">
+                      <div className="w-16 h-16 bg-[#a29a88] rounded-lg flex items-center justify-center">
+                        <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-black group-hover:text-gray-700 transition-colors">🛍️ Fashion E-Commerce „GreenStyle"</h3>
+                        <p className="text-gray-500">Facebook Ads ROI: 5,8× (aus 1 € wurden 5,80 €)</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-3xl font-bold text-black">+340%</div>
+                      <div className="text-sm text-gray-500">Online-Umsatz</div>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white p-4 rounded-lg border border-gray-100">
+                    <div className="text-sm text-gray-500 mb-2">Bonus: Content-Shooting inklusive – keine Extra-Kosten</div>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                      <div>
+                        <div className="text-lg font-bold text-black">5,8×</div>
+                        <div className="text-xs text-gray-500">Facebook Ads ROI</div>
+                      </div>
+                      <div>
+                        <div className="text-lg font-bold text-black">+340%</div>
+                        <div className="text-xs text-gray-500">Online-Umsatz</div>
+                      </div>
+                      <div>
+                        <div className="text-lg font-bold text-black">Inklusive</div>
+                        <div className="text-xs text-gray-500">Content-Shooting</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Testimonial */}
+              <div className="text-center mt-12">
+                <div className="bg-white p-6 rounded-xl shadow-sm max-w-2xl mx-auto">
+                  <p className="text-lg text-gray-700 italic mb-4">
+                    💬 „Endlich ein Partner, der versteht: Marketing muss sich rechnen."
+                  </p>
+                  <p className="text-sm text-gray-500 font-semibold">– Sarah M., Unternehmerin</p>
                 </div>
               </div>
             </div>
