@@ -25,7 +25,7 @@ export default function AGBPage() {
             <div className="hidden md:flex space-x-8 text-sm">
               <a href="/" className="text-gray-600 hover:text-black transition-colors">Home</a>
               <a href="/leistungen" className="text-gray-600 hover:text-black transition-colors">Leistungen</a>
-              <a href="/portfolio" className="text-gray-600 hover:text-black transition-colors">Portfolio</a>
+
               <a href="/preise" className="text-gray-600 hover:text-black transition-colors">Preise</a>
               <a href="/blog" className="text-gray-600 hover:text-black transition-colors">Blog</a>
               <a href="/kontakt" className="text-gray-600 hover:text-black transition-colors">Kontakt</a>
@@ -113,7 +113,7 @@ export default function AGBPage() {
                     <div className="bg-gray-50 p-6 rounded-xl">
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">Performance-Garantie</h3>
                       <p className="text-gray-700 leading-relaxed">
-                        Wir garantieren eine Verbesserung der Website-Performance um mindestens 40% oder Sie erhalten Ihr Geld zurück. Details zu den Messkriterien werden im jeweiligen Projekt definiert.
+                        Wir arbeiten kontinuierlich an der Verbesserung Ihrer Website-Performance. Details zu den Optimierungszielen werden im jeweiligen Projekt definiert.
                       </p>
                     </div>
                   </div>
@@ -261,7 +261,7 @@ export default function AGBPage() {
               <h4 className="font-semibold mb-4">Services</h4>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li><a href="/leistungen" className="hover:text-white transition-colors">Leistungen</a></li>
-                <li><a href="/portfolio" className="hover:text-white transition-colors">Portfolio</a></li>
+
                 <li><a href="/preise" className="hover:text-white transition-colors">Preise</a></li>
               </ul>
             </div>

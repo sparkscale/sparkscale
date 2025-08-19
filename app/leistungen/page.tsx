@@ -52,11 +52,7 @@ export default function LeistungenPage() {
       link: "/leistungen",
       icon: <IconBriefcase className="h-4 w-4" />,
     },
-    {
-      name: "Portfolio", 
-      link: "/portfolio",
-      icon: <IconPhoto className="h-4 w-4" />,
-    },
+
     {
       name: "Preise",
       link: "/preise", 
@@ -195,12 +191,12 @@ export default function LeistungenPage() {
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">Performance-Garantie</h3>
                   <p className="text-gray-600 leading-relaxed mb-6">
                     Wir garantieren messbare Ergebnisse: Core Web Vitals, 
-                    Rankings und Conversions - oder Sie bekommen Ihr Geld zurück.
+                    Rankings und Conversions für bessere Ergebnisse.
                   </p>
                 <div className="text-sm text-[#a29a88] font-semibold">
                     ✓ Live-Monitoring<br />
                     ✓ Monatliche Reports<br />
-                    ✓ Geld-zurück-Garantie
+                    ✓ Transparente Preise
                   </div>
                 </div>
               </div>
@@ -210,7 +206,7 @@ export default function LeistungenPage() {
       </section>
 
       {/* Full-Stack Digital Partner */}
-      <section className="py-20 px-8 bg-black text-white">
+      <section className="py-16 md:py-24 px-8 bg-[#1f2937]">
         <div className="container mx-auto max-w-6xl">
           <ScrollAnimation animation="slideUp" delay={0.2}>
             <div className="text-center mb-16">
@@ -296,13 +292,13 @@ export default function LeistungenPage() {
                 <svg className="w-8 h-8 text-[#a29a88]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
-                <h3 className="text-2xl font-bold text-[#a29a88]">📊 Ergebnis</h3>
+                <h3 className="text-2xl font-bold text-[#a29a88]">Ergebnis</h3>
               </div>
               <p className="text-xl text-white font-semibold mb-6">
-                Bis zu 3× mehr qualifizierte Anfragen in 90 Tagen – oder Ihr Geld zurück.
+                Bis zu 3× mehr qualifizierte Anfragen in nur 90 Tagen!
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/preise" className="bg-[#a29a88] text-black px-8 py-3 rounded-full font-semibold hover:bg-yellow-500 transition-all duration-300">
+                <a href="/preise" className="bg-[#a29a88] text-black px-8 py-3 rounded-full font-semibold hover:bg-[#a29a88] transition-all duration-300">
                   Marketing-Pakete ansehen
                 </a>
                 <a href="/kontakt" className="border-2 border-[#a29a88] text-[#a29a88] px-8 py-3 rounded-full font-semibold hover:bg-[#a29a88] hover:text-black transition-all duration-300">
@@ -366,7 +362,7 @@ export default function LeistungenPage() {
 
                 <div className="bg-gray-50 p-6 rounded-xl">
                   <div className="text-sm text-gray-500 mb-2">Durchschnittliche Verbesserung:</div>
-                  <div className="text-2xl font-bold text-black">+340% Performance</div>
+                  <div className="text-2xl font-bold text-black">Bessere Performance</div>
                 </div>
               </div>
 

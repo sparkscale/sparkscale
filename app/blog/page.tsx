@@ -90,7 +90,7 @@ export default function BlogPage() {
             <div className="hidden md:flex space-x-8 text-sm">
               <a href="/" className="text-gray-600 hover:text-black transition-colors">Home</a>
               <a href="/leistungen" className="text-gray-600 hover:text-black transition-colors">Leistungen</a>
-              <a href="/portfolio" className="text-gray-600 hover:text-black transition-colors">Portfolio</a>
+
               <a href="/preise" className="text-gray-600 hover:text-black transition-colors">Preise</a>
               <a href="/roi-rechner" className="text-gray-600 hover:text-black transition-colors">ROI-Rechner</a>
               <a href="/blog" className="text-black font-semibold">Blog</a>

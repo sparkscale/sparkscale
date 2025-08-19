@@ -25,7 +25,7 @@ export default function ImpressumPage() {
             <div className="hidden md:flex space-x-8 text-sm">
               <a href="/" className="text-gray-600 hover:text-black transition-colors">Home</a>
               <a href="/leistungen" className="text-gray-600 hover:text-black transition-colors">Leistungen</a>
-              <a href="/portfolio" className="text-gray-600 hover:text-black transition-colors">Portfolio</a>
+
               <a href="/preise" className="text-gray-600 hover:text-black transition-colors">Preise</a>
               <a href="/blog" className="text-gray-600 hover:text-black transition-colors">Blog</a>
               <a href="/kontakt" className="text-gray-600 hover:text-black transition-colors">Kontakt</a>
@@ -167,7 +167,7 @@ export default function ImpressumPage() {
               <h4 className="font-semibold mb-4">Services</h4>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li><a href="/leistungen" className="hover:text-white transition-colors">Leistungen</a></li>
-                <li><a href="/portfolio" className="hover:text-white transition-colors">Portfolio</a></li>
+
                 <li><a href="/preise" className="hover:text-white transition-colors">Preise</a></li>
               </ul>
             </div>

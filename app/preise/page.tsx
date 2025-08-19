@@ -54,11 +54,7 @@ export default function PreisePage() {
       link: "/leistungen",
       icon: <IconBriefcase className="h-4 w-4" />,
     },
-    {
-      name: "Portfolio", 
-      link: "/portfolio",
-      icon: <IconPhoto className="h-4 w-4" />,
-    },
+
     {
       name: "Preise",
       link: "/preise", 
@@ -290,7 +286,7 @@ export default function PreisePage() {
                     </svg>
                     <div>
                       <span className="text-gray-700 text-sm font-medium">Performance-Garantie</span>
-                      <div className="text-xs text-gray-500 mt-1">Core Web Vitals oder Geld zurück</div>
+                      <div className="text-xs text-gray-500 mt-1">Professionelle Optimierung</div>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -429,7 +425,7 @@ export default function PreisePage() {
               <div className="bg-gradient-to-br from-black to-gray-800 text-white p-8 md:p-12 rounded-2xl shadow-2xl max-w-4xl mx-auto">
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-white mb-4">Ab 1.200 €/Monat</h3>
-                  <p className="text-gray-300 text-lg mb-6">(nur mit Website-Paket buchbar)</p>
+                  
                   
                   <div className="bg-gray-900 p-6 rounded-xl mb-8">
                     <h4 className="text-lg font-bold text-[#a29a88] mb-4">Enthalten:</h4>
@@ -453,7 +449,7 @@ export default function PreisePage() {
                     🎯 Perfekt für: Selbstständige mit 50.000 €+ Jahresumsatz, die professionell auftreten wollen
                   </p>
                   <p className="text-xl text-white font-bold">
-                    💡 Garantie: Keine Leads in 90 Tagen? Geld zurück.
+                    Für organische Lead-Gewinnung
                   </p>
                 </div>
 
@@ -462,9 +458,6 @@ export default function PreisePage() {
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="/kontakt" className="bg-[#a29a88] text-black px-8 py-4 rounded-full font-semibold hover:bg-yellow-500 transition-all duration-300">
                       Marketing-Beratung buchen
-                    </a>
-                    <a href="/portfolio" className="border-2 border-[#a29a88] text-[#a29a88] px-8 py-4 rounded-full font-semibold hover:bg-[#a29a88] hover:text-black transition-all duration-300">
-                      Marketing-Erfolge ansehen
                     </a>
                   </div>
                 </div>
@@ -485,7 +478,7 @@ export default function PreisePage() {
               <div className="grid md:grid-cols-3 gap-8 mb-8">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-black mb-2">100%</div>
-                  <div className="text-sm text-gray-700">Geld-zurück bei nicht erreichten Core Web Vitals</div>
+                  <div className="text-sm text-gray-700">Fokus auf Core Web Vitals Optimierung</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-black mb-2">6 Monate</div>
@@ -498,7 +491,7 @@ export default function PreisePage() {
               </div>
               
               <p className="text-gray-700 mb-6 max-w-3xl mx-auto">
-                Durchschnittlich amortisiert sich jede Investition in 6 Monaten durch mehr Leads, bessere Rankings 
+                Eine professionelle Website-Optimierung kann zu mehr Leads und besseren Rankings führen 
                 und höhere Conversion-Raten. Wir stehen zu unseren Versprechen.
               </p>
               
@@ -537,7 +530,7 @@ export default function PreisePage() {
                 <div className="bg-white p-6 rounded-xl shadow-sm">
                   <h4 className="font-bold text-black mb-3">Wie funktioniert die Performance-Garantie?</h4>
                   <p className="text-gray-600 text-sm">
-                    Erreichen wir nicht die versprochenen Core Web Vitals Werte, erhalten Sie Ihr Geld zurück. 
+                    Wir arbeiten kontinuierlich an der Verbesserung Ihrer Core Web Vitals Werte. 
                     So einfach ist das. Wir sind von unserer Qualität überzeugt.
                   </p>
                 </div>
@@ -592,7 +585,7 @@ export default function PreisePage() {
                 <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span className="text-sm font-medium">30-Tage Geld-zurück-Garantie</span>
+                <span className="text-sm font-medium">Transparente Abrechnung</span>
               </div>
               <div className="flex items-center gap-2 text-gray-600">
                 <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">

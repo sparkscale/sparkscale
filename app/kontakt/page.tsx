@@ -52,11 +52,7 @@ export default function KontaktPage() {
       link: "/leistungen",
       icon: <IconBriefcase className="h-4 w-4" />,
     },
-    {
-      name: "Portfolio", 
-      link: "/portfolio",
-      icon: <IconPhoto className="h-4 w-4" />,
-    },
+
     {
       name: "Preise",
       link: "/preise", 
@@ -79,7 +75,7 @@ export default function KontaktPage() {
     },
   ];
 
-  const handleFormSubmit = (data: Record<string, unknown>) => {
+  const handleFormSubmit = (data: FormData & { leadScore: number }) => {
     console.log('Lead Score:', data.leadScore);
     console.log('Form Data:', data);
     // Hier würde HubSpot API-Call stattfinden
@@ -119,7 +115,7 @@ export default function KontaktPage() {
                 <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                Performance-Garantie
+                Professioneller Service
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -131,7 +127,7 @@ export default function KontaktPage() {
                 <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                90% Seite 1 Erfolg
+                SEO-Expertise
               </div>
             </div>
           </ScrollAnimation>
@@ -148,7 +144,7 @@ export default function KontaktPage() {
       </section>
 
       {/* Direkte Kontaktoptionen */}
-      <section className="py-16 px-8 bg-white">
+      <section className="hidden py-16 px-8 bg-white">
         <div className="container mx-auto max-w-6xl">
           <ScrollAnimation animation="slideUp" delay={0.2}>
             <div className="text-center mb-12">
@@ -216,7 +212,7 @@ export default function KontaktPage() {
       </section>
 
       {/* Büro Adresse & Öffnungszeiten */}
-      <section className="py-16 px-8 bg-gray-100">
+      <section className="hidden py-16 px-8 bg-gray-100">
         <div className="container mx-auto max-w-4xl">
           <ScrollAnimation animation="slideUp" delay={0.2}>
             <div className="grid md:grid-cols-2 gap-12">

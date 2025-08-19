@@ -175,10 +175,10 @@ export default function ROICalculator() {
       <ScrollAnimation animation="slideUp" delay={0.4}>
         <div className="text-center mt-8 p-8 bg-gray-50 rounded-2xl border-2 border-gray-100">
           <h3 className="text-2xl font-bold text-black mb-4">
-            Performance-Garantie oder Geld zurück
+            Professionelle Performance-Optimierung
           </h3>
           <p className="text-gray-600 mb-6 text-lg max-w-2xl mx-auto">
-            90% unserer Kunden erreichen Seite 1. Starten Sie jetzt Ihre kostenlose Website-Analyse.
+            Professionelle SEO-Optimierung für bessere Rankings. Starten Sie jetzt Ihre kostenlose Website-Analyse.
           </p>
           <div >
             <a 

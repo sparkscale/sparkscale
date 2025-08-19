@@ -26,7 +26,7 @@ export default function UeberUnsPage() {
             </div>
             <div className="hidden md:flex space-x-8 text-sm">
               <a href="/leistungen" className="text-gray-600 hover:text-black transition-colors">Leistungen</a>
-              <a href="/portfolio" className="text-gray-600 hover:text-black transition-colors">Portfolio</a>
+
               <a href="/preise" className="text-gray-600 hover:text-black transition-colors">Preise</a>
               <a href="/roi-rechner" className="text-gray-600 hover:text-black transition-colors">ROI-Rechner</a>
               <a href="/ueber-uns" className="text-gray-600 hover:text-black transition-colors font-semibold">Über uns</a>
@@ -52,7 +52,7 @@ export default function UeberUnsPage() {
               Webagentur für KMUs
             </h1>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Performance-Garantie oder Geld zurück. Wir machen Ihre Website zur Leadmaschine <br />
+              Professionelle Performance-Optimierung. Wir machen Ihre Website zur Leadmaschine <br />
               und sorgen für messbare Erfolge in der digitalen Welt.
             </p>
           </ScrollAnimation>
@@ -285,12 +285,12 @@ export default function UeberUnsPage() {
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">Performance-Garantie</h3>
                   <p className="text-gray-600 leading-relaxed mb-6">
                     Wir garantieren messbare Ergebnisse: Core Web Vitals, 
-                    Rankings und Conversions - oder Sie bekommen Ihr Geld zurück.
+                    Rankings und Conversions für bessere Ergebnisse.
                   </p>
                 <div className="text-sm text-[#a29a88] font-semibold">
                     ✓ Live-Monitoring<br />
                     ✓ Monatliche Reports<br />
-                    ✓ Geld-zurück-Garantie
+                    ✓ Transparente Preise
                   </div>
                 </div>
               </div>
@@ -475,7 +475,7 @@ export default function UeberUnsPage() {
                 <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
-                Performance-Garantie oder Geld zurück
+                Professionelle Performance-Optimierung
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-[#a29a88]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
