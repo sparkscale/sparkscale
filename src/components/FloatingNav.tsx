@@ -15,7 +15,7 @@ export const FloatingNav = ({
   navItems: {
     name: string;
     link: string;
-    icon?: JSX.Element;
+    icon?: React.ReactElement;
   }[];
   className?: string;
 }) => {
@@ -63,8 +63,20 @@ export const FloatingNav = ({
             key={`link=${idx}`}
             href={navItem.link}
             className={cn(
-              "relative items-center flex space-x-1 text-white hover:text-gray-300 transition-colors"
+              "relative items-center flex space-x-1 transition-colors"
             )}
+            style={{
+              color: '#a29a88',
+              textDecoration: 'none'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = 'white';
+              e.currentTarget.style.textDecoration = 'none';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = '#a29a88';
+              e.currentTarget.style.textDecoration = 'none';
+            }}
           >
             <span className="block sm:hidden">{navItem.icon}</span>
             <span className="hidden sm:block text-sm">{navItem.name}</span>

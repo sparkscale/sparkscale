@@ -25,12 +25,12 @@ export default function UeberUnsPage() {
               </a>
             </div>
             <div className="hidden md:flex space-x-8 text-sm">
-              <a href="/leistungen" className="text-gray-600 hover:text-black transition-colors">Leistungen</a>
+              <a href="/leistungen" className="text-gray-800 hover:text-black transition-colors">Leistungen</a>
 
-              <a href="/preise" className="text-gray-600 hover:text-black transition-colors">Preise</a>
-              <a href="/roi-rechner" className="text-gray-600 hover:text-black transition-colors">ROI-Rechner</a>
-              <a href="/ueber-uns" className="text-gray-600 hover:text-black transition-colors font-semibold">Über uns</a>
-              <a href="/kontakt" className="text-gray-600 hover:text-black transition-colors">Kontakt</a>
+              <a href="/preise" className="text-gray-800 hover:text-black transition-colors">Preise</a>
+              <a href="/roi-rechner" className="text-gray-800 hover:text-black transition-colors">ROI-Rechner</a>
+              <a href="/ueber-uns" className="text-gray-800 hover:text-black transition-colors font-semibold">Über uns</a>
+              <a href="/kontakt" className="text-gray-800 hover:text-black transition-colors">Kontakt</a>
             </div>
             <div >
               <a href="/kontakt" className="bg-black text-[#a29a88] px-6 py-2 rounded-full text-sm font-semibold hover:text-white hover:shadow-lg transition-all duration-300 group" style={{display: 'inline-block'}}>

@@ -9,7 +9,7 @@ import SuccessModal from './SuccessModal';
 
 interface FormData {
   projektArt: string[];
-  budget: string;
+  budget: string[];
   timeline: string;
   name: string;
   email: string;
@@ -26,7 +26,7 @@ const MultiStepContactForm: React.FC<MultiStepContactFormProps> = ({ onSubmit })
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<FormData>({
     projektArt: [],
-    budget: '',
+    budget: [],
     timeline: '',
     name: '',
     email: '',
@@ -43,7 +43,7 @@ const MultiStepContactForm: React.FC<MultiStepContactFormProps> = ({ onSubmit })
   useEffect(() => {
     trackFormStep(1, formData);
     vercelAnalytics.trackFormStart();
-  }, []);
+  }, [trackFormStep, formData, vercelAnalytics]);
 
   // Track step changes
   useEffect(() => {
@@ -51,11 +51,33 @@ const MultiStepContactForm: React.FC<MultiStepContactFormProps> = ({ onSubmit })
       trackFormStep(currentStep, formData);
       vercelAnalytics.trackFormStep(currentStep, getStepName(currentStep));
     }
-  }, [currentStep]); // Removed formData and trackFormStep from dependencies
+  }, [currentStep, trackFormStep, formData, vercelAnalytics]);
 
   const getStepName = (step: number) => {
     const stepNames = ['', 'project_type', 'budget_timeline', 'contact_info', 'message'];
     return stepNames[step] || 'unknown';
+  };
+
+  const handleBudgetSelection = (optionId: string, category: 'website' | 'zusatz') => {
+    setFormData(prev => {
+      let newBudget = [...prev.budget];
+      
+      if (category === 'website') {
+        // Remove any existing website package
+        newBudget = newBudget.filter(id => !websitePakete.some(pkg => pkg.id === id));
+        // Add new website package
+        newBudget.push(optionId);
+      } else if (category === 'zusatz') {
+        // Toggle zusatz package
+        if (newBudget.includes(optionId)) {
+          newBudget = newBudget.filter(id => id !== optionId);
+        } else {
+          newBudget.push(optionId);
+        }
+      }
+      
+      return { ...prev, budget: newBudget };
+    });
   };
 
   const projektOptionen = [
@@ -63,15 +85,19 @@ const MultiStepContactForm: React.FC<MultiStepContactFormProps> = ({ onSubmit })
     { id: 'redesign', label: 'Website-Redesign', score: 15 },
     { id: 'seo', label: 'SEO-Optimierung', score: 25 },
     { id: 'performance', label: 'Performance-Optimierung', score: 30 },
-    { id: 'local-seo', label: 'Local SEO', score: 20 },
+    { id: 'social-media', label: 'Social Media Marketing', score: 20 },
     { id: 'wartung', label: 'Wartung & Pflege', score: 10 }
   ];
 
-  const budgetOptionen = [
-    { id: 'starter', label: '2.500€ - Starter Paket', score: 10 },
-    { id: 'pro', label: '5.500€ - Pro Paket', score: 25 },
-    { id: 'enterprise', label: '9.500€+ - Enterprise', score: 40 },
-    { id: 'unsicher', label: 'Ich bin unsicher', score: 5 }
+  const websitePakete = [
+    { id: 'starter', label: '2.500€ - Starter Paket', score: 10, category: 'website' },
+    { id: 'pro', label: '5.500€ - Pro Paket', score: 25, category: 'website' },
+    { id: 'enterprise', label: '9.500€+ - Enterprise', score: 40, category: 'website' },
+    { id: 'unsicher', label: 'Ich bin unsicher', score: 5, category: 'website' }
+  ];
+
+  const zusatzPakete = [
+    { id: 'marketing', label: 'ab 1.000€/Monat - Marketing & Social Media', score: 30, category: 'zusatz' }
   ];
 
   const timelineOptionen = [
@@ -91,8 +117,12 @@ const MultiStepContactForm: React.FC<MultiStepContactFormProps> = ({ onSubmit })
     });
 
     // Budget Score
-    const budgetOption = budgetOptionen.find(opt => opt.id === formData.budget);
-    if (budgetOption) score += budgetOption.score;
+    formData.budget.forEach(budgetId => {
+      const websiteOption = websitePakete.find(opt => opt.id === budgetId);
+      const zusatzOption = zusatzPakete.find(opt => opt.id === budgetId);
+      if (websiteOption) score += websiteOption.score;
+      if (zusatzOption) score += zusatzOption.score;
+    });
 
     // Timeline Score
     const timelineOption = timelineOptionen.find(opt => opt.id === formData.timeline);
@@ -205,7 +235,7 @@ const MultiStepContactForm: React.FC<MultiStepContactFormProps> = ({ onSubmit })
   const isStepValid = (): boolean => {
     switch (currentStep) {
       case 1: return formData.projektArt.length > 0;
-      case 2: return formData.budget !== '';
+      case 2: return formData.budget.length > 0;
       case 3: return formData.timeline !== '';
       case 4: return formData.name !== '' && formData.email !== '';
       default: return false;
@@ -263,7 +293,7 @@ const MultiStepContactForm: React.FC<MultiStepContactFormProps> = ({ onSubmit })
                     className={`p-4 border-2 rounded-xl text-left transition-all ${
                       formData.projektArt.includes(option.id)
                         ? 'border-[#a29a88] bg-[#a29a88]/10 text-[#6b6659]'
-                        : 'border-gray-200 hover:border-[#a29a88] hover:bg-gray-50'
+                        : 'border-gray-200 hover:border-[#a29a88] hover:bg-gray-50 text-gray-800'
                     }`}
                   >
                     <div className="font-semibold">{option.label}</div>
@@ -284,24 +314,57 @@ const MultiStepContactForm: React.FC<MultiStepContactFormProps> = ({ onSubmit })
               transition={{ duration: 0.3 }}
             >
               <h3 className="text-xl font-semibold text-gray-900 mb-6">
-                Welches Budget haben Sie eingeplant?
+                Was wünschen Sie sich für Ihr Unternehmen?
               </h3>
-              <p className="text-gray-600 mb-6">Damit wir Ihnen das passende Paket vorschlagen können:</p>
+              <p className="text-gray-600 mb-6">Damit wir Ihnen die beste Lösung vorschlagen können:</p>
               
-              <div className="space-y-4">
-                {budgetOptionen.map((option) => (
-                  <button
-                    key={option.id}
-                    onClick={() => setFormData(prev => ({ ...prev, budget: option.id }))}
-                    className={`w-full p-4 border-2 rounded-xl text-left transition-all ${
-                      formData.budget === option.id
-                        ? 'border-[#a29a88] bg-[#a29a88]/10 text-[#6b6659]'
-                        : 'border-gray-200 hover:border-[#a29a88] hover:bg-gray-50'
-                    }`}
-                  >
-                    <div className="font-semibold">{option.label}</div>
-                  </button>
-                ))}
+              <div className="space-y-6">
+                {/* Website Pakete */}
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Website-Paket wählen:</h4>
+                  <div className="space-y-3">
+                    {websitePakete.map((option) => (
+                      <button
+                        key={option.id}
+                        onClick={() => handleBudgetSelection(option.id, 'website')}
+                        className={`w-full p-4 border-2 rounded-xl text-left transition-all ${
+                          formData.budget.includes(option.id)
+                            ? 'border-[#a29a88] bg-[#a29a88]/10 text-[#6b6659]'
+                            : 'border-gray-200 hover:border-[#a29a88] hover:bg-gray-50 text-gray-800'
+                        }`}
+                      >
+                        <div className="font-semibold">{option.label}</div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Zusatz-Pakete */}
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Social Media-Paket:</h4>
+                  <div className="space-y-3">
+                    {zusatzPakete.map((option) => (
+                      <button
+                        key={option.id}
+                        onClick={() => handleBudgetSelection(option.id, 'zusatz')}
+                        className={`w-full p-4 border-2 rounded-xl text-left transition-all ${
+                          formData.budget.includes(option.id)
+                            ? 'border-[#a29a88] bg-[#a29a88]/10 text-[#6b6659]'
+                            : 'border-gray-200 hover:border-[#a29a88] hover:bg-gray-50 text-gray-800'
+                        }`}
+                      >
+                        <div className="flex items-center justify-between">
+                          <div className="font-semibold">{option.label}</div>
+                          {formData.budget.includes(option.id) && (
+                            <svg className="w-5 h-5 text-[#a29a88]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          )}
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
             </motion.div>
           )}
@@ -329,12 +392,12 @@ const MultiStepContactForm: React.FC<MultiStepContactFormProps> = ({ onSubmit })
                     className={`w-full p-4 border-2 rounded-xl text-left transition-all ${
                       formData.timeline === option.id
                         ? 'border-[#a29a88] bg-[#a29a88]/10 text-[#6b6659]'
-                        : 'border-gray-200 hover:border-[#a29a88] hover:bg-gray-50'
+                        : 'border-gray-200 hover:border-[#a29a88] hover:bg-gray-50 text-gray-800'
                     }`}
                   >
                     <div className="font-semibold">{option.label}</div>
                     {option.id === 'sofort' && (
-                      <div className="text-sm text-[#a29a88] mt-1">🔥 Begrenzte Kapazität - nur 5 Plätze/Monat</div>
+                      <div className="text-sm text-[#a29a88] mt-1">Begrenzte Kapazität! Nur 5 Plätze/Monat</div>
                     )}
                   </button>
                 ))}

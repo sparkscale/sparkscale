@@ -293,10 +293,10 @@ export default function PreisePage() {
                     </svg>
                     <div>
                       <span className="text-gray-700 text-sm font-medium">
-                        3 Monate Support
+                        3 Monate Support inklusive
                       </span>
                       <div className="text-xs text-gray-500 mt-1">
-                        Updates, Bugfixes, kleine Änderungen
+                        Updates, Bugfixes + dauerhafter Support verfügbar
                       </div>
                     </div>
                   </li>
@@ -528,10 +528,10 @@ export default function PreisePage() {
                     </svg>
                     <div>
                       <span className="text-gray-700 text-sm font-medium">
-                        6 Monate Premium Support
+                        3 Monate Premium Support inklusive
                       </span>
                       <div className="text-xs text-gray-500 mt-1">
-                        Priorität-Support, monatliche Reports
+                        Priorität-Support + dauerhafter Support verfügbar
                       </div>
                     </div>
                   </li>
@@ -731,10 +731,10 @@ export default function PreisePage() {
                     </svg>
                     <div>
                       <span className="text-gray-700 text-sm font-medium">
-                        12 Monate Full-Service Support
+                        3 Monate Full-Service Support inklusive
                       </span>
                       <div className="text-xs text-gray-500 mt-1">
-                        Dedizierter Account Manager, SLA
+                        Account Manager + dauerhafter Support verfügbar
                       </div>
                     </div>
                   </li>
@@ -798,27 +798,60 @@ export default function PreisePage() {
                     </h4>
                     <div className="grid md:grid-cols-2 gap-6 text-left">
                       <div>
-                        <p className="text-white font-medium mb-2">
-                          Vollständige Betreuung: Instagram, Facebook & TikTok
-                        </p>
-                        <p className="text-white font-medium mb-2">
-                          Kontinuierliche Posts & Stories
-                        </p>
-                        <p className="text-white font-medium mb-2">
-                          Strategische Werbekampagnen zugeschnitten auf Ihre
-                          Zielgruppe
-                        </p>
+                        <ul className="space-y-3">
+                          <li className="flex items-start gap-3">
+                            <svg className="w-4 h-4 text-[#a29a88] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span className="text-white font-medium">
+                              Vollständige Betreuung: Instagram, Facebook & TikTok
+                            </span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <svg className="w-4 h-4 text-[#a29a88] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span className="text-white font-medium">
+                              Kontinuierliche Posts & Stories
+                            </span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <svg className="w-4 h-4 text-[#a29a88] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span className="text-white font-medium">
+                              Strategische Werbekampagnen zugeschnitten auf Ihre Zielgruppe
+                            </span>
+                          </li>
+                        </ul>
                       </div>
                       <div>
-                        <p className="text-white font-medium mb-2">
-                          Eigene Foto- & Video-Shootings
-                        </p>
-                        <p className="text-white font-medium mb-2">
-                          Community Management – wir antworten für Sie
-                        </p>
-                        <p className="text-white font-medium mb-2">
-                          Monatliche Strategie-Calls & Reports
-                        </p>
+                        <ul className="space-y-3">
+                          <li className="flex items-start gap-3">
+                            <svg className="w-4 h-4 text-[#a29a88] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span className="text-white font-medium">
+                              Eigene Foto- & Video-Shootings
+                            </span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <svg className="w-4 h-4 text-[#a29a88] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span className="text-white font-medium">
+                              Community Management – wir antworten für Sie
+                            </span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <svg className="w-4 h-4 text-[#a29a88] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span className="text-white font-medium">
+                              Monatliche Strategie-Calls & Reports
+                            </span>
+                          </li>
+                        </ul>
                       </div>
                     </div>
                   </div>
@@ -826,7 +859,7 @@ export default function PreisePage() {
 
                 <div className="text-center mb-8">
                   <p className="text-lg text-[#a29a88] font-semibold mb-4">
-                    🎯 Perfekt für: Selbstständige mit 50.000 €+ Jahresumsatz,
+                    Perfekt für: Selbstständige mit 50.000 €+ Jahresumsatz,
                     die professionell auftreten wollen
                   </p>
                   <p className="text-xl text-white font-bold">
@@ -911,9 +944,125 @@ export default function PreisePage() {
             </div>
           </ScrollAnimation>
 
+          {/* Dauerhafter Support Section */}
+          <ScrollAnimation animation="slideUp" delay={0.1}>
+            <div className="max-w-6xl mx-auto mt-20 mb-20">
+              <div className="text-center mb-12">
+                <h3 className="text-3xl font-bold text-black mb-4">
+                  Dauerhafter Support für Ihren Erfolg
+                </h3>
+                <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+                  Nach dem Launch ist vor dem Wachstum. Wir begleiten Sie langfristig mit 
+                  professionellem Support – individuell nach Ihrem Bedarf.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {/* Hosting & Wartung */}
+                <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                  <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2" />
+                    </svg>
+                  </div>
+                  <h4 className="text-lg font-semibold text-black mb-3">Hosting & Wartung</h4>
+                  <ul className="text-sm text-gray-600 space-y-2">
+                    <li>• Premium-Hosting (99,9% Uptime)</li>
+                    <li>• SSL-Zertifikate</li>
+                    <li>• Automatische Backups</li>
+                    <li>• Security-Updates</li>
+                    <li>• Performance-Monitoring</li>
+                  </ul>
+                  <div className="mt-4 text-xs text-gray-500">
+                    ab 49€/Monat je nach Größe
+                  </div>
+                </div>
+
+                {/* SEO & SGE Optimierung */}
+                <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                  <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <h4 className="text-lg font-semibold text-black mb-3">SEO & SGE Optimierung</h4>
+                  <ul className="text-sm text-gray-600 space-y-2">
+                    <li>• Monatliche SEO-Optimierung</li>
+                    <li>• KI-Search Anpassungen (SGE)</li>
+                    <li>• Content-Updates</li>
+                    <li>• Ranking-Monitoring</li>
+                    <li>• Keyword-Recherche</li>
+                  </ul>
+                  <div className="mt-4 text-xs text-gray-500">
+                    ab 299€/Monat je nach Umfang
+                  </div>
+                </div>
+
+                {/* Bug Fixes & Updates */}
+                <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                  <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <h4 className="text-lg font-semibold text-black mb-3">Bug Fixes & Updates</h4>
+                  <ul className="text-sm text-gray-600 space-y-2">
+                    <li>• Schnelle Fehlerbehebung</li>
+                    <li>• Feature-Updates</li>
+                    <li>• Browser-Kompatibilität</li>
+                    <li>• Mobile Optimierungen</li>
+                    <li>• Performance-Verbesserungen</li>
+                  </ul>
+                  <div className="mt-4 text-xs text-gray-500">
+                    ab 89€/Stunde nach Aufwand
+                  </div>
+                </div>
+
+                {/* Kunden Support */}
+                <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                  <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                  </div>
+                  <h4 className="text-lg font-semibold text-black mb-3">Kunden Support</h4>
+                  <ul className="text-sm text-gray-600 space-y-2">
+                    <li>• Schulungen & Training</li>
+                    <li>• CMS-Support</li>
+                    <li>• Content-Beratung</li>
+                    <li>• Analytics & Reports</li>
+                    <li>• Strategische Beratung</li>
+                  </ul>
+                  <div className="mt-4 text-xs text-gray-500">
+                    ab 149€/Monat je nach Betreuung
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-12 text-center">
+                <div className="bg-gray-50 p-8 rounded-2xl border border-gray-200">
+                  <h4 className="text-xl font-semibold text-black mb-4">
+                    Individueller Support für alle Pakete
+                  </h4>
+                  <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+                    Egal ob Starter, Professional oder Enterprise – wir bieten für jedes Paket 
+                    maßgeschneiderten Support. Die Preise richten sich nach dem tatsächlichen Aufwand 
+                    und Ihren individuellen Anforderungen.
+                  </p>
+                  <div className="flex justify-center">
+                    <button className="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300">
+                      Support-Beratung buchen
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollAnimation>
+
           {/* FAQ Section */}
           <ScrollAnimation animation="slideUp" delay={0.1}>
-            <div className="max-w-4xl mx-auto mt-20">
+            <div className="hidden max-w-4xl mx-auto mt-20">
               <h3 className="text-2xl font-bold text-center text-black mb-12">
                 Häufige Fragen
               </h3>

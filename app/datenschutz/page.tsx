@@ -23,12 +23,12 @@ export default function DatenschutzPage() {
               </a>
             </div>
             <div className="hidden md:flex space-x-8 text-sm">
-              <a href="/" className="text-gray-600 hover:text-black transition-colors">Home</a>
-              <a href="/leistungen" className="text-gray-600 hover:text-black transition-colors">Leistungen</a>
+              <a href="/" className="text-gray-800 hover:text-black transition-colors">Home</a>
+              <a href="/leistungen" className="text-gray-800 hover:text-black transition-colors">Leistungen</a>
 
-              <a href="/preise" className="text-gray-600 hover:text-black transition-colors">Preise</a>
-              <a href="/blog" className="text-gray-600 hover:text-black transition-colors">Blog</a>
-              <a href="/kontakt" className="text-gray-600 hover:text-black transition-colors">Kontakt</a>
+              <a href="/preise" className="text-gray-800 hover:text-black transition-colors">Preise</a>
+              <a href="/blog" className="text-gray-800 hover:text-black transition-colors">Blog</a>
+              <a href="/kontakt" className="text-gray-800 hover:text-black transition-colors">Kontakt</a>
             </div>
             <div className="hidden md:block">
               <div>
