@@ -23,7 +23,7 @@ const CookieBanner: React.FC = () => {
     const cookieConsent = localStorage.getItem('spark-scale-cookie-consent');
     if (!cookieConsent) {
       // Show banner after a short delay for better UX
-      const timer = setTimeout(() => setIsVisible(true), 1000);
+      const timer = setTimeout(() => setIsVisible(true), 3500);
       return () => clearTimeout(timer);
     } else {
       // Load saved preferences and initialize analytics if consented
