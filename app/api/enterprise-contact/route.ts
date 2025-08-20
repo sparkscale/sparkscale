@@ -1,11 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Hardcoded API key (same as in create-customer route)
+const apiKey = 're_WZn4gLoN_EQC3RtcH4CuLZs3MbejuBShk';
+const resend = new Resend(apiKey);
 
 export async function POST(request: NextRequest) {
   try {
     console.log('API route called');
+    console.log('Using hardcoded API key (same as contact form)');
 
     const body = await request.json();
     console.log('Request body:', body);
