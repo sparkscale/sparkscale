@@ -313,10 +313,13 @@ export default function PreisePage() {
                   </div>
                 </div>
 
-                <div>
-                  <button className="w-full bg-black text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300">
+                <div className="text-center">
+                  <a
+                    href="/kontakt"
+                    className="inline-block bg-[#a29a88] text-black px-8 py-3 rounded-full font-semibold hover:bg-[#a29a88] transition-all duration-300"
+                  >
                     Sofort starten
-                  </button>
+                  </a>
                 </div>
               </div>
 
@@ -548,10 +551,13 @@ export default function PreisePage() {
                   </div>
                 </div>
 
-                <div>
-                  <button className="w-full bg-black text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300 shadow-lg">
+                <div className="text-center">
+                  <a
+                    href="/kontakt"
+                    className="inline-block bg-[#a29a88] text-black px-8 py-3 rounded-full font-semibold hover:bg-[#a29a88] transition-all duration-300"
+                  >
                     Beratung buchen
-                  </button>
+                  </a>
                 </div>
               </div>
 
@@ -578,7 +584,7 @@ export default function PreisePage() {
                     Enterprise
                   </h3>
                   <div className="text-4xl font-light text-black mb-2">
-                    ab 9.500€
+                    Auf Anfrage
                   </div>
                   <p className="text-gray-500 text-sm">Individuell angepasst</p>
                 </div>
@@ -752,9 +758,12 @@ export default function PreisePage() {
                 </div>
 
                 <div>
-                  <button className="w-full border-2 border-black text-black px-8 py-4 rounded-full font-semibold hover:bg-black hover:text-white transition-all duration-300">
+                  <a
+                    href="/enterprise-kontakt"
+                    className="block w-full border-2 border-black text-black px-8 py-4 rounded-full font-semibold hover:bg-black hover:text-white transition-all duration-300 text-center"
+                  >
                     Strategiegespräch
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -800,27 +809,59 @@ export default function PreisePage() {
                       <div>
                         <ul className="space-y-3">
                           <li className="flex items-start gap-3">
-                            <svg className="w-4 h-4 text-[#a29a88] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            <svg
+                              className="w-4 h-4 text-[#a29a88] mt-1 flex-shrink-0"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                              />
                             </svg>
                             <span className="text-white font-medium">
-                              Vollständige Betreuung: Instagram, Facebook & TikTok
+                              Vollständige Betreuung: Instagram, Facebook &
+                              TikTok
                             </span>
                           </li>
                           <li className="flex items-start gap-3">
-                            <svg className="w-4 h-4 text-[#a29a88] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            <svg
+                              className="w-4 h-4 text-[#a29a88] mt-1 flex-shrink-0"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                              />
                             </svg>
                             <span className="text-white font-medium">
                               Kontinuierliche Posts & Stories
                             </span>
                           </li>
                           <li className="flex items-start gap-3">
-                            <svg className="w-4 h-4 text-[#a29a88] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            <svg
+                              className="w-4 h-4 text-[#a29a88] mt-1 flex-shrink-0"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                              />
                             </svg>
                             <span className="text-white font-medium">
-                              Strategische Werbekampagnen zugeschnitten auf Ihre Zielgruppe
+                              Strategische Werbekampagnen zugeschnitten auf Ihre
+                              Zielgruppe
                             </span>
                           </li>
                         </ul>
@@ -828,24 +869,54 @@ export default function PreisePage() {
                       <div>
                         <ul className="space-y-3">
                           <li className="flex items-start gap-3">
-                            <svg className="w-4 h-4 text-[#a29a88] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            <svg
+                              className="w-4 h-4 text-[#a29a88] mt-1 flex-shrink-0"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                              />
                             </svg>
                             <span className="text-white font-medium">
                               Eigene Foto- & Video-Shootings
                             </span>
                           </li>
                           <li className="flex items-start gap-3">
-                            <svg className="w-4 h-4 text-[#a29a88] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            <svg
+                              className="w-4 h-4 text-[#a29a88] mt-1 flex-shrink-0"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                              />
                             </svg>
                             <span className="text-white font-medium">
                               Community Management – wir antworten für Sie
                             </span>
                           </li>
                           <li className="flex items-start gap-3">
-                            <svg className="w-4 h-4 text-[#a29a88] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            <svg
+                              className="w-4 h-4 text-[#a29a88] mt-1 flex-shrink-0"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                              />
                             </svg>
                             <span className="text-white font-medium">
                               Monatliche Strategie-Calls & Reports
@@ -859,8 +930,9 @@ export default function PreisePage() {
 
                 <div className="text-center mb-8">
                   <p className="text-lg text-[#a29a88] font-semibold mb-4">
-                    Perfekt für: Selbstständige mit 50.000 €+ Jahresumsatz,
-                    die professionell auftreten wollen
+                    Perfekt für: Unternehmen jeder Größe, Selbstständige und
+                    alle, die ihre Social Media Präsenz professionell aufbauen
+                    möchten
                   </p>
                   <p className="text-xl text-white font-bold">
                     Für organische Lead-Gewinnung
@@ -952,8 +1024,9 @@ export default function PreisePage() {
                   Dauerhafter Support für Ihren Erfolg
                 </h3>
                 <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-                  Nach dem Launch ist vor dem Wachstum. Wir begleiten Sie langfristig mit 
-                  professionellem Support – individuell nach Ihrem Bedarf.
+                  Nach dem Launch ist vor dem Wachstum. Wir begleiten Sie
+                  langfristig mit professionellem Support – individuell nach
+                  Ihrem Bedarf.
                 </p>
               </div>
 
@@ -961,11 +1034,23 @@ export default function PreisePage() {
                 {/* Hosting & Wartung */}
                 <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
                   <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2" />
+                    <svg
+                      className="w-6 h-6 text-yellow-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"
+                      />
                     </svg>
                   </div>
-                  <h4 className="text-lg font-semibold text-black mb-3">Hosting & Wartung</h4>
+                  <h4 className="text-lg font-semibold text-black mb-3">
+                    Hosting & Wartung
+                  </h4>
                   <ul className="text-sm text-gray-600 space-y-2">
                     <li>• Premium-Hosting (99,9% Uptime)</li>
                     <li>• SSL-Zertifikate</li>
@@ -974,18 +1059,30 @@ export default function PreisePage() {
                     <li>• Performance-Monitoring</li>
                   </ul>
                   <div className="mt-4 text-xs text-gray-500">
-                    ab 49€/Monat je nach Größe
+                    Preis je nach Umfang
                   </div>
                 </div>
 
                 {/* SEO & SGE Optimierung */}
                 <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
                   <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    <svg
+                      className="w-6 h-6 text-yellow-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                      />
                     </svg>
                   </div>
-                  <h4 className="text-lg font-semibold text-black mb-3">SEO & SGE Optimierung</h4>
+                  <h4 className="text-lg font-semibold text-black mb-3">
+                    SEO & SGE Optimierung
+                  </h4>
                   <ul className="text-sm text-gray-600 space-y-2">
                     <li>• Monatliche SEO-Optimierung</li>
                     <li>• KI-Search Anpassungen (SGE)</li>
@@ -994,19 +1091,36 @@ export default function PreisePage() {
                     <li>• Keyword-Recherche</li>
                   </ul>
                   <div className="mt-4 text-xs text-gray-500">
-                    ab 299€/Monat je nach Umfang
+                    Preis je nach Umfang
                   </div>
                 </div>
 
                 {/* Bug Fixes & Updates */}
                 <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
                   <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <svg
+                      className="w-6 h-6 text-yellow-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
                     </svg>
                   </div>
-                  <h4 className="text-lg font-semibold text-black mb-3">Bug Fixes & Updates</h4>
+                  <h4 className="text-lg font-semibold text-black mb-3">
+                    Bug Fixes & Updates
+                  </h4>
                   <ul className="text-sm text-gray-600 space-y-2">
                     <li>• Schnelle Fehlerbehebung</li>
                     <li>• Feature-Updates</li>
@@ -1015,18 +1129,30 @@ export default function PreisePage() {
                     <li>• Performance-Verbesserungen</li>
                   </ul>
                   <div className="mt-4 text-xs text-gray-500">
-                    ab 89€/Stunde nach Aufwand
+                    Preis je nach Umfang
                   </div>
                 </div>
 
                 {/* Kunden Support */}
                 <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
                   <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                    <svg
+                      className="w-6 h-6 text-yellow-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
+                      />
                     </svg>
                   </div>
-                  <h4 className="text-lg font-semibold text-black mb-3">Kunden Support</h4>
+                  <h4 className="text-lg font-semibold text-black mb-3">
+                    Kunden Support
+                  </h4>
                   <ul className="text-sm text-gray-600 space-y-2">
                     <li>• Schulungen & Training</li>
                     <li>• CMS-Support</li>
@@ -1035,7 +1161,7 @@ export default function PreisePage() {
                     <li>• Strategische Beratung</li>
                   </ul>
                   <div className="mt-4 text-xs text-gray-500">
-                    ab 149€/Monat je nach Betreuung
+                    Preis je nach Umfang
                   </div>
                 </div>
               </div>
@@ -1046,9 +1172,10 @@ export default function PreisePage() {
                     Individueller Support für alle Pakete
                   </h4>
                   <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-                    Egal ob Starter, Professional oder Enterprise – wir bieten für jedes Paket 
-                    maßgeschneiderten Support. Die Preise richten sich nach dem tatsächlichen Aufwand 
-                    und Ihren individuellen Anforderungen.
+                    Egal ob Starter, Professional oder Enterprise – wir bieten
+                    für jedes Paket maßgeschneiderten Support. Die Preise
+                    richten sich nach dem tatsächlichen Aufwand und Ihren
+                    individuellen Anforderungen.
                   </p>
                   <div className="flex justify-center">
                     <button className="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300">
